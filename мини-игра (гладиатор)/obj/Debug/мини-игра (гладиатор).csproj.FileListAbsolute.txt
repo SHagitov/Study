@@ -1,0 +1,8 @@
+D:\Users\Admin\Documents\GitHub\Study\мини-игра (гладиатор)\bin\Debug\мини-игра (гладиатор).exe.config
+D:\Users\Admin\Documents\GitHub\Study\мини-игра (гладиатор)\bin\Debug\мини-игра (гладиатор).exe
+D:\Users\Admin\Documents\GitHub\Study\мини-игра (гладиатор)\bin\Debug\мини-игра (гладиатор).pdb
+D:\Users\Admin\Documents\GitHub\Study\мини-игра (гладиатор)\obj\Debug\мини-игра (гладиатор).csproj.AssemblyReference.cache
+D:\Users\Admin\Documents\GitHub\Study\мини-игра (гладиатор)\obj\Debug\мини-игра (гладиатор).csproj.SuggestedBindingRedirects.cache
+D:\Users\Admin\Documents\GitHub\Study\мини-игра (гладиатор)\obj\Debug\мини-игра (гладиатор).csproj.CoreCompileInputs.cache
+D:\Users\Admin\Documents\GitHub\Study\мини-игра (гладиатор)\obj\Debug\мини-игра (гладиатор).exe
+D:\Users\Admin\Documents\GitHub\Study\мини-игра (гладиатор)\obj\Debug\мини-игра (гладиатор).pdb
