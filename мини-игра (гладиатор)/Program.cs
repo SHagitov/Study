@@ -17,8 +17,8 @@ namespace мини_игра__гладиатор_
             float health2 = rand.Next(50, 100);
             int damage2 = rand.Next(5, 20);
             int armor2 = rand.Next(25, 65);
-            Console.WriteLine("Гладиатор1 - " + health1 + "хп, " + damage1 + " Max Damage, " + armor1 + "armor");
-            Console.WriteLine("Гладиатор2 - " + health2 + "хп, " + damage2 + " Max Damage, " + armor2 + "armor");
+            Console.WriteLine("Гладиатор1 - " + health1 + " хп, " + damage1 + " Max Damage, " + armor1 + " armor");
+            Console.WriteLine("Гладиатор2 - " + health2 + " хп, " + damage2 + " Max Damage, " + armor2 + " armor");
             while (health1 > 0 && health2 > 0)
             {
                 health1 -= Convert.ToSingle(rand.Next(0, damage2)) / 100 * armor1;
