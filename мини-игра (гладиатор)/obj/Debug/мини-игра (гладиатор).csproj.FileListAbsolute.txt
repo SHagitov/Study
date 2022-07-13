@@ -14,3 +14,11 @@ C:\Users\Admin\Documents\GitHub\Study\мини-игра (гладиатор)\obj
 C:\Users\Admin\Documents\GitHub\Study\мини-игра (гладиатор)\obj\Debug\мини-игра (гладиатор).csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\Study\мини-игра (гладиатор)\obj\Debug\мини-игра (гладиатор).exe
 C:\Users\Admin\Documents\GitHub\Study\мини-игра (гладиатор)\obj\Debug\мини-игра (гладиатор).pdb
+C:\Users\Marat\Documents\GitHub\Study\мини-игра (гладиатор)\bin\Debug\мини-игра (гладиатор).exe.config
+C:\Users\Marat\Documents\GitHub\Study\мини-игра (гладиатор)\bin\Debug\мини-игра (гладиатор).exe
+C:\Users\Marat\Documents\GitHub\Study\мини-игра (гладиатор)\bin\Debug\мини-игра (гладиатор).pdb
+C:\Users\Marat\Documents\GitHub\Study\мини-игра (гладиатор)\obj\Debug\мини-игра (гладиатор).csproj.AssemblyReference.cache
+C:\Users\Marat\Documents\GitHub\Study\мини-игра (гладиатор)\obj\Debug\мини-игра (гладиатор).csproj.SuggestedBindingRedirects.cache
+C:\Users\Marat\Documents\GitHub\Study\мини-игра (гладиатор)\obj\Debug\мини-игра (гладиатор).csproj.CoreCompileInputs.cache
+C:\Users\Marat\Documents\GitHub\Study\мини-игра (гладиатор)\obj\Debug\мини-игра (гладиатор).exe
+C:\Users\Marat\Documents\GitHub\Study\мини-игра (гладиатор)\obj\Debug\мини-игра (гладиатор).pdb
