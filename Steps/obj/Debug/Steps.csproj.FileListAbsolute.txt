@@ -1,0 +1,16 @@
+C:\Users\Marat\Documents\GitHub\Study\steps\Steps\bin\Debug\Steps.exe.config
+C:\Users\Marat\Documents\GitHub\Study\steps\Steps\bin\Debug\Steps.exe
+C:\Users\Marat\Documents\GitHub\Study\steps\Steps\bin\Debug\Steps.pdb
+C:\Users\Marat\Documents\GitHub\Study\steps\Steps\obj\Debug\Steps.csproj.AssemblyReference.cache
+C:\Users\Marat\Documents\GitHub\Study\steps\Steps\obj\Debug\Steps.csproj.SuggestedBindingRedirects.cache
+C:\Users\Marat\Documents\GitHub\Study\steps\Steps\obj\Debug\Steps.csproj.CoreCompileInputs.cache
+C:\Users\Marat\Documents\GitHub\Study\steps\Steps\obj\Debug\Steps.exe
+C:\Users\Marat\Documents\GitHub\Study\steps\Steps\obj\Debug\Steps.pdb
+C:\Users\Marat\Documents\GitHub\Study\Steps\bin\Debug\Steps.exe.config
+C:\Users\Marat\Documents\GitHub\Study\Steps\bin\Debug\Steps.exe
+C:\Users\Marat\Documents\GitHub\Study\Steps\bin\Debug\Steps.pdb
+C:\Users\Marat\Documents\GitHub\Study\Steps\obj\Debug\Steps.csproj.AssemblyReference.cache
+C:\Users\Marat\Documents\GitHub\Study\Steps\obj\Debug\Steps.csproj.SuggestedBindingRedirects.cache
+C:\Users\Marat\Documents\GitHub\Study\Steps\obj\Debug\Steps.csproj.CoreCompileInputs.cache
+C:\Users\Marat\Documents\GitHub\Study\Steps\obj\Debug\Steps.exe
+C:\Users\Marat\Documents\GitHub\Study\Steps\obj\Debug\Steps.pdb
