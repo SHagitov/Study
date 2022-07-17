@@ -10,6 +10,47 @@ namespace Steps
     {
         static void Main(string[] args)
         {
+            string empty = "";
+            string whiteSpaced = " ";
+            string notEmpty = " Z";
+            string nullString = null;
+
+            Console.WriteLine("IsNullOrEmpty");
+            bool IsNullOrEmpty = string.IsNullOrEmpty(nullString);
+            Console.WriteLine(IsNullOrEmpty);
+
+            IsNullOrEmpty = string.IsNullOrEmpty(whiteSpaced);
+            Console.WriteLine(IsNullOrEmpty);
+
+            Console.ReadKey();
+
+        }
+        static void QueryingString()
+        {
+            string name = "abracadabra";
+            bool containsA = name.Contains('a');
+            bool containsZ = name.Contains('Z');
+            Console.WriteLine(containsA);
+            Console.WriteLine(containsZ);
+            bool endsWithAbra = name.EndsWith("abra");
+            Console.WriteLine(endsWithAbra);
+            bool startswithAbra = name.StartsWith("abra");
+            Console.WriteLine(startswithAbra);
+            //int indexOfA = name.IndexOf('a');
+            //Console.WriteLine(indexOfA);
+            int indexOfA = name.IndexOf('a', 1);
+            Console.WriteLine(indexOfA);
+            int lastIndexOfR = name.LastIndexOf('r');
+            Console.WriteLine(lastIndexOfR);
+            Console.WriteLine(name.Length); //кол-во символов
+            string substrFrom5 = name.Substring(5);
+            string substrFromTo = name.Substring(0,7);
+            Console.WriteLine(substrFrom5);
+            Console.WriteLine(substrFromTo);
+            Console.ReadKey();
+        }
+        static void StaticAndInstanceMembers()
+        {
             string name = "abracadabra";
             bool containsA = name.Contains('a');
             bool containsZ = name.Contains('Z');
@@ -92,6 +133,7 @@ namespace Steps
             Console.WriteLine(a);
             //Console.WriteLine(b);
             //Console.WriteLine(c);
+            Console.ReadKey();
         }
         static void Literals()
         {
@@ -137,6 +179,7 @@ namespace Steps
             object obj1 = 1;
             char @char = 'Z';
             Console.WriteLine(x);
+            Console.ReadKey();
         }
     }
 }
