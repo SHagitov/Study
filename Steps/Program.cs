@@ -10,7 +10,17 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            ComparisonOperations();
+            string name = "abracadabra";
+            bool containsA = name.Contains('a');
+            bool containsZ = name.Contains('Z');
+            Console.WriteLine(containsA);
+            Console.WriteLine(containsZ);
+            string abc = string.Concat("a","b","c");
+            Console.WriteLine(abc);
+            Console.WriteLine(int.MinValue);
+            int x = 1;
+            string xStr = x.ToString();
+            Console.WriteLine(xStr);
             Console.ReadKey();
         }
         static void ComparisonOperations()
