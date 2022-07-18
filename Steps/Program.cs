@@ -12,7 +12,77 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            
+            MathDemo();
+        }
+        static void MathDemo()
+        {
+            Console.WriteLine(Math.Pow(2,3));
+            Console.WriteLine(Math.Sqrt(9));
+            Console.WriteLine(Math.Sqrt(8));
+            Console.WriteLine(Math.Round(1.4));
+            Console.WriteLine(Math.Round(1.4));
+            Console.WriteLine(Math.Round(1.5));
+            Console.ReadKey();
+        }
+        static void Comment()
+        {
+            // a single-line comment
+            /*
+             * 
+             * 
+             * 
+             * 
+             * 
+             */
+            //describe hows and whys! not whats!
+            int a = 1;
+
+            //increment a by 1 - bad comment, this code is self-evident
+            //we need to tweak the index to match the expected outcome
+            a++;
+        }
+        static void CastingAndParsing()
+        {
+            byte t = 3; // 0000 0011
+            int i = t; // 0000 0000 0000 0000 0000 0000 0000 0011
+            long l = i; 
+            float f = i;
+            Console.WriteLine(f);
+            t = (byte)i;
+            Console.WriteLine(t);
+            i = (int)f;
+            Console.WriteLine(i);
+            f = 3.3f;
+            i = (int)f;
+            Console.WriteLine(i);
+            string str = "1";
+            i = int.Parse(str);
+            Console.WriteLine(i);
+            int x = 5;
+            double result = (double)x / 2;
+            Console.WriteLine(result);
+            Console.ReadKey();
+        }
+        static void ConsoleBasics()
+        {
+            //Console.WriteLine("Hi, please tell me your name");
+            //string name = Console.ReadLine();
+            //string sentence =  $"Your name is {name}";
+            //Console.WriteLine(sentence);
+
+            Console.WriteLine("Hi, please tell me your age");
+            string input = Console.ReadLine();
+            int age = int.Parse(input);
+
+            string sentence = $"Your age is {age}";
+            Console.WriteLine(sentence);
+            Console.ReadKey();
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.Write("New style ");
+            Console.Write("New style\n");
+            Console.ReadKey();
         }
         static void ComparingStrings()
         {
