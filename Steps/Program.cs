@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
+using System.Threading;
 
 namespace Steps
 {
@@ -10,6 +12,113 @@ namespace Steps
     {
         static void Main(string[] args)
         {
+            
+        }
+        static void ComparingStrings()
+        {
+            string str1 = "abcde";
+            string str2 = "abcde";
+
+            bool areEqual = str1 == str2;
+            Console.WriteLine(areEqual);
+
+            areEqual = string.Equals(str1, str2, StringComparison.Ordinal);
+            Console.WriteLine(areEqual);
+            Console.WriteLine();
+            Console.WriteLine("Equals:\n");
+            string s1 = "Strasse";
+            string s2 = "Straße";
+            areEqual = string.Equals(s1, s2, StringComparison.Ordinal);
+            Console.WriteLine(areEqual);
+            areEqual = string.Equals(s1, s2, StringComparison.InvariantCulture);
+            Console.WriteLine(areEqual);
+            areEqual = string.Equals(s1, s2, StringComparison.CurrentCulture);
+            Console.WriteLine(areEqual);
+            Console.ReadKey();
+        }
+        static void StringFormat()
+        {
+            string name = "John";
+            int age = 30;
+            string str1 = string.Format("My name is {0} and I'm {1} years old.",name,age);
+            Console.WriteLine(str1);
+            string str2 = $"My name is {name} and I'm {age} years old.";
+            Console.WriteLine(str2);
+            string str3 = "My name is \nMarat";
+            Console.WriteLine(str3);
+            string str4 = "I'm \t first";
+            Console.WriteLine(str4);
+            str3 = $"My name is {Environment.NewLine}John";
+            Console.WriteLine(str3);
+            string str5 = "I'm John and I'm a \"good\" programmer";
+            Console.WriteLine(str5);
+            string str6 = "C:\\Files\\file.txt";
+            string str7 = @"C:\Files\file.txt";
+            Console.WriteLine(str6);
+            Console.WriteLine(str7);
+            int answer = 42;
+            string result = string.Format("{0:d}", answer);
+            string result2 = string.Format("{0:d4}",answer);
+            string result3 = string.Format("{0:f}",answer);
+            string result4 = string.Format("{0:f4}",answer);
+            Console.WriteLine(result);
+            Console.WriteLine(result2);
+            Console.WriteLine(result3);
+            Console.WriteLine(result4);
+            Console.OutputEncoding = Encoding.UTF8;
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+            double money = 22.2;
+            result = string.Format("{0:C}",money);
+            Console.WriteLine(result);
+            Console.WriteLine(money.ToString("C2"));
+            result = $"{money:C2}";
+            Console.WriteLine(result);
+            Console.ReadKey();
+        }
+        static void StringBuilderDemo()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("My ");
+            sb.Append("name ");
+            sb.Append("John");
+            sb.AppendLine("!");
+            sb.AppendLine("Hello!");
+            string str = sb.ToString();
+            Console.WriteLine(str);
+            Console.ReadKey();
+        }
+        static void StringModifications()
+        {
+            string nameConcat = string.Concat("My ","name ","is ","Marat");
+            Console.WriteLine(nameConcat);
+            nameConcat = string.Join(" ","My","name","is","Marat");
+            Console.WriteLine(nameConcat);
+            nameConcat = "My " + "name " + "is " + "Marat";
+            Console.WriteLine(nameConcat);
+            nameConcat = nameConcat.Insert(0,"By the way, ");
+            Console.WriteLine(nameConcat);
+            nameConcat = nameConcat.Remove(0,1);
+            Console.WriteLine(nameConcat);
+            string replaced = nameConcat.Replace('M','T');
+            Console.WriteLine(replaced);
+            string data = "12;28;34;25;64";
+            string[] spliData = data.Split(';');
+            string first = spliData[0];
+            Console.WriteLine(first);
+            char[] chars = nameConcat.ToCharArray();
+            Console.WriteLine(chars[0]);
+            Console.WriteLine(nameConcat[0]);
+            string lower = nameConcat.ToLower();
+            Console.WriteLine(lower);
+            string upper = nameConcat.ToUpper();
+            Console.WriteLine(upper);  
+            string john = "   My name is John   ";
+            Console.WriteLine(john.Trim());
+            Console.ReadKey();
+        }
+        static void StringEmptiness()
+        {
+            string str = string.Empty;
             string empty = "";
             string whiteSpaced = " ";
             string notEmpty = " Z";
@@ -22,8 +131,26 @@ namespace Steps
             IsNullOrEmpty = string.IsNullOrEmpty(whiteSpaced);
             Console.WriteLine(IsNullOrEmpty);
 
-            Console.ReadKey();
+            IsNullOrEmpty = string.IsNullOrEmpty(notEmpty);
+            Console.WriteLine(IsNullOrEmpty);
 
+            IsNullOrEmpty = string.IsNullOrEmpty(empty);
+            Console.WriteLine(IsNullOrEmpty);
+            Console.WriteLine(" ");
+            Console.WriteLine("IsNullOrWhiteSpace");
+
+            bool isNullOrWhiteSpace = string.IsNullOrWhiteSpace(nullString); 
+            Console.WriteLine(isNullOrWhiteSpace);
+
+            isNullOrWhiteSpace = string.IsNullOrWhiteSpace(whiteSpaced); 
+            Console.WriteLine(isNullOrWhiteSpace);
+
+            isNullOrWhiteSpace = string.IsNullOrWhiteSpace(notEmpty); 
+            Console.WriteLine(isNullOrWhiteSpace);
+
+            isNullOrWhiteSpace = string.IsNullOrWhiteSpace(empty); 
+            Console.WriteLine(isNullOrWhiteSpace);
+            Console.ReadKey();
         }
         static void QueryingString()
         {
