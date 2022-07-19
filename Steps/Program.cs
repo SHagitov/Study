@@ -12,7 +12,30 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            DateTimeIntro();
+            HomeworkGetMax();
+        }
+        static void HomeworkGetMax()
+        {
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+
+            // 1 - st
+            //int max = a;
+            // if (b>a)
+            //    max = b;
+
+            //2nd
+            //int max;
+            //if (a>b)
+            //    max = a;
+            //else
+            //    max = b;
+
+            //3rd
+            int max = a > b ? a : b;
+            
+            Console.WriteLine($"Max={max}");
+            Console.ReadKey();
         }
         static void DateTimeIntro()
         {
