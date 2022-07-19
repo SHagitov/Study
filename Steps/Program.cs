@@ -12,7 +12,51 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            MathDemo();
+            DateTimeIntro();
+        }
+        static void DateTimeIntro()
+        {
+            DateTime now = DateTime.Now;
+            Console.WriteLine(now.ToString());
+            Console.WriteLine($"It's {now.Date}, {now.Hour}:{now.Minute}");
+            DateTime dt = new DateTime(2016,2,28);
+            DateTime newDt = dt.AddDays(1);
+            Console.WriteLine(newDt.ToString());
+            TimeSpan ts = now - dt;
+            //ts = now.Subtract(dt);
+            Console.WriteLine(ts.Days.ToString());
+            Console.ReadKey();
+        }
+        static void IntroToArrays()
+        {
+                        int[] a1;
+            a1 = new int[10];
+
+            int[] a2 = new int[5];
+
+            int[] a3 = new int[5] {1,8,-2,5,10};
+
+            int[] a4 = {1,2,3,4,5};
+
+            Console.WriteLine(a4[0]);
+
+            int number = a4[4];
+            Console.WriteLine(number);
+
+            a4[4] = 8;
+            Console.WriteLine(a4[4]);
+
+            Console.WriteLine(a4.Length);
+            Console.WriteLine(a4[a4.Length-1]);
+            string s1 = "abcdefgh";
+            char first = s1[0];
+            char last = s1[s1.Length-1];
+            Console.WriteLine(first);
+            Console.WriteLine(last);
+
+            //impossible
+            //s1[0] = 'z';
+            Console.ReadKey();
         }
         static void MathDemo()
         {
