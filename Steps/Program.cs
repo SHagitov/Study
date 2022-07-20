@@ -12,7 +12,64 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            Average();
+            ArrayType();
+        }
+        static void ArrayType()
+        {
+            int[] numbers = {1,2,3,4,5,6,7,8,9};
+            //работает только с сортированным массивом
+            int index = Array.BinarySearch(numbers,7);
+            Console.WriteLine(index);
+            Console.WriteLine();
+            int[] copy = new int[10];
+            
+            Array.Copy(numbers, copy, numbers.Length);
+
+            int[] anotherCopy = new int[10];
+            copy.CopyTo(anotherCopy, 0);
+            Array.Reverse(copy);
+            foreach (var t in copy)
+            {
+                Console.WriteLine(t);
+            }
+            Console.WriteLine();
+
+            Array.Sort(copy);
+            foreach (var t in copy)
+            {
+                Console.WriteLine(t);
+            }
+            Array.Clear(copy, 0, copy.Length);
+            Console.WriteLine();
+
+            int[] a1;
+            a1 = new int[10];
+
+            int[] a2 = new int[5];
+
+            int[] a3 = new int[5] {1,2,3,4,5};
+
+            int[] a4 = {0,1,2,3,4};
+
+            Array myArray = new int[5];
+
+            Array myArray2 = Array.CreateInstance(typeof(int), 5);
+            myArray2.SetValue(777,0);
+            Console.WriteLine(myArray2.GetValue(0));
+
+            Console.ReadKey();
+        }
+        static void Factorial()
+        {
+            Console.WriteLine("Enter n > 0");
+            int n = int.Parse(Console.ReadLine());
+            ulong factorial = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                factorial *= (ulong)i;
+            }
+            Console.WriteLine(factorial.ToString());
+            Console.ReadKey();
         }
         static void Average()
         {
