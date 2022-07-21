@@ -12,7 +12,109 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            Dictionary();
+            ArrayStartingIndexOne();
+        }
+        static void ArrayStartingIndexOne()
+        {
+            Array myArray = Array.CreateInstance(typeof(int), new[] {5}, new[] {1});
+            myArray.SetValue(2020, 1);
+            myArray.SetValue(2021, 2);
+            myArray.SetValue(2022, 3);
+            myArray.SetValue(2023, 4);
+            Console.WriteLine($"Starting index: {myArray.GetLowerBound(0)}");
+            Console.WriteLine($"Ending index: {myArray.GetUpperBound(0)}");
+            
+            for(int i = myArray.GetLowerBound(0); i < myArray.GetUpperBound(0); i++)
+            {
+                Console.WriteLine($"{myArray.GetValue(i)} at index {i}");
+            }
+            Console.ReadKey();
+        }
+        static void JaggedArray()
+        {
+            int[][] jaggedArray = new int[4][];
+            jaggedArray[0] = new int[1];
+            jaggedArray[1] = new int[2];
+            jaggedArray[2] = new int[3];
+            jaggedArray[3] = new int[4];
+            Console.WriteLine("Enter the number for a jagged array");
+
+            for (int i = 0; i < jaggedArray.Length; i++)
+            {
+                for (int j = 0; j < jaggedArray[i].Length; j++)
+                {
+                    string st = Console.ReadLine();
+                    jaggedArray[i][j] = int.Parse(st);
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine("Printing the Elements");
+            for (int i = 0; i < jaggedArray.Length; i++)
+            {
+                for (int j = 0; j < jaggedArray[i].Length; j++)
+                {
+                    Console.Write(jaggedArray[i][j] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+        static void MultidimArrays()
+        {
+            int[,] r1 = new int[3,3] { { 1,2,3}, { 2,3,4 }, { 3,4,5 } };
+            int[,] r2 = { { 1,2,3}, {4,5,6 } };
+            for(int i = 0; i < r2.GetLength(0); i++)
+            {
+                for(int j = 0; j < r2.GetLength(1); j++)
+                {
+                    Console.Write($"{r2[i,j]} ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+        static void StackQueue()
+        {
+            var queque = new Queue<int>();
+            queque.Enqueue(1);
+            queque.Enqueue(2);
+            queque.Enqueue(3);
+            queque.Enqueue(4);
+            queque.Enqueue(5);
+
+            Console.WriteLine($"Should print out 1: {queque.Peek()}");
+
+            queque.Dequeue();
+
+            Console.WriteLine($"Should print out 2: {queque.Peek()}");
+
+            Console.WriteLine("Iterate over the queue");
+
+            foreach (var x in queque)
+            {
+                Console.WriteLine(x);
+            }
+            Console.ReadLine();
+            var stack = new Stack<int>();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
+
+            Console.WriteLine($"Should print out 5: {stack.Peek()}");
+
+            stack.Pop();
+
+            Console.WriteLine($"Should print out 4: {stack.Peek()}");
+
+            Console.WriteLine("Iterate over the stack");
+
+            foreach(var x in stack)
+            {
+                Console.WriteLine(x);
+            }
+            Console.ReadKey();
         }
         static void Dictionary()
         {
