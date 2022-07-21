@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "задача-Steps",
+      "appliesTo": "Steps.csproj",
+      "type": "msbuild"
+    }
+  ]
+}
