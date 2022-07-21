@@ -10,10 +10,30 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            Class1 t = new Class1();
-            t.Hit(10);
-            Console.WriteLine(t.health);
+            Calculator calculator = new Calculator();
+            if (calculator.TryDivide(10, 0, out double result))
+            {
+                Console.WriteLine(result);
+            }
+            else
+            {
+                Console.WriteLine("Failed to divide");
+            }
             Console.ReadKey();
+            Console.WriteLine("Enter a number, please");
+            string line = Console.ReadLine();
+            bool wasParsed = int.TryParse(line, out var number);
+            if (wasParsed)
+            {
+                Console.WriteLine();
+                Console.WriteLine(number);
+            }
+            else
+            {
+                Console.WriteLine("Failed to parse");
+            }
+            Console.ReadKey();
+
         }
         static void ArrayStartingIndexOne()
         {
