@@ -12,7 +12,95 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            ArrayType();
+            Dictionary();
+        }
+        static void Dictionary()
+        {
+            var people = new Dictionary<int, string>();
+            people.Add(1, "John");
+            people.Add(2, "Bob");
+            people.Add(3, "Alice");
+
+            people = new Dictionary<int, string>()
+            {
+                { 1, "John" },
+                { 2, "Bob" },
+                { 3, "Alice" },
+            };
+            string name = people[1];
+            Console.WriteLine(name);
+
+            var keys = people.Keys;
+            foreach(var x in keys)
+            {
+                Console.WriteLine(x);
+            }
+            var values = people.Values;
+            foreach(var x in values)
+            {
+                Console.WriteLine(x);
+            }
+
+            foreach(var pair in people)
+            {
+                Console.WriteLine($"{pair.Key} {pair.Value}");
+            }
+            Console.WriteLine($"Count = {people.Count}");
+
+            bool containsKey = people.ContainsKey(2);
+            bool containsValue = people.ContainsValue("John");
+            Console.WriteLine($"{containsKey} {containsValue}");
+
+            people.Remove(1);
+
+            if(people.TryGetValue(2, out string val))
+            {
+                Console.WriteLine($"Key 2, Val = {val}");
+
+            }
+            else
+            {
+                Console.WriteLine("Failed to get");
+            }
+            people.Clear();
+            Console.ReadKey();
+        }
+        static void ListDemo()
+        {
+            var intList = new List<int>() {1,2,3,4,5,6,7,8};
+            intList.Add(777);
+
+            int[] intArray = {-1,-2,-3};
+            intList.AddRange(intArray);
+            
+            if(intList.Remove(1)) // первую встречную удаляет
+            {
+                //do
+            }
+            else { }
+
+            intList.RemoveAt(0);
+            intList.Reverse();
+
+            bool contains = intList.Contains(-1);
+            int min = intList.Min();
+            int max = intList.Max();
+            Console.WriteLine($"Min = {min}. Max = {max}");
+
+            int indexOf = intList.IndexOf(2);
+            int lastIndexOf = intList.LastIndexOf(1);
+
+            for (int i = 0; i < intList.Count; i++)
+            {
+                Console.Write($"{intList[i]} ");
+            }
+            Console.WriteLine();
+
+            foreach(var x in intList)
+            {
+                Console.Write($"{x} ");
+            }    
+            Console.ReadKey();
         }
         static void ArrayType()
         {
