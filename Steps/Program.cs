@@ -10,8 +10,11 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            Calculator calculator = new Calculator();
-            if (calculator.TryDivide(10, 0, out double result))
+            calculating();
+        }
+        static void calculating()
+        {
+            if (Calculator.TryDivide(456, 2, out double result))
             {
                 Console.WriteLine(result);
             }
@@ -33,7 +36,6 @@ namespace Steps
                 Console.WriteLine("Failed to parse");
             }
             Console.ReadKey();
-
         }
         static void ArrayStartingIndexOne()
         {
