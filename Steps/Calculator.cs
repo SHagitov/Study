@@ -43,5 +43,18 @@ namespace Steps
         {
             return 0.5 * a * h;
         }
+        public static double CalculateTriangleSquareAlpha(double ab, double ac, int alpha, bool isInRadians = false)
+        {
+            if (isInRadians)
+            {
+                return 0.5 * ab * ac * Math.Sin(alpha);
+            }
+            else
+            {
+                double rads = alpha * Math.PI / 180;
+                return 0.5 * ab * ac * Math.Sin(rads);
+
+            }
+        }
     }
 }

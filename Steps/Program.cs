@@ -10,7 +10,37 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            calculating();
+            SwapExample();
+        }
+        static void SwapExample()
+        {
+            int a = 1;
+            int b = 2;
+            Console.WriteLine($"Original a = {a}, b = {b}");
+            Swap(ref a, ref b);
+            Console.WriteLine($"Swapped a = {a}, b = {b}");
+            var list = new List<int>();
+            AddNumber(list);
+
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadKey();
+        }
+        static void Swap(ref int a, ref int b)
+        {
+            Console.WriteLine($"Original a = {a}, b = {b}");
+            int tmp = a;
+            a = b;
+            b = tmp;
+            Console.WriteLine($"Swapped a = {a}, b = {b}");
+        }
+        static void AddNumber(List<int> numbers)
+        {
+            numbers.Add(1);
+            numbers.Add(2);
+            numbers.Add(3);
         }
         static void calculating()
         {
