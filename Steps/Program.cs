@@ -10,7 +10,43 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            SwapExample();
+            ulong x = ulong.MaxValue;
+            Console.WriteLine(x);
+            Console.ReadLine();
+        }
+
+        static void Polymorphism()
+        {
+            Shape[] shapes = new Shape[2];
+            shapes[0] = new Triangle(10, 20, 30);
+            shapes[1] = new Rectangle(5, 10);
+
+            foreach (Shape shape in shapes)
+            {
+                shape.Draw();
+                Console.WriteLine(shape.Perimeter());
+            }
+            Console.ReadLine();
+        }
+        static void Inheritance()
+        {
+            ModelXTerminal terminal = new ModelXTerminal("123");
+            terminal.Connect();
+            Console.ReadLine();
+        }
+        static void BoxingUnboxing()
+        {
+            int x = 1;
+            object obj = x;
+
+            int y = (int)obj;
+
+            double pi = 3.14;
+            object obj1 = pi;
+
+            int number = (int)(double)obj1;
+            Console.WriteLine(number);
+            Console.ReadKey();
         }
         static void SwapExample()
         {
@@ -911,7 +947,7 @@ namespace Steps
         {
             checked
             {
-                uint x = uint.MaxValue;
+                ulong x = ulong.MaxValue;
                 Console.WriteLine(x);
                 //x++; //переполнение
                 Console.WriteLine(x);
