@@ -50,6 +50,7 @@
     <Compile Include="EvilInheritance.cs" />
     <Compile Include="Inheritance.cs" />
     <Compile Include="Interfaces.cs" />
+    <Compile Include="MyStack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shapes.cs" />
