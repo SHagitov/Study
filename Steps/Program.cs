@@ -11,7 +11,7 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            
+            Console.ReadLine();
         }
         //        static void Exceptions()
         //        {
@@ -294,11 +294,11 @@ namespace Steps
         //            people.Add(3, "Alice");
 
         //            people = new Dictionary<int, string>()
-        //            {
-        //                { 1, "John" },
-        //                { 2, "Bob" },
-        //                { 3, "Alice" },
-        //            };
+        //                    {
+        //                        { 1, "John" },
+        //                        { 2, "Bob" },
+        //                        { 3, "Alice" },
+        //                    };
         //            string name = people[1];
         //            Console.WriteLine(name);
 
@@ -580,7 +580,7 @@ namespace Steps
         //            }
         //            Console.WriteLine();
         //            int[] numbers = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
-        //                             -1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18};
+        //                                     -1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18};
         //            int counter = 0;
         //            for (int i = 0; i < numbers.Length; i++)
         //            {
@@ -631,7 +631,7 @@ namespace Steps
         //        static void NestedFor()
         //        {
         //            int[] numbers = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
-        //                             -1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18};
+        //                                     -1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18};
         //            for (int i = 0; i < numbers.Length; i++)
         //            {
         //                for (int j = i + 1; j < numbers.Length; j++)
