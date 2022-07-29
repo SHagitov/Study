@@ -14,15 +14,52 @@ namespace Steps
 
         private readonly int speed;
         public int health { get; private set; } = 100;
-        public string Race { get; private set; }
-
+        public Race Race { get; private set; }
         public int Armor { get; private set; }
-        public Class1(string race, int armor)
+
+        public Class1(Race race)
+        {
+            Race = race;
+            Armor = (int)race;
+
+            //switch (race)
+            //{
+            //    case Race.Elf:
+            //        Armor = 20;
+            //        break;
+            //    case Race.Ork:
+            //        Armor = 40;
+            //        break;
+            //    case Race.Terrain:
+            //        Armor = 10;
+            //        break;
+            //    default:
+            //        throw new ArgumentException("Unknown race");
+            //}
+
+            //if (race == Race.Terrain)
+            //{
+            //    Armor = 20;
+            //}
+            //else if (race == Race.Ork)
+            //{
+            //    Armor = 40;
+            //}
+            //else if (race == Race.Elf)
+            //{
+            //    Armor = 10;
+            //}
+            //else
+            //{
+            //    throw new ArgumentException("Unknown race");
+            //}
+        }
+        public Class1(Race race, int armor)
         {
             Race = race;
             Armor = armor;
         }
-        public Class1(string race, int armor, int speed)
+        public Class1(Race race, int armor, int speed)
         {
             Race = race;
             Armor = armor;

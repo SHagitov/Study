@@ -14,3 +14,11 @@ C:\Users\Marat\Documents\GitHub\Study\Steps\obj\Debug\Steps.csproj.SuggestedBind
 C:\Users\Marat\Documents\GitHub\Study\Steps\obj\Debug\Steps.csproj.CoreCompileInputs.cache
 C:\Users\Marat\Documents\GitHub\Study\Steps\obj\Debug\Steps.exe
 C:\Users\Marat\Documents\GitHub\Study\Steps\obj\Debug\Steps.pdb
+C:\Users\Admin\Documents\GitHub\Study\Steps\bin\Debug\Steps.exe.config
+C:\Users\Admin\Documents\GitHub\Study\Steps\bin\Debug\Steps.exe
+C:\Users\Admin\Documents\GitHub\Study\Steps\bin\Debug\Steps.pdb
+C:\Users\Admin\Documents\GitHub\Study\Steps\obj\Debug\Steps.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Study\Steps\obj\Debug\Steps.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Documents\GitHub\Study\Steps\obj\Debug\Steps.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\Study\Steps\obj\Debug\Steps.exe
+C:\Users\Admin\Documents\GitHub\Study\Steps\obj\Debug\Steps.pdb

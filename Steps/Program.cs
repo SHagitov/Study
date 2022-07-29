@@ -10,11 +10,29 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            ulong x = ulong.MaxValue;
-            Console.WriteLine(x);
-            Console.ReadLine();
+            Class1 c = new Class1(Race.Elf, 7);
         }
 
+        static void EvilInheritance()
+        {
+            Ishape rect = new Rect() { Height = 2, Width = 5 };
+            Ishape square = new Square() { SideLength = 10 };
+            Console.WriteLine($"Rect area = {rect.CalcSquare()}");
+            Console.WriteLine($"Square area = {square.CalcSquare()}");
+            //Rect rect = new Rect { Height = 2, Width = 5 };
+            //int rectArea = AreaCalculator.CalcSquare(rect);
+            //Console.WriteLine($"Rect area = {rectArea}");
+            //Rect square = new Square { Height = 10, Width = 10 };
+            //AreaCalculator.CalcSquare(square);
+            Console.ReadLine();
+        }
+        static void Interfaces()
+        {
+            List<object> list = new List<object> { 1, 2, 3 };
+            IBaseCollection collection = new BaseList(4);
+            collection.Add(1);
+            collection.AddRange(list);
+        }
         static void Polymorphism()
         {
             Shape[] shapes = new Shape[2];
