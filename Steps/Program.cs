@@ -11,10 +11,246 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            ForLoop();
+            DoWhileLoop();
             Console.ReadLine();
         }
 
+        static void DoWhileLoop()
+        {
+            // Цикл do-while продолжает выполнение блока кода, только если условие продолжение истинно.
+            // Условие проверяется только в конце каждой итерации.
+            // В следствии чего, при использовании do-while, тело цикла быдет выполнено хотя бы один раз
+
+
+            bool condition = false;
+            do
+            {
+                // Тело цикла
+            } while (condition);
+
+
+            Console.WriteLine("Вывод чисел от 0 до 9");
+            int i = 0;
+            do
+            {
+                Console.Write($"{i} ");
+                i++;
+            } while (i < 10);
+
+
+            Console.WriteLine("\n\nВывод чисел от -5 до 5");
+            i = -5;
+            do
+            {
+                Console.Write($"{i} ");
+                i++;
+            } while (i <= 5);
+
+
+            Console.WriteLine("\n\nВывод чисел от 10 до 1. Вариант 1");
+            int j = 0;
+            do
+            {
+                Console.Write($"{10 - j} ");
+                j++;
+            } while (j < 10);
+
+
+            Console.WriteLine("\n\nВывод чисел от 10 до 1. Вариант 2");
+            int k = 10;
+            do
+            {
+                Console.Write($"{k} ");
+                k--;
+            } while (k >= 1);
+
+
+            Console.WriteLine("\n\nВывод чисел от 1 до 22 c шагом 3");
+            int counter = 1;
+            do
+            {
+                Console.Write($"{counter} ");
+                counter += 3;
+            } while (counter <= 22);
+
+
+            Console.WriteLine("\n\nВывод чисел от -1 до 1 c шагом 0.25");
+            double step = -1;
+            do
+            {
+                Console.Write($"{step}  ");
+                step += 0.25;
+            } while (step <= 1);
+
+
+            Console.WriteLine("\n\nВывод чисел от 1 до -1 c шагом 0.5");
+            double interval = 1;
+            do
+            {
+                Console.Write($"{interval}  ");
+                interval -= 0.5;
+            } while (interval >= -1);
+
+
+
+
+
+            #region Замечание 1
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n\nЗамечание 1");
+
+            Console.WriteLine("\n\nВывод чисел от 1 до 22 c шагом 3");
+            counter = 28;
+            do
+            {
+                Console.Write($"{counter} ");
+                counter += 3;
+            } while (counter <= 22);
+
+
+            Console.WriteLine("\n\nВывод чисел от -1 до 1 c шагом 0.25");
+            step = 9;
+            do
+            {
+                Console.Write($"{step}  ");
+                step += 0.25;
+            } while (step <= 1);
+
+
+            Console.WriteLine("\n\nВывод чисел от 1 до -1 c шагом 0.5");
+            interval = -90;
+            do
+            {
+                Console.Write($"{interval}  ");
+                interval -= 0.5;
+            } while (interval >= -1);
+
+            #endregion
+
+            #region Замечание 2
+
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("\n\nЗамечание 2");
+
+            Console.WriteLine("\n\nВывод чисел от 1 до 22 c шагом 3");
+            counter = 28;
+            if (counter < 22)
+            {
+                do
+                {
+                    Console.Write($"{counter} ");
+                    counter += 3;
+                } while (counter <= 22);
+            }
+
+            Console.WriteLine("\n\nВывод чисел от -1 до 1 c шагом 0.25");
+            step = 9;
+            if (step == 1)
+            {
+                do
+                {
+                    Console.Write($"{step}  ");
+                    step += 0.25;
+                } while (step <= 1);
+            }
+
+            Console.WriteLine("\n\nВывод чисел от 1 до -1 c шагом 0.5");
+            interval = -90;
+            if (interval == 1)
+            {
+                do
+                {
+                    Console.Write($"{interval}  ");
+                    interval -= 0.5;
+                } while (interval >= -1);
+            }
+            #endregion
+
+            Console.ReadKey();
+
+            // Пример 1. Сгенерировать 10 случайных чисел от -8 до 9
+
+            Random r = new Random();
+            do
+            {
+                Console.Write($"{r.Next(-8, 10)} ");
+                i++;
+            } while (i < 10);
+
+            Console.ReadKey();
+
+            // Пример 2. Заказчик просит вас написать прогрмму, в которой 
+            // пользователь вводит целое число start.
+            // Программа должна вывести таблицу квадратов чисел от start до start+10
+
+            Console.Write("\nВведите start:");
+            int start = Convert.ToInt32(Console.ReadLine());
+            do
+            {
+                Console.WriteLine($"{i,4}^2 = {i * i}");
+                i++;
+            } while (i <= start + 10);
+
+            // Пример 3. Заказчик просит вас написать прогрмму, в которой 
+            // пользователь может ввести два целых числа start и end.
+            // Программа должна вывести таблицу квадратов чисел от start до end
+            //  (!) Разница между start и end не может превышать 20
+
+            Console.Write("\nВведите start:");
+            _ = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("\nВведите end:");
+            int end = Convert.ToInt32(Console.ReadLine());
+
+            if (start <= end)
+                do
+                {
+                    Console.WriteLine($"{start,4}^2 = {start * start}");
+                    start++;
+                } while (start <= end);
+
+            // Пример 5. Пользователь вводит два целых числа numerator и denominator, 
+            // которые являются числителем и знаменателем соответственно
+            // Нужно выяснить, можно ли сократить эту дробь
+            // и если можно, то на какое число
+            //   50     25      5     1
+            // ----- = ---- = ---- = ---
+            //  100     50     10     2
+
+            Console.Write("\nВведите numerator:");
+            double numerator = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("\nВведите denominator:");
+            double denominator = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine($"Исходная дробь {numerator}/{denominator}");
+
+            double a = numerator, b = denominator;
+
+            #region for
+
+            //for (int i = 0; i < 100000; i++)
+            //{
+            //    if (a != b) if (a > b) a = a - b; else b = b - a;
+            //}
+
+            #endregion
+            if (a != b)
+            {
+                do
+                {
+                    if (a > b) a = a - b; else b = b - a;
+
+                    Console.WriteLine($">>> {a} {b}");
+                } while (a != b);
+            }
+            Console.WriteLine($"Можно сократить на {a}");
+
+            Console.WriteLine($"Сокращённая дробь {numerator / a}/{denominator / a}");
+        }
         static void WhileLoop()
         {
             // Цикл while выполняет блок кода, только если его условие истинно и 
