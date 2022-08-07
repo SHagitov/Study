@@ -11,8 +11,1089 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            Random();
+            ForLoop();
             Console.ReadLine();
+        }
+
+        static void WhileLoop()
+        {
+            // Цикл while выполняет блок кода, только если его условие истинно и 
+            // будет продолжаться до тех пор, пока условие остается верным.
+            // Условие проверяется только в начале каждой итерации.
+
+            bool condition = false;
+            while (condition)
+            {
+                // Тело цикла
+            }
+
+
+            Console.WriteLine("Вывод чисел от 0 до 9");
+            int i = 0;
+            while (i < 10)
+            {
+                Console.Write($"{i} ");
+                i++;
+            }
+
+
+            Console.WriteLine("\n\nВывод чисел от -5 до 5");
+            i = -5;
+            while (i <= 5)
+            {
+                Console.Write($"{i} ");
+                i++;
+            }
+
+
+            Console.WriteLine("\n\nВывод чисел от 10 до 1. Вариант 1");
+            int j = 0;
+            while (j < 10)
+            {
+                Console.Write($"{10 - j} ");
+                j++;
+            }
+
+
+            Console.WriteLine("\n\nВывод чисел от 10 до 1. Вариант 2");
+            int k = 10;
+            while (k >= 1)
+            {
+                Console.Write($"{k} ");
+                k--;
+            }
+
+
+            Console.WriteLine("\n\nВывод чисел от 1 до 22 c шагом 3");
+            int counter = 1;
+            while (counter <= 22)
+            {
+                Console.Write($"{counter} ");
+                counter += 3;
+            }
+
+
+            Console.WriteLine("\n\nВывод чисел от -1 до 1 c шагом 0.25");
+            double step = -1;
+            while (step <= 1)
+            {
+                Console.Write($"{step}  ");
+                step += 0.25;
+            }
+
+
+            Console.WriteLine("\n\nВывод чисел от 1 до -1 c шагом 0.5");
+            double interval = 1;
+            while (interval >= -1)
+            {
+                Console.Write($"{interval}  ");
+                interval -= 0.5;
+            }
+
+            Console.ReadKey();
+
+            // Пример 1. Сгенерировать 10 случайных чисел от -8 до 9
+
+            Random r = new Random();
+            while (i < 10)
+            {
+                Console.Write($"{r.Next(-8, 10)} ");
+                i++;
+            }
+
+            Console.ReadKey();
+
+            // Пример 2. Заказчик просит вас написать прогрмму, в которой 
+            // пользователь вводит целое число start.
+            // Программа должна вывести таблицу квадратов чисел от start до start+10
+
+            Console.Write("\nВведите start:");
+            int start = Convert.ToInt32(Console.ReadLine());
+            while (i <= start + 10)
+            {
+                Console.WriteLine($"{i,4}^2 = {i * i}");
+                i++;
+            }
+
+            // Пример 3. Заказчик просит вас написать прогрмму, в которой 
+            // пользователь может ввести два целых числа start и end.
+            // Программа должна вывести таблицу квадратов чисел от start до end
+            //  (!) Разница между start и end не может превышать 20
+
+            Console.Write("\nВведите start:");
+            _ = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("\nВведите end:");
+            int end = Convert.ToInt32(Console.ReadLine());
+
+            while (start <= end)
+            {
+                Console.WriteLine($"{start,4}^2 = {start * start}");
+                start++;
+            }
+
+            // Пример 4. Заказчик прочит вас написать программу по подсчёту 
+            // среднего балла полученных студентами на экзамене
+            // (i) Пользователь с клавиатуры вводит 10 чисел 
+            // Требуется найти среднее арифметическое этих чисел
+
+            double value;
+            double average = 0;
+            while (i <= 10)
+            {
+                Console.Write($"Введите {i}-й результат вступительного испытания: ");
+                value = double.Parse(Console.ReadLine());
+                average += value;
+                i++;
+            }
+
+            Console.WriteLine($"Среднее = {average / 10}");
+
+            // Пример 5. Пользователь вводит два целых числа numerator и denominator, 
+            // которые являются числителем и знаменателем соответственно
+            // Нужно выяснить, можно ли сократить эту дробь
+            // и если можно, то на какое число
+            //   50     25      5     1
+            // ----- = ---- = ---- = ---
+            //  100     50     10     2
+
+            Console.Write("\nВведите numerator:");
+            double numerator = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("\nВведите denominator:");
+            double denominator = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine($"Исходная дробь {numerator}/{denominator}");
+
+            double a = numerator, b = denominator;
+
+            #region for
+
+            //for (int i = 0; i < 100000; i++)
+            //{
+            //    if (a != b) if (a > b) a = a - b; else b = b - a;
+            //}
+
+            #endregion
+
+            while (a != b)
+            {
+                if (a > b) a = a - b; else b = b - a;
+            }
+
+            Console.WriteLine($"Можно сократить на {a}");
+
+            Console.WriteLine($"Сокращённая дробь {numerator / a}/{denominator / a}");
+        }
+        static void ForLoop()
+        {
+            // В C# есть три+одна циклическая конструкция (оператор). 
+            // Они используются для выполнения определенной 
+            // последовательности действий несколько раз.
+
+            // Цикл — разновидность управляющей конструкции, 
+            // предназначенная для организации многократного исполнения набора инструкций.
+
+            // Блок исполняемых инструкций называется телом цикла
+            // Одно исполнение набора инструкций называют итерацией цикла
+
+            // Цикл for используется для прохождения через блок указанное число раз.
+            // Он использует три параметра.
+            // Первый параметр инициализирует счетчик и всегда выполняется один раз, перед циклом.
+            // Второй параметр - условие для цикла, оно проверяется перед каждой итерацией.
+            // Третий параметр содержит приращение счетчика и выполняется в конце каждой итерации.
+
+            //   Первый   ; Второй; Третий
+            for (int i = 0; i < 10; i++)
+            {
+                // Тело цикла
+            }
+
+
+            Console.WriteLine("Вывод чисел от 0 до 9");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write($"{i} ");
+            }
+
+            Console.WriteLine("\n\nВывод чисел от -5 до 5");
+            for (int i = -5; i <= 5; i++)
+            {
+                Console.Write($"{i} ");
+            }
+
+            Console.WriteLine("\n\nВывод чисел от 10 до 1. Вариант 1");
+            for (int j = 0; j < 10; j++)
+            {
+                Console.Write($"{10 - j} ");
+            }
+
+            Console.WriteLine("\n\nВывод чисел от 10 до 1. Вариант 2");
+            for (int k = 10; k >= 1; k--)
+            {
+                Console.Write($"{k} ");
+            }
+
+
+            Console.WriteLine("\n\nВывод чисел от 1 до 22 c шагом 3");
+            for (int counter = 1; counter <= 22; counter += 3)
+            {
+                Console.Write($"{counter} ");
+            }
+
+
+            Console.WriteLine("\n\nВывод чисел от -1 до 1 c шагом 0.25");
+            for (double step = -1; step <= 1; step += 0.25)
+            {
+                Console.Write($"{step}  ");
+            }
+
+            Console.WriteLine("\n\nВывод чисел от 1 до -1 c шагом 0.5");
+            for (double interval = 1; interval >= -1; interval -= 0.5)
+            {
+                Console.Write($"{interval}  ");
+            }
+
+
+            Console.ReadKey();
+
+            // Пример 1. Сгенерировать 10 случайных чисел от -8 до 9
+
+            Random r = new Random();
+
+            for (int i = 0; i < 200; i++)
+            {
+                Console.Write($"{r.Next(-8, 10)} ");
+            }
+
+            Console.ReadKey();
+
+            // Пример 2. Заказчик просит вас написать прогрмму, в которой 
+            // пользователь вводит целое число start.
+            // Программа должна вывести таблицу квадратов чисел от start до start+10
+
+            Console.Write("\nВведите start:");
+            int start = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = start; i <= start + 10; i++)
+            {
+                Console.WriteLine($"{i,4}^2 = {i * i}");
+            }
+
+            // Пример 3. Заказчик просит вас написать прогрмму, в которой 
+            // пользователь может ввести два целых числа start и end.
+            // Программа должна вывести таблицу квадратов чисел от start до end
+            //  (!) Разница между start и end не может превышать 20
+
+            Console.Write("\nВведите start:");
+            _ = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("\nВведите end:");
+            int end = Convert.ToInt32(Console.ReadLine());
+            for (int i = start; i <= end; i++)
+            {
+                Console.WriteLine($"{i,4}^2 = {i * i}");
+            }
+            // Пример 4. Заказчик прочит вас написать программу по подсчёту 
+            // среднего балла полученных студентами на экзамене
+            // (i) Пользователь с клавиатуры вводит 10 чисел 
+            // Требуется найти среднее арифметическое этих чисел
+
+            double value;
+            double average = 0;
+
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.Write($"Введите {i}-й результат вступительного испытания: ");
+                value = double.Parse(Console.ReadLine());
+                average += value;
+            }
+
+            Console.WriteLine($"Среднее = {average / 10}");
+        }
+        static void Reiteration()
+        {
+            // Пример 1. Сгенерировать 10 случайных чисел от -8 до 9
+
+            Random rand = new Random();
+
+            Console.WriteLine($"1-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"2-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"3-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"4-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"5-e случайное число {rand.Next(-8, 10)}");
+
+            Console.WriteLine($"6-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"7-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"8-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"9-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"10-e случайное число {rand.Next(-8, 10)}");
+
+            Console.WriteLine($"11-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"12-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"13-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"14-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"15-e случайное число {rand.Next(-8, 10)}");
+
+            Console.WriteLine($"16-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"17-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"18-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"19-e случайное число {rand.Next(-8, 10)}");
+            Console.WriteLine($"20-e случайное число {rand.Next(-8, 10)}");
+            // Пример 2. Заказчик просит вас написать прогрмму, в которой 
+            // пользователь вводит целое число start.
+            // Программа должна вывести таблицу квадратов чисел от start до start+10
+
+            Console.Write("\nВведите start:");
+            int start = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"{start,4}^2 = {start * start}"); start++;
+            Console.WriteLine($"{start,4}^2 = {start * start}"); start++;
+            Console.WriteLine($"{start,4}^2 = {start * start}"); start++;
+            Console.WriteLine($"{start,4}^2 = {start * start}"); start++;
+            Console.WriteLine($"{start,4}^2 = {start * start}"); start++;
+
+            Console.WriteLine($"{start,4}^2 = {start * start}"); start++;
+            Console.WriteLine($"{start,4}^2 = {start * start}"); start++;
+            Console.WriteLine($"{start,4}^2 = {start * start}"); start++;
+            Console.WriteLine($"{start,4}^2 = {start * start}"); start++;
+            Console.WriteLine($"{start,4}^2 = {start * start}"); start++;
+
+            Console.WriteLine($"{start,4}^2 = {start * start}");
+
+            // Пример 3. Заказчик просит вас написать прогрмму, в которой 
+            // пользователь может ввести два целых числа start и end.
+            // Программа должна вывести таблицу квадратов чисел от start до end
+            // Разница между start и end не может превышать 20
+
+            Console.Write("\nВведите start:");
+            _ = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("\nВведите end:");
+            int end = Convert.ToInt32(Console.ReadLine());
+
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+            if (start <= end) { Console.WriteLine($"{start,4}^2 = {start * start}"); start++; }
+
+            // Пример 4. Заказчик прочит вас написать программу по подсчёту 
+            // среднего балла полученных студентами на экзамене
+            // Пользователь с клавиатуры вводит 10 чисел 
+            // Требуется найти среднее арифметическое этих чисел
+
+
+
+            Console.Write("Введите 1-й результат вступительного испытания: ");
+            double value1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите 2-й результат вступительного испытания: ");
+            double value2 = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите 3-й результат вступительного испытания: ");
+            double value3 = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите 4-й результат вступительного испытания: ");
+            double value4 = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите 5-й результат вступительного испытания: ");
+            double value5 = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите 6-й результат вступительного испытания: ");
+            double value6 = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите 7-й результат вступительного испытания: ");
+            double value7 = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите 8-й результат вступительного испытания: ");
+            double value8 = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите 9-й результат вступительного испытания: ");
+            double value9 = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите 10-й результат вступительного испытания: ");
+            double value10 = double.Parse(Console.ReadLine());
+
+            double average = (value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 + value9 + value10) / 10;
+            Console.WriteLine($"Среднее = {average}");
+
+            // Пример 5. Пользователь вводит два целых числа numerator и denominator, 
+            // которые являются числителем и знаменателем соответственно
+            // Нужно выяснить, можно ли сократить эту дробь
+            // и если можно, то на какое число
+            //   50     25      5     1
+            // ----- = ---- = ---- = ---
+            //  100     50     10     2
+
+            Console.Write("\nВведите numerator:");
+            double numerator = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("\nВведите denominator:");
+            double denominator = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine($"\n Исходная дробь {numerator}/{denominator}");
+
+            double a = numerator, b = denominator;
+
+            if (a != b) if (a > b) a = a - b; else b = b - a;
+            if (a != b) if (a > b) a = a - b; else b = b - a;
+            if (a != b) if (a > b) a = a - b; else b = b - a;
+            if (a != b) if (a > b) a = a - b; else b = b - a;
+
+            Console.WriteLine($"Можно сократить на {a}");
+
+            Console.WriteLine($"Сокращённая дробь {numerator / a}/{denominator / a}");
+        }
+        static void Switch()
+        {
+            // Целое число может принимть множество вариантов
+            // Применение if-else для всех значений может быть громоздко
+            // поэтому в некоторых случаях выгоднее использовать оператор выбора Switch
+
+            Console.Write("Введите номер дня: ");
+            int dayIndex = int.Parse(Console.ReadLine());
+
+            if (dayIndex == 1) Console.WriteLine("Понедельник");
+            else if (dayIndex == 2) Console.WriteLine("Вторник");
+            else if (dayIndex == 3) Console.WriteLine("Среда");
+            else if (dayIndex == 4) Console.WriteLine("Четверг");
+            else if (dayIndex == 5) Console.WriteLine("Пятница");
+            else if (dayIndex == 6) Console.WriteLine("Суббота");
+            else if (dayIndex == 7) Console.WriteLine("Воскресенье");
+            else Console.WriteLine("На планете Земля в неделе семь дней");
+
+            switch (dayIndex)
+            {
+                case 1:
+                    Console.WriteLine("Понедельник");
+                    break;
+                case 2:
+                    Console.WriteLine("Вторник");
+                    break;
+                case 3:
+                    Console.WriteLine("Среда");
+                    break;
+                case 4:
+                    Console.WriteLine("Четверг");
+                    break;
+                case 5:
+                    Console.WriteLine("Пятница");
+                    break;
+                case 6:
+                    Console.WriteLine("Суббота");
+                    break;
+                case 7:
+                    Console.WriteLine("Воскресенье");
+                    break;
+                default:
+                    Console.WriteLine("На планете Земля в неделе семь дней");
+                    break;
+            }
+            // Заказчик просит создать эмулятор игры, в которм у игрока есть возможность выбрать 
+            // уровень сложности, в зависимости от которого будет генерироваться разный игровой мир
+
+            Console.WriteLine("Введите уровень сложности. 1 - Простой, 2 - Средний, 3 - Сложный");
+            int level;  // 1 - Простой
+                        // 2 - Средний
+                        // 3 - Сложный
+                        // В зависимости от уровня определить количество генериуемых NPC
+                        // Простой - Два NPC
+                        // Средний - Четыре NPC
+                        // Сложный - Пять NPC
+
+            level = Convert.ToInt32(Console.ReadLine());
+
+            #region if-else
+
+            if (level == 1)
+            {
+                Console.WriteLine("NPC сгенерирован");
+                Console.WriteLine("NPC сгенерирован");
+            }
+            else if (level == 2)
+            {
+                Console.WriteLine("NPC сгенерирован");
+                Console.WriteLine("NPC сгенерирован");
+                Console.WriteLine("NPC сгенерирован");
+                Console.WriteLine("NPC сгенерирован");
+            }
+            else if (level == 3)
+            {
+                Console.WriteLine("NPC сгенерирован");
+                Console.WriteLine("NPC сгенерирован");
+                Console.WriteLine("NPC сгенерирован");
+                Console.WriteLine("NPC сгенерирован");
+                Console.WriteLine("NPC сгенерирован");
+            }
+            else
+            {
+                Console.WriteLine("Выбран неизвестный уровень сложности");
+            }
+
+            #endregion
+
+            #region switch
+
+            switch (level)
+            {
+                case 1:
+                    Console.WriteLine("NPC сгенерирован");
+                    Console.WriteLine("NPC сгенерирован");
+                    break;
+
+                case 2:
+                    Console.WriteLine("NPC сгенерирован");
+                    Console.WriteLine("NPC сгенерирован");
+                    Console.WriteLine("NPC сгенерирован");
+                    Console.WriteLine("NPC сгенерирован");
+                    break;
+
+                case 3:
+                    Console.WriteLine("NPC сгенерирован");
+                    Console.WriteLine("NPC сгенерирован");
+                    Console.WriteLine("NPC сгенерирован");
+                    Console.WriteLine("NPC сгенерирован");
+                    Console.WriteLine("NPC сгенерирован");
+                    break;
+
+                default:
+                    Console.WriteLine("Выбран неизвестный уровень сложности");
+                    break;
+            }
+
+            #endregion
+
+            // Замечание.
+            // При использовании оператора switch нет возможности указывать диапазоны значений
+
+            Random r = new Random();
+
+            int value = Convert.ToInt32(Console.ReadLine());
+
+            if (value > 0 && value < 5)
+            {
+                Console.WriteLine("0 <= value < 5");
+            }
+            else if (value >= 5 && value < 10)
+            {
+                Console.WriteLine("5 <= value < 10");
+            }
+
+
+            #region switch вариант 1
+
+            switch (value)
+            {
+                case 0: Console.WriteLine("0 <= value < 5"); break;
+                case 1: Console.WriteLine("0 <= value < 5"); break;
+                case 2: Console.WriteLine("0 <= value < 5"); break;
+                case 3: Console.WriteLine("0 <= value < 5"); break;
+                case 4: Console.WriteLine("0 <= value < 5"); break;
+                case 5: Console.WriteLine("5 <= value < 10"); break;
+                case 6: Console.WriteLine("5 <= value < 10"); break;
+                case 7: Console.WriteLine("5 <= value < 10"); break;
+                case 8: Console.WriteLine("5 <= value < 10"); break;
+                case 9: Console.WriteLine("5 <= value < 10"); break;
+            }
+
+            #endregion
+
+            #region switch вариант 1
+
+            switch (value)
+            {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4: Console.WriteLine("0 <= value < 5"); break;
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9: Console.WriteLine("5 <= value < 10"); break;
+            }
+
+            #endregion
+
+            #region switch ещё один вариант 
+
+            switch (value)
+            {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4: Console.WriteLine("0 <= value < 5"); break;
+                default: Console.WriteLine("5 <= value < 10"); break;
+            }
+
+            #endregion
+        }
+        static void TernaryOperator()
+        {
+            // Тернарный оператор
+
+            // В дополнение к оператору if есть, так называемый, тернарный оператор (?:).
+            // Этот оператор может заменить одно предложение if-else, которое 
+            // присваивает значение конкретной переменной. 
+            // Оператор принимает три выражения. 
+            // Если первый оценивается как true, будет возвращено второе выражение, 
+            // и если оно false, то возвращается третий
+
+            Random r = new Random();
+            double x = r.NextDouble();       // Получение числа от 0.0 до 1.0, не включая 1.0
+
+            int result = (x < 0.5) ? 0 : 1;  // Тернарный оператор (?:)
+            Console.WriteLine($"result = {result}");
+
+            if (x < 0.5)
+            {
+                result = 0;
+            }
+            else
+            {
+                result = 1;
+            }
+
+            Console.WriteLine($"result = {result}");
+
+            #region Замечание
+
+            Console.ReadKey();
+
+            Console.WriteLine(x < 0.5 ? 0 : 1);
+
+            if (x < 0.5)
+            {
+                Console.WriteLine(0);
+            }
+            else
+            {
+                Console.WriteLine(1);
+            }
+
+            #endregion
+
+            // Заказчик просит написать программу, которая должна генерировать три случайных числа
+            // из диапазона от -21 до 22 после чего на экране должно быть выведено максимальное из чисел.
+            // Если максимальных чисил несколько ( т.е. каких-то два или все три числа равны) 
+            // на экране показать одно число без дополнительных сообщений
+
+            #region Решение if-else
+
+            Random rand = new Random();
+
+            int firstNumber = rand.Next(-21, 23);   // Выдаёт от -21 до 23
+            int secondNumber = rand.Next(-21, 23);  // Выдаёт от -21 до 23
+            int thirdNumber = rand.Next(-21, 23);   // Выдаёт от -21 до 23
+
+            int maxValue;
+
+            // Если первое число больше двух других, 
+            if ((firstNumber > secondNumber) && (firstNumber > thirdNumber))
+            {
+                maxValue = firstNumber; // то оно максимальное
+            }
+            else // Если первое число меньше второго или меньше третьего, то максимальное среди двух оставшихся
+            {
+                if (secondNumber > thirdNumber) // Сравниваем второе и третье число, если второе больше третьего
+                {
+                    maxValue = secondNumber;   // то максимальное - второе
+                }
+                else// иначе 
+                {
+                    maxValue = thirdNumber;// максимальное - третье
+                }
+            }
+
+            Console.WriteLine($"Максимальное значение = {maxValue}");   // Выводим результат на экран
+
+            #endregion
+
+            #region Решение ?:
+
+            Console.ReadKey();
+
+            int a = rand.Next(-21, 23);   // Выдаёт от -21 до 23
+            int b = rand.Next(-21, 23);   // Выдаёт от -21 до 23
+            int c = rand.Next(-21, 23);   // Выдаёт от -21 до 23
+            maxValue = (a > b) && (a > c) ? a : (b > c) ? b : c;
+
+            maxValue = (firstNumber > b) && (firstNumber > thirdNumber) ? firstNumber : (secondNumber > thirdNumber) ? secondNumber : thirdNumber;
+
+
+            Console.WriteLine($"Максимальное значение = {maxValue}");   // Выводим результат на экран
+
+            #endregion
+
+            _ = new Random();
+            _ = rand.Next(-21, 23);   // Выдаёт от -21 до 23
+            _ = rand.Next(-21, 23);   // Выдаёт от -21 до 23
+
+            bool f = a > b;
+            int outputInt = f ? a : b;
+            Console.WriteLine(outputInt);
+
+            string outputString = f ? "да" : "нет";
+            _ = f ? "да" : "";
+
+            Console.WriteLine(outputString);
+        }
+        static void IfElse()
+        {
+            // Условные операторы используются для выполнения различных блоков кода на основе разных условий
+
+            // Оператор if будет выполняться только в том случае, если условие в скобках будет "истина". 
+            // Условие может включать в себя любое сравнение и логические операторы
+            // т.е. bool результат
+
+            Random rand = new Random();
+
+            int x = rand.Next(3); // Выдаёт 0, 1 или 2
+            Console.WriteLine($"Получено значение x = {x}");
+
+            if (x < 2)
+                Console.WriteLine("x равен 0 или 1");
+
+            // Часто используемая форма записи
+
+            if (x < 2)
+            {
+                Console.WriteLine("x равен 0 или 1");
+            }
+            // Чтобы проверить другие условия, оператор if может быть расширен любым количество if'ов.
+            // Каждое дополнительное условие будет проверено, только если все предыдущие условия являются ложными.
+
+            // Пример
+
+            _ = new Random();
+            _ = rand.Next(3); // Выдаёт 0, 1 или 2
+            Console.WriteLine($"Получено значение x = {x}");
+
+            //if (x == 1) Console.WriteLine("x == 1");
+            //else Console.WriteLine("x != 1");
+
+            //if (x==1)
+            //{
+            //    Console.WriteLine("x == 1");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("x != 1");
+            //}
+
+            #region if-else-if
+
+            if (x < 1) Console.WriteLine("x < 1");
+            else if (x > 1) Console.WriteLine("x > 1");
+            else Console.WriteLine("x = 1");
+
+            #endregion
+
+            #region Пример записи 1
+            Console.ReadKey();
+
+            if (x < 1)
+            {
+                Console.WriteLine("x < 1");
+            }
+            else if (x > 1)
+            {
+                Console.WriteLine("x > 1");
+            }
+            else
+            {
+                Console.WriteLine("x = 1");
+            }
+
+            #endregion
+
+            #region Пример записи 2
+            Console.ReadKey();
+
+            if (true)
+            {
+
+            }
+            else
+            {
+                if (true)
+                {
+
+                }
+                else
+                {
+                    if (true)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+
+            if (x < 1)
+            {
+                Console.WriteLine("x < 1");
+            }
+            else
+            {
+                if (x > 1)
+                {
+                    Console.WriteLine("x > 1");
+                }
+                else
+                {
+                    Console.WriteLine("x = 1");
+                }
+            }
+
+            #endregion
+            // Заказчик просит написать программу, которая определяет текущую температуру 
+            // и даёт рекомендацию по выбору одежды для прогулки
+
+            _ = new Random();
+
+            int temperature = rand.Next(30);    // Выдаёт от 0 до 30
+            Console.WriteLine($"Текущая температура = {temperature}°с");
+
+            if (temperature < 18)
+            {
+                Console.WriteLine("На улице прохладно, рекомендую взять куртку потеплее");
+            }
+            else
+            {
+                Console.WriteLine("На улице тепло, теплая куртка не понадобится");
+            }
+            // Заказчик просит написать программу, которая должна генерировать два случайных числа
+            // из диапазона от -10 до 10 после чего на экране должно быть выведено:
+            // 1.1. Максимальное из чисел
+            // 1.2. Минимальное из чисел
+            // 2. Добавить в программу возможность определения равенства чисел 
+            // и вывода соответствующего сообщения на экран
+            // 3. Добавить возможность ввода данных с клавиатуры
+
+            _ = new Random();
+
+            Console.Write("Введите первое число: ");
+            int firstNumber = int.Parse(Console.ReadLine());
+
+            Console.Write("Введите второе число: ");
+            int secondNumber = int.Parse(Console.ReadLine());
+
+            #region Пункт 1 вариант 1
+
+            Console.WriteLine("Пункт 1 вариант 1");
+
+            if (firstNumber > secondNumber)
+            {
+                Console.WriteLine($"Максимальное число = {firstNumber}");
+            }
+            else
+            {
+                Console.WriteLine($"Максимальное число = {secondNumber}");
+            }
+
+            if (firstNumber < secondNumber)
+            {
+                Console.WriteLine($"Минимальное число = {firstNumber}");
+            }
+            else
+            {
+                Console.WriteLine($"Минимальное число = {secondNumber}");
+            }
+
+            #endregion
+
+            #region Пункт 1 вариант 2
+
+            Console.WriteLine("\nПункт 1 вариант 2");
+
+            if (firstNumber > secondNumber)
+            {
+                Console.WriteLine($"Максимальное число = {firstNumber}");
+                Console.WriteLine($"Минимальное число = {secondNumber}");
+            }
+            else
+            {
+                Console.WriteLine($"Максимальное число = {secondNumber}");
+                Console.WriteLine($"Минимальное число = {firstNumber}");
+            }
+
+            #endregion
+
+            #region Пункт 1 вариант 3
+
+            Console.WriteLine("\nПункт 1 вариант 3");
+
+            bool flag = firstNumber > secondNumber;
+
+            if (flag)
+            {
+                Console.WriteLine($"Максимальное число = {firstNumber}");
+                Console.WriteLine($"Минимальное число = {secondNumber}");
+            }
+            else
+            {
+                Console.WriteLine($"Максимальное число = {secondNumber}");
+                Console.WriteLine($"Минимальное число = {firstNumber}");
+            }
+
+            #endregion
+
+            #region Пункт 1 вариант 4
+
+            Console.WriteLine("\nПункт 1 вариант 4");
+
+            int maxValue, minValue;
+
+            if (firstNumber > secondNumber)
+            {
+                maxValue = firstNumber;
+                minValue = secondNumber;
+            }
+            else
+            {
+                maxValue = secondNumber;
+                minValue = firstNumber;
+
+            }
+
+            Console.WriteLine($"Максимальное число = {maxValue}");
+            Console.WriteLine($"Минимальное число = {minValue}");
+
+            #endregion
+
+            #region Пункт 2
+
+            Console.WriteLine("\nПункт 2");
+
+            if (firstNumber > secondNumber)
+            {
+                maxValue = firstNumber;
+                minValue = secondNumber;
+            }
+            else if (firstNumber < secondNumber)
+            {
+                maxValue = secondNumber;
+                minValue = firstNumber;
+            }
+            else
+            {
+                Console.WriteLine("Числа равны");
+            }
+
+            Console.WriteLine($"Максимальное число = {maxValue}");
+            Console.WriteLine($"Минимальное число = {minValue}");
+
+            #endregion
+
+            #region Пункт 3
+
+            //Console.Write("Введите первое число: ");
+            //int firstNumber = int.Parse(Console.ReadLine());
+
+            //Console.Write("Введите второе число: ");
+            //int secondNumber = int.Parse(Console.ReadLine());
+
+            #endregion
+
+            // Заказчик просит написать приложение, которое по введённому номеру дня недели
+            // выведет на экран название этого дня или сообщит, что введённое число не корректно
+
+            Console.Write("Введите номер дня: ");
+            int dayIndex = int.Parse(Console.ReadLine());
+
+            #region Вариант 1
+
+            if (dayIndex == 1)
+            {
+                Console.WriteLine("Понедельник");
+            }
+            else
+            {
+                if (dayIndex == 2)
+                {
+                    Console.WriteLine("Вторник");
+                }
+                else
+                {
+                    if (dayIndex == 3)
+                    {
+                        Console.WriteLine("Среда");
+                    }
+                    else
+                    {
+                        if (dayIndex == 4)
+                        {
+                            Console.WriteLine("Четверг");
+                        }
+                        else
+                        {
+                            if (dayIndex == 5)
+                            {
+                                Console.WriteLine("Пятница");
+                            }
+                            else
+                            {
+                                if (dayIndex == 6)
+                                {
+                                    Console.WriteLine("Суббота");
+                                }
+                                else
+                                {
+                                    if (dayIndex == 7)
+                                    {
+                                        Console.WriteLine("Воскресенье");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("На планете Земля в неделе семь дней");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            #endregion
+
+            #region Вариант 2
+
+            if (dayIndex == 1) Console.WriteLine("Понедельник");
+            else if (dayIndex == 2) Console.WriteLine("Вторник");
+            else if (dayIndex == 3) Console.WriteLine("Среда");
+            else if (dayIndex == 4) Console.WriteLine("Четверг");
+            else if (dayIndex == 5) Console.WriteLine("Пятница");
+            else if (dayIndex == 6) Console.WriteLine("Суббота");
+            else if (dayIndex == 7) Console.WriteLine("Воскресенье");
+            else Console.WriteLine("На планете Земля в неделе семь дней");
+
+            #endregion
         }
         static void Random()
         {
@@ -1079,7 +2160,6 @@ namespace Steps
             Console.WriteLine(number);
             Console.ReadLine();
         }
-
         static void MyyStack()
         {
             MyStack<int> ms = new MyStack<int>();
