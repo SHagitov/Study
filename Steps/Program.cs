@@ -11,10 +11,976 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            DoWhileLoop();
+            ForEach();
             Console.ReadLine();
         }
 
+        static void ForEach()
+        {
+            // 7. Цикл foreach
+
+            #region Задача 1
+
+            //Console.WriteLine("Сформировать массив из N случайных чисел от -5 до 5");
+
+            ////Решение
+
+            //Console.Write("Введите n: ");               // Приглашение ко вводу числа
+            //int n = int.Parse(Console.ReadLine());      // Ввод числа с клавиатуры
+
+            //Random random = new Random();               // Инициализация генератора псевдослучайных чисел
+
+            //int[] numbs = new int[n];                   // Объявление и инициализация массива
+
+            //for (int i = 0; i < numbs.Length; i++)      //
+            //{                                           //
+            //    numbs[i] = random.Next(-5, 6);          // Заполнение массива
+            //}                                           // 
+
+            //for (int i = 0; i < numbs.Length; i++)      //
+            //{                                           //
+            //    Console.Write($"{numbs[i]} ");          // Вывод массива на экран
+            //}                                           //
+            //Console.WriteLine();
+
+            //foreach (var e in numbs)
+            //{
+            //    Console.Write($"{e} ");
+            //}
+
+            //Console.ReadKey();
+
+            #endregion
+
+            #region int[][] dataTime
+
+            //int[][] dataTime = new int[24][];
+
+            ////int[][][] vs = new int[3][][];
+            ////vs[0] = new int[3][];
+
+
+            //for (int j = 0; j < dataTime.Length; j++)
+            //{
+            //    dataTime[j] = (j >= 9 && j < 21) ? new int[12] : new int[4];
+            //}
+
+            ////for (int i = 0; i < dataTime.Length; i++)
+            ////{
+            ////    for (int j = 0; j < dataTime[i].Length; j++)
+            ////    {
+            ////        Console.Write($"{dataTime[i][j],3} ");
+            ////    }
+            ////    Console.WriteLine();
+            ////}
+
+            //foreach (var array in dataTime)
+            //{
+            //    foreach (var e in array)
+            //    {
+            //        Console.Write($"{e,3} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            #endregion
+
+            #region String
+
+            //string message = "Я С#-разработчик";
+
+            //for (int i = 0; i < message.Length; i++)
+            //{
+            //    Console.Write($"{message[i]} ");
+            //}
+
+            //Console.WriteLine();
+
+            //foreach (var c in message)
+            //{
+            //    Console.Write($"{c} ");
+            //}
+
+            Console.WriteLine();
+            Console.ReadKey();
+
+            #endregion
+        }
+        static void JaggedArray2()
+        {
+            // 6. Массив массивов
+
+            ////         0     1     2     3
+            ////     ┌─────────────────────────┐
+            ////     │ ┌───┐ ┌───┐ ┌───┐ ┌───┐ │
+            ////  0  │ │ 1 │ │ 3 │ │ 0 │ │ 1 │ │
+            ////     │ └───┘ └───┘ └───┘ └───┘ │
+            ////     │ ┌───┐ ┌───┐ ┌───┐ ┌───┐ │
+            ////  1  │ │ 1 │ │ 0 │ │ 3 │ │ 1 │ │
+            ////     │ └───┘ └───┘ └───┘ └───┘ │
+            ////     │ ┌───┐ ┌───┐ ┌───┐ ┌───┐ │
+            ////  2  │ │ 2 │ │ 0 │ │ 1 │ │ 9 │ │
+            ////     │ └───┘ └───┘ └───┘ └───┘ │
+            ////     └─────────────────────────┘
+
+
+
+            ////         0     1     2     3
+            ////     ┌─────────────┐
+            ////     │ ┌───┐ ┌───┐ │
+            ////  0  │ │ 1 │ │ 3 │ │
+            ////     │ └───┘ └───┘ └───────────┐
+            ////     │ ┌───┐ ┌───┐ ┌───┐ ┌───┐ │
+            ////  1  │ │ 1 │ │ 0 │ │ 3 │ │ 1 │ │
+            ////     │ └───┘ └───┘ └───┘ └───┘ │
+            ////     │ ┌───┐ ┌───┐ ┌───┐ ┌─────┘
+            ////  2  │ │ 2 │ │ 0 │ │ 1 │ │
+            ////     │ └───┘ └───┘ └───┘ │
+            ////     └───────────────────┘
+
+            // Зубчатые массивы являются массивами массивов
+            // Они могут иметь неправильные размеры.
+            // Размеры распределяются по одному за раз
+
+            //int[,]
+            int[][] jaggedArray = new int[3][];
+
+            jaggedArray[0] = new int[2];
+            //jaggedArray[0,1]
+            jaggedArray[0][0] = 1;
+            jaggedArray[0][1] = 3;
+
+            jaggedArray[1] = new int[4];
+            jaggedArray[1][0] = 1;
+            jaggedArray[1][1] = 0;
+            jaggedArray[1][2] = 3;
+            jaggedArray[1][3] = 1;
+
+            jaggedArray[2] = new int[3];
+            jaggedArray[2][0] = 2;
+            jaggedArray[2][1] = 0;
+            jaggedArray[2][2] = 1;
+
+
+            for (int i = 0; i < jaggedArray.Length; i++)
+            {
+                for (int j = 0; j < jaggedArray[i].Length; j++)
+                {
+                    Console.Write($"{jaggedArray[i][j]} ");
+                }
+                Console.WriteLine();
+            }
+
+            // Написать программу, моделирующую получение показаний метоостанции
+            // Собирать и хранить информацию о температуре воздуха
+            // В период с 9 ч утра до 21 ч вечера каждые 5 минут
+            // В период с 21 ч вечера до 9 утра каждые 15 минут
+
+            #region  int[,] dataTime 
+            //Random r = new Random();
+
+            //int[,] dataTime = new int[24, 12];
+
+            //for (int i = 0; i < dataTime.GetLength(0); i++)
+            //{
+            //    Console.Write($"{i,3}ч. ");
+            //    for (int j = 0; j < dataTime.GetLength(1); j++)
+            //    {
+            //        if (i >= 9 && i < 21) dataTime[i, j] = r.Next(20);
+            //        else dataTime[i, j] = (j < 4) ? r.Next(20) : 0;
+
+            //        Console.Write($"{dataTime[i, j],3} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+            //Console.ReadKey();
+            //Console.Clear();
+            //for (int i = 0; i < dataTime.GetLength(0); i++)
+            //{
+            //    Console.ForegroundColor = ConsoleColor.White;
+            //    Console.Write($"{i,3}ч. ");
+            //    for (int j = 0; j < dataTime.GetLength(1); j++)
+            //    {
+            //        if (i >= 9 && i < 21) Console.ForegroundColor = ConsoleColor.White;
+            //        else Console.ForegroundColor = (j < 4) ? ConsoleColor.White : ConsoleColor.Red;
+            //        Console.Write($"{dataTime[i, j],3} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.ForegroundColor = ConsoleColor.White;
+
+            #endregion
+
+            #region int[][] dataTime
+
+            //Random r = new Random();
+            //int[][] dataTime = new int[24][];
+
+            //for (int j = 0; j < dataTime.Length; j++)
+            //{
+            //    dataTime[j] = (j >= 9 && j < 21) ? new int[12] : new int[4];
+            //}
+
+            //for (int i = 0; i < dataTime.Length; i++)
+            //{
+            //    Console.Write($"{i} ч. ");
+            //    for (int j = 0; j < dataTime[i].Length; j++)
+            //    {
+            //        dataTime[i][j] = r.Next(20);
+            //        Console.Write($"{dataTime[i][j],3} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            #endregion
+        }
+        static void MultiAray()
+        {
+            // 5. Многомерные массивы: использование, задание
+            int[,,] matrix3D = new int[3, 4, 5];
+
+            Console.WriteLine($"matrix3D.Rank = {matrix3D.Rank}");
+
+            Console.WriteLine($"matrix3D.Length = {matrix3D.Length}");
+            Console.WriteLine($"matrix3D.GetLength(0) = {matrix3D.GetLength(0)}");
+            Console.WriteLine($"matrix3D.GetLength(1) = {matrix3D.GetLength(1)}");
+            Console.WriteLine($"matrix3D.GetLength(2) = {matrix3D.GetLength(2)}");
+
+            Random r = new Random();
+
+
+            for (int i = 0; i < matrix3D.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix3D.GetLength(1); j++)
+                {
+                    for (int k = 0; k < matrix3D.GetLength(2); k++)
+                    {
+                        matrix3D[i, j, k] = r.Next(10);
+                        Console.Write($"{matrix3D[i, j, k]} ");
+                    }
+                }
+            }
+
+            Console.WriteLine("\n\n");
+
+            int[,,,] matrix4D = new int[3, 4, 5, 6];
+
+            Console.WriteLine($"matrix4D.Rank = {matrix4D.Rank}");
+
+            Console.WriteLine($"matrix4D.Length = {matrix4D.Length}");
+            Console.WriteLine($"matrix4D.GetLength(0) = {matrix4D.GetLength(0)}");
+            Console.WriteLine($"matrix4D.GetLength(1) = {matrix4D.GetLength(1)}");
+            Console.WriteLine($"matrix4D.GetLength(2) = {matrix4D.GetLength(2)}");
+            Console.WriteLine($"matrix4D.GetLength(3) = {matrix4D.GetLength(3)}");
+
+            for (int i = 0; i < matrix4D.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix4D.GetLength(1); j++)
+                {
+                    for (int k = 0; k < matrix4D.GetLength(2); k++)
+                    {
+                        for (int l = 0; l < matrix4D.GetLength(3); l++)
+                        {
+                            matrix4D[i, j, k, l] = r.Next(10);
+                            Console.Write($"{matrix4D[i, j, k, l]} ");
+                        }
+                    }
+                }
+            }
+
+            Console.WriteLine("\n\n");
+
+            int[,,,,] matrix5D = new int[3, 4, 5, 6, 10];
+
+            Console.WriteLine($"matrix5D.Rank = {matrix5D.Rank}");
+
+            Console.WriteLine($"matrix5D.Length = {matrix5D.Length}");
+            Console.WriteLine($"matrix5D.GetLength(0) = {matrix5D.GetLength(0)}");
+            Console.WriteLine($"matrix5D.GetLength(1) = {matrix5D.GetLength(1)}");
+            Console.WriteLine($"matrix5D.GetLength(2) = {matrix5D.GetLength(2)}");
+            Console.WriteLine($"matrix5D.GetLength(3) = {matrix5D.GetLength(3)}");
+            Console.WriteLine($"matrix5D.GetLength(4) = {matrix5D.GetLength(4)}");
+
+            Console.WriteLine("\n\n");
+
+            Console.ReadKey();
+
+        }
+        static void Array2D()
+        {
+            // 4. Двумерные массивы: использование, задание
+
+            // int[] collection = new int[3];
+            //// ┌───────────────────────────────────────────┐
+            //// │    ┌────────┐   ┌────────┐   ┌────────┐   │
+            //// │    │   31   │   │   12   │   │  1771  │   │
+            //// │    └────────┘   └────────┘   └────────┘   │
+            //// │         0            1           2        │
+            //// └───────────────────────────────────────────┘
+
+            ////         0     1     2     3
+            ////     ┌─────────────────────────┐
+            ////     │ ┌───┐ ┌───┐ ┌───┐ ┌───┐ │
+            ////  0  │ │ 1 │ │ 3 │ │ 0 │ │ 1 │ │
+            ////     │ └───┘ └───┘ └───┘ └───┘ │
+            ////     │ ┌───┐ ┌───┐ ┌───┐ ┌───┐ │
+            ////  1  │ │ 1 │ │ 0 │ │ 3 │ │ 1 │ │
+            ////     │ └───┘ └───┘ └───┘ └───┘ │
+            ////     │ ┌───┐ ┌───┐ ┌───┐ ┌───┐ │
+            ////  2  │ │ 2 │ │ 0 │ │ 1 │ │ 9 │ │
+            ////     │ └───┘ └───┘ └───┘ └───┘ │
+            ////     └─────────────────────────┘
+
+            //
+
+            int[,] matrix = new int[3, 4]; // Задание двумерного массива, в котором 3 строки и 4 столбца
+
+            matrix[1, 2] = 3;
+
+            Random r = new Random();
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    matrix[i, j] = r.Next(10);
+                    Console.Write($"{matrix[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.Write("Введите количество строк: ");
+            int row = int.Parse(Console.ReadLine());
+            Console.Write("Введите количество столбцов: ");
+            int col = int.Parse(Console.ReadLine());
+
+            int[,] arr2d = new int[row, col];
+            _ = new Random();
+
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    arr2d[i, j] = r.Next(10);
+                    Console.Write($"{arr2d[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+
+            string[,] table = new string[,] {
+                                  { "00", "01", "02", "03" },
+                                  { "10", "11", "12", "13" },
+                                  { "20", "21", "22", "23" }
+                                };
+
+            Console.WriteLine();
+
+            Console.WriteLine($"table.Rank = {arr2d.Rank}");
+            Console.WriteLine($"table.GetLength(0) = {arr2d.GetLength(0)}");
+            Console.WriteLine($"table.GetLength(1) = {arr2d.GetLength(1)}");
+
+            for (int i = 0; i < table.GetLength(0); i++)
+            {
+                for (int j = 0; j < table.GetLength(1); j++)
+                {
+                    Console.Write($"{table[i, j],3} ");
+                }
+                Console.WriteLine();
+            }
+
+            #region Элементы одномерного массива А из 9 чисел построчно расположить в матрице B[3×3]
+
+            //int[] a = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //int[,] b = new int[3, 3];
+
+            //int counterA = 0;
+
+            //for (int i = 0; i < b.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < b.GetLength(1); j++)
+            //    {
+            //        b[i, j] = a[counterA++];
+            //        Console.Write($"{b[i, j]} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            #endregion
+
+            #region В матрице Z[3×3] каждый элемент разделить на диагональный, стоящий в том же столбце.
+
+            //
+            //  1 2 3
+            //  4 5 6
+            //  7 8 9
+            //Random r = new Random();
+
+            //var Z = new double[3, 3];
+
+            //Console.WriteLine("Исходная матрица Z[3x3]: ");
+
+            //for (int i = 0; i < Z.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < Z.GetLength(1); j++)
+            //    {
+            //        Z[i, j] = r.Next(1, 10);
+            //        Console.Write($"{Z[i, j],6} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            //Console.WriteLine("Матрица Z[3x3] после преобразования: ");
+
+            //for (int i = 0; i < Z.GetLength(0); i++)
+            //{
+            //    double div = Z[i, i];
+            //    for (int j = 0; j < Z.GetLength(1); j++)
+            //    {
+            //        Z[i, j] /= div;
+            //        Console.Write($"{Z[i, j],6} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            #endregion
+
+            #region Для каждой строки матрицы A[4×4] найти сумму элементов.
+
+            _ = new Random();
+
+            var A = new int[4, 4];
+
+            Console.WriteLine("Исходная матрица A[4x4]: ");
+
+            for (int i = 0; i < A.GetLength(0); i++)
+            {
+                int sum = 0;
+
+                for (int j = 0; j < A.GetLength(1); j++)
+                {
+                    A[i, j] = r.Next(1, 3);
+                    sum += A[i, j];
+                    Console.Write($"{A[i, j],2} ");
+                }
+                Console.WriteLine($" : {sum}");
+            }
+
+            #endregion
+        }
+        static void ArrayMethods()
+        {
+            // 2. Основные методы работы с одномерными массивами
+            #region Задача 4
+
+            Console.Clear();
+            Console.WriteLine("Массив из N элементов состоит из нулей и единиц.\nПоставить нули в начало, а единицы – в конец.");
+
+            // Решение
+            Random random = new Random();               // Инициализация генератора псевдослучайных чисел
+
+            Console.Write("\nКоличество элементов: ");  // Приглашение ко вводу числа
+            int n = int.Parse(Console.ReadLine());      // Ввод искомого числа с клавиатуры
+            int[] numbs = new int[n];                  // Объявление и инициализация массива
+
+            Console.Write("\nИсходный массив: ");       // 
+
+            for (int i = 0; i < numbs.Length; i++)      //
+            {                                           //
+                numbs[i] = random.Next(0, 2);           // Заполнение массива
+                Console.Write($"{numbs[i]} ");          // Вывод массива на экран
+            }                                           // 
+
+            //     0  1  0  0  0  0  1  0  1  0
+            //     ^                          ^
+            //                                  
+
+            #region Old
+
+            //int head = 0;                               // Указатель головного элемента
+            //int tail = numbs.Length - 1;                // Указатель хвостового элемента
+
+            //bool flag = true;                           // Флаг, показывающий увеличивать позицию головного - flag = true
+            //                                            // или уменьшать позицию хвостового - flag = false
+
+            //while (head < tail)                         // Пока "голова" меньше "хвоста"
+            //{
+            //    if (flag)                               // flag = true
+            //    {                                       //
+            //        if (numbs[head] == 1) flag = false; // Работаем с головным элементом
+            //        else head++;                        //
+            //    }
+            //    else                                    // иначе flag = false
+            //    {                                       //
+            //        if (numbs[tail] == 0) flag = true;  // Работаем с хвостовым элементом
+            //        else tail--;                        // 
+            //    }
+
+            //    if (numbs[head] == 1 && numbs[tail] == 0)  // Если головной элемент = 1 и хвостовой = 0
+            //    {
+            //        int temp = numbs[head];             //
+            //        numbs[head] = numbs[tail];          // Меняем их местами
+            //        numbs[tail] = temp;                 //
+
+            //        head++;                             // Сдвигаем голову 
+            //        tail--;                             // и хвост
+            //    }
+            //}
+
+            #endregion
+
+            #region ToDo
+
+            Array.Sort(numbs);
+
+            #endregion
+
+            Console.Write("\nПолучившийся массив: ");
+
+            for (int i = 0; i < numbs.Length; i++)      //
+            {                                           //
+                Console.Write($"{numbs[i]} ");          // Вывод массива на экран
+            }
+
+            Console.ReadKey();
+
+            #endregion
+            var data = new int[] { 1, 5, 2, 5, 4, 6, 5, 7, 6, 8, 6, 9, 5, 1 };
+
+            Console.WriteLine("Исходный массив: ");
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                Console.Write($"{data[i]} ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine($"data.Length = {data.Length}"); // Получает общее число элементов во всех измерениях массива
+
+            int result = Array.IndexOf(data, 5); // Выполняет поиск указанного объекта внутри 
+                                                 // всего одномерного массива и возвращает индекс его первого вхождения.
+
+            Console.WriteLine($"Array.IndexOf(data, 5) = {result}");
+
+            result = Array.LastIndexOf(data, 5);
+            Console.WriteLine($"Array.LastIndexOf(data, 5) = {result}");
+
+            int rank = data.Rank; // Получает ранг (число измерений) массива. 
+
+            Console.WriteLine($"data.Rank = {rank}");
+
+            Array.Sort(data);   // Сортирует элементы во всем массиве 
+
+            Console.WriteLine("\nМассив после применения Array.Sort(data): ");
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                Console.Write($"{data[i]} ");
+            }
+            Console.WriteLine();
+
+            Array.Reverse(data);   // Изменяет порядок элементов во всем одномерном массиве на обратный.
+
+            Console.WriteLine("Массив после применения Array.Reverse(data): ");
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                Console.Write($"{data[i]} ");
+            }
+            Console.WriteLine();
+
+            Array.Clear(data, 7, 3);    // Задает для диапазона элементов в массиве значение, предусмотренное по умолчанию
+
+            Console.WriteLine("Массив после применения Array.Clear(data, 7, 3): ");
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                Console.Write($"{data[i]} ");
+            }
+            Console.WriteLine();
+
+            int[] copyData = new int[20];
+
+            Array.ConstrainedCopy(data, 2, copyData, 10, 5);
+            // Копирует диапазон элементов из массива (data), начиная с заданного индекса (2)
+            // источника, и вставляет его в другой массив (copyData) , начиная с заданного
+            // индекса (10) назначения. Гарантирует, что в случае невозможности успешно скопировать
+            // весь диапазон, все изменения будут отменены.
+            // 5 - количество копируемых элементов
+
+            //Array.Copy()
+
+            Console.WriteLine("Массив copyData: ");
+
+            for (int i = 0; i < copyData.Length; i++)
+            {
+                Console.Write($"{copyData[i]} ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Массив copyData после применения  Array.ConstrainedCopy(data, 4, copyData, 10, 5): ");
+
+            for (int i = 0; i < copyData.Length; i++)
+            {
+                Console.Write($"{copyData[i]} ");
+            }
+            Console.WriteLine("\n");
+
+            // 3. Вложенные циклы, операторы break и continue
+
+            #region Распечатать таблицу умножения
+
+            // 2 x 1 = 2        3 x 1 = 3          4 x 1 = 4
+            // 2 x 2 = 4        3 x 2 = 6          4 x 2 = 8
+            // 2 x 3 = 6        3 x 3 = 9          4 x 3 = 12
+            // 2 x 4 = 8        3 x 4 = 12         4 x 4 = 16
+            // 2 x 5 = 10       3 x 5 = 15         4 x 5 = 20
+            // 2 x 6 = 12       3 x 6 = 18         4 x 6 = 24
+            // 2 x 7 = 14       3 x 7 = 21         4 x 7 = 28
+            // 2 x 8 = 16       3 x 8 = 24         4 x 8 = 32
+            // 2 x 9 = 18       3 x 9 = 27         4 x 9 = 36
+            // 2 x 10 = 20      3 x 10 = 30        4 x 10 = 40
+
+            //for (int i = 1; i <= 10; i++)
+            //{
+            //    Console.WriteLine($"2 x {i} = {2 * i}");
+            //}
+            //Console.WriteLine();
+
+
+            //for (int i = 1; i <= 10; i++)
+            //{
+            //    Console.WriteLine($"3 x {i} = {3 * i}");
+            //}
+            //Console.WriteLine();
+
+
+            //for (int i = 1; i <= 10; i++)
+            //{
+            //    Console.WriteLine($"4 x {i} = {4 * i}");
+            //}
+            Console.WriteLine();
+
+            #region ToDo
+
+            //for (int i = 2; i < 10; i++)
+            //{
+            //    for (int j = 1; j <= 10; j++)
+            //    {
+            //        Console.WriteLine($"{i} x {j} = {i * j} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            #endregion
+
+            #endregion
+
+            #region Показать всевозможные трехбуквенные слова из алфавита S K I L
+            //4 * 4 * 4 = 4^3
+
+            #region ToDo
+
+            //char[] symbols = { 'S', 'K', 'I', 'L' };
+            //int count = 1;
+
+            //for (int i = 0; i < symbols.Length; i++)
+            //{
+            //    for (int j = 0; j < symbols.Length; j++)
+            //    {
+            //        for (int k = 0; k < symbols.Length; k++)
+            //        {
+            //            Console.WriteLine($"{count++,3}: {symbols[i]}{symbols[j]}{symbols[k]}");
+            //        }
+            //    }
+            //}
+
+            #endregion
+
+            #endregion
+
+            #region Найти хотя бы одно решение уравнения в целых числах
+
+            //     ┌                             ┐
+            //     │     ┌   ┐ 3         ┌   ┐ 2 │
+            //     │ 2 × │ a │    +  3 × │ b │   │ = 8337
+            //     │     └   ┘           └   ┘   │
+            //     └                             ┘
+
+            // 2 * 1^3 + 3 * 1^2
+            // 2 * 1^3 + 3 * 2^2
+            // 2 * 1^3 + 3 * 3^2
+            // 2 * 1^3 + 3 * 4^2
+            // 2 * 1^3 + 3 * 5^2
+            // ...
+            // 2 * 2^3 + 3 * 1^2
+            // 2 * 2^3 + 3 * 2^2
+            // 2 * 2^3 + 3 * 3^2
+            // 2 * 2^3 + 3 * 4^2
+            // 2 * 2^3 + 3 * 5^2
+            // ...
+            // 2 * 3^3 + 3 * 1^2
+            // 2 * 3^3 + 3 * 2^2
+            // 2 * 3^3 + 3 * 3^2
+            // 2 * 3^3 + 3 * 4^2
+            // 2 * 3^3 + 3 * 5^2
+
+            #region ToDo
+
+            //for (double a = -500; a < 500; a++)
+            //{
+            //    for (double b = -500; b < 500; b++)
+            //    {
+            //        if ((2 * a * a * a + 3 * b * b) == 8337) Console.WriteLine($"a = {a}  b = {b}");
+            //    }
+            //}
+
+            #endregion
+
+            #endregion
+
+            #region break и continue
+
+            int count = 0;
+
+            for (int i = 0; i < 1_000; i++)
+            {
+                //if (i % 2 == 0) continue;
+                for (int j = 0; j < 1_000; j++)
+                {
+                    break;
+                    //Console.Write($"({i} {j})  ");
+
+
+                }
+                count++;
+            }
+
+            Console.WriteLine($"count = {count}");
+
+            Console.WriteLine();
+            #endregion
+
+        }
+        static void Arrays()
+        {
+            // 1. Одномерные массивы: инициализация, определения, использование, задание
+
+            #region Введение
+
+            //
+            // Массив - структура данных, хранящая набор значений (элементов массива), 
+            // идентифицируемых по индексу или набору индексов, 
+            //
+            // Массив данных имеет одинаковый тип данных.
+            // Чтобы объявить массив, типу данных добавляется набор квадратных скобок.
+            // Это будет означать, что выпланируете создать массив
+            // После этого указывается идентификатор (имя) массива. 
+            // Массив может быть объявлен любым типом данных, и все его элементы будут иметь этот тип.
+
+            // Задание массива целых чисел 
+            int[] x;
+
+            // Массив объявляется с ключевым словом new, за которым идёт информация о
+            // типе данных и количестве элементов массива.
+            // Это фиксированное количество, которые может содержать массив. 
+            // Когда массив создан, элементы будут автоматически назначены данными по умолчанию для 
+            // этого типа. (числа - нули, bool - false и т.д. )
+
+            x = new int[3]; // int-массив из 3 элементов
+
+            double[] array = new double[5]; // double-массив из 5 элементов
+
+            // Для заполнения элементов массива нужно указать его номер в квадратных скобках.
+            // Обратите внимание, что индекс первого элемента начинается с нуля.
+
+            x[0] = 1;
+            x[1] = 12;
+            x[2] = 223;
+
+            array[0] = 3;
+            array[1] = 5;
+            array[2] = 8;
+            array[3] = 13;
+            array[4] = 21;
+
+            // 
+            int[] birthdayCollection = new int[8] { 2, 8, 0, 9, 1, 9, 9, 0 };
+            int[] newYearCollection = new int[] { 31, 12, 2319 };
+            string[] dateCollection = { "01", "01", "1771" };
+
+            ////
+            //// ┌───────────────────────────────────────────┐
+            //// │    ┌────────┐   ┌────────┐   ┌────────┐   │
+            //// │    │   31   │   │   12   │   │  1771  │   │
+            //// │    └────────┘   └────────┘   └────────┘   │
+            //// │         0            1           2        │
+            //// └───────────────────────────────────────────┘
+            ////               newYearCollection              
+            ////                                              
+            //// birthdayCollection[0]
+            //// birthdayCollection[1]
+            //// birthdayCollection[2]
+            //// Индексы меняются от 0 до 2                               
+            ///
+
+            #endregion
+
+            #region Задача 1
+
+            //Console.WriteLine("Сформировать массив из N случайных чисел от -5 до 5");
+
+            //// Решение
+
+            //Console.Write("Введите n: ");               // Приглашение ко вводу числа
+            //int n = int.Parse(Console.ReadLine());      // Ввод числа с клавиатуры
+
+            //Random random = new Random();               // Инициализация генератора псевдослучайных чисел
+
+            //int[] numbs = new int[n];                   // Объявление и инициализация массива
+
+            //for (int i = 0; i < numbs.Length; i++)      //
+            //{                                           //
+            //    numbs[i] = random.Next(-5, 6);          // Заполнение массива
+            //    Console.Write($"{numbs[i]} ");          // Вывод массива на экран
+            //}                                           // 
+
+
+            Console.ReadKey();
+
+            #endregion
+
+            #region Задача 2
+
+            //Console.Clear();
+            //Console.WriteLine("Сформировать массив N случайных чисел. Подсчитать количество четных чисел");
+
+            Random random = new Random();
+            //// Решение
+
+            //Console.Write("Введите n: ");               // Приглашение ко вводу числа
+            //int n = int.Parse(Console.ReadLine());          // Ввод числа с клавиатуры
+
+            //var numbs = new int[n];                         // Объявление и инициализация массива
+
+            //int evenElement = 0;                        // Количество четных элементов
+
+            //for (int i = 0; i < numbs.Length; i++)      //
+            //{                                           //
+            //    numbs[i] = random.Next(10);             // Заполнение массива
+            //    Console.Write($"{numbs[i]} ");          // Вывод массива на экран
+            //    if (numbs[i] % 2 == 0) evenElement++;    // Подсчёт чётных элементов
+            //}                                           // 
+
+
+
+            //                                        //
+
+            //Console.WriteLine($"\nЧётных: {evenElement}");
+
+            //Console.ReadKey();
+
+            #endregion
+
+            #region Задача 3
+
+            //Console.Clear();
+            //Console.WriteLine("В массиве из 10 чисел вычислить, сколько раз встречается введенное число");
+
+            //// Решение
+
+            //int[] numbs = new int[10];                         // Объявление и инициализация массива
+
+            //for (int i = 0; i < numbs.Length; i++)      //
+            //{                                           //
+            //    numbs[i] = random.Next(10);             // Заполнение массива
+            //    Console.Write($"{numbs[i]} ");          // Вывод массива на экран
+            //}                                           // 
+
+            //Console.Write("\nКакое число ищём: ");      // Приглашение ко вводу числа
+            //int n = int.Parse(Console.ReadLine());      // Ввод искомого числа с клавиатуры
+
+            //int find = 0;                               // Результат поиска
+
+
+            //for (int i = 0; i < numbs.Length; i++)      //
+            //{                                           //
+            //    if (numbs[i] == n) find++;              // Поиск искомого элемента
+            //}
+
+            //Console.WriteLine($"\nЭлемент '{n}' найден: {find} р. ");
+
+            //Console.ReadKey();
+
+            #endregion
+
+            #region Задача 4
+
+            Console.Clear();
+            Console.WriteLine("Массив из N элементов состоит из нулей и единиц.\nПоставить нули в начало, а единицы – в конец.");
+
+            // Решение
+
+            Console.Write("\nКоличество элементов: ");  // Приглашение ко вводу числа
+            int n = int.Parse(Console.ReadLine());      // Ввод искомого числа с клавиатуры
+            int[] numbs = new int[n];                   // Объявление и инициализация массива
+
+            Console.Write("\nИсходный массив: ");       // 
+
+            for (int i = 0; i < numbs.Length; i++)      //
+            {                                           //
+                numbs[i] = random.Next(0, 2);           // Заполнение массива
+                Console.Write($"{numbs[i]} ");          // Вывод массива на экран
+            }                                           // 
+
+            //     0  0  0  0  0  0  0  1  1  1
+            //                       ^  ^     
+            //                                  
+
+            int head = 0;                               // Указатель головного элемента
+            int tail = numbs.Length - 1;                // Указатель хвостового элемента
+
+            bool flag = true;                           // Флаг, показывающий увеличивать позицию головного - flag = true
+                                                        // или уменьшать позицию хвостового - flag = false
+
+            while (head < tail)                         // Пока "голова" меньше "хвоста"
+            {
+                if (flag)                                // flag = true
+                {                                       //
+                    if (numbs[head] == 1) flag = false; // Работаем с головным элементом
+                    else head++;                        //
+                }
+                else                                    // иначе flag = false
+                {                                       //
+                    if (numbs[tail] == 0) flag = true;  // Работаем с хвостовым элементом
+                    else tail--;                        // 
+                }
+
+                if (numbs[head] == 1 && numbs[tail] == 0)  // Если головной элемент = 1 и хвостовой = 0
+                {
+                    int temp = numbs[head];             //
+                    numbs[head] = numbs[tail];          // Меняем их местами
+                    numbs[tail] = temp;                 //
+
+                    head++;                             // Сдвигаем голову 
+                    tail--;                             // и хвост
+                }
+            }
+
+            Console.Write("\nПолучившийся массив: ");
+
+            for (int i = 0; i < numbs.Length; i++)      //
+            {                                           //
+                Console.Write($"{numbs[i]} ");          // Вывод массива на экран
+            }
+
+            Console.ReadKey();
+
+            #endregion
+        }
         static void DoWhileLoop()
         {
             // Цикл do-while продолжает выполнение блока кода, только если условие продолжение истинно.
@@ -2539,7 +3505,7 @@ namespace Steps
             }
             Console.ReadKey();
         }
-        static void JaggedArray()
+        static void JaggedArray1()
         {
             int[][] jaggedArray = new int[4][];
             jaggedArray[0] = new int[1];
