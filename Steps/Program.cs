@@ -55,6 +55,104 @@ namespace Steps
 
             //Выведите все цифры натурального числа N по одной
             Console.WriteLine(Numbers(1234654));
+
+            static void Find(char[] Set, char[] Word, int N)
+            {
+                if (N == Word.Length)
+                {
+                    foreach (var e in Word) { Console.Write(e); }
+                    Console.WriteLine();
+                    return;
+                }
+
+                char[] tWord = Word;
+
+                for (int i = 0; i < Set.Length; i++)
+                {
+                    tWord[N] = Set[i];
+                    Find(Set, tWord, N + 1);
+                }
+            }
+
+            char[] alphabet = { 'q', 'w', 'e', 'r', 't' };
+            char[] currentWord = new char[4];
+
+            Find(alphabet, currentWord, 0);
+
+            static void Print(char[,] Map)
+            {
+                for (int i = 0; i < Map.GetLength(0); i++)
+                {
+                    for (int j = 0; j < Map.GetLength(1); j++)
+                    {
+                        Console.Write(Map[i, j] == '.' ? ' ' : Map[i, j]);
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine();
+
+            }
+
+            static void ToColor(char[,] Map, int PosX, int PosY)
+            {
+                if (Map[PosX, PosY] == '.')
+                {
+                    Map[PosX, PosY] = '+';              // "Закрашиваем" текущую ячейку
+                    ToColor(Map, PosX - 1, PosY);       // Просматриваем ячейку выше текущей
+                    ToColor(Map, PosX, PosY + 1);       // Просматриваем ячейку правее текущей
+                    ToColor(Map, PosX + 1, PosY);       // Просматриваем ячейку ниже текущей
+                    ToColor(Map, PosX, PosY - 1);       // Просматриваем ячейку левее текущей
+                }
+            }
+
+            char[,] map = new char[,]
+             {
+                {'.','+','+','.','+','+','.', },
+                {'+','.','.','+','.','.','+', },
+                {'+','.','.','.','.','.','+', },
+                {'.','+','.','.','.','+','.', },
+                {'.','.','+','.','+','.','.', },
+                {'.','.','.','+','.','.','.', }
+            };
+
+            Print(map);
+            Console.WriteLine();
+            ToColor(map, 1, 1);
+            Print(map);
+
+            static int F(int N)
+            {
+                //Console.WriteLine($" F{N}");
+                return (N > 2) ? F(N - 1) + G(N - 2) : N;
+            }
+
+            static int G(int N)
+            {
+                //Console.WriteLine($" G{N}");
+
+                return (N > 2) ? G(N - 1) + F(N - 2) : N + 1;
+            }
+            Console.ReadKey();
+            Console.WriteLine(F(13));
+
+            static void Infinity()
+            {
+                Console.Write("O_- "); // Шаг рекурсии
+                                       //Thread.Sleep(100);         // 
+                Infinity();                //
+            }
+
+            static void NotInfinity(int Count)
+            {
+                Console.WriteLine("O_- ");
+                Thread.Sleep(100);
+                Count = Count - 1;
+                if (Count > 0) // Базовый случай
+                    NotInfinity(Count);
+            }
+
+            //Infinity();
+            NotInfinity(5);
         }
         static void Params()
         {
