@@ -11,10 +11,970 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            ForEach();
+            Recursion();
             Console.ReadLine();
         }
 
+        static void Recursion()
+        {
+            static int Fib(int N)
+            {
+                return (N == 1 || N == 2) ? 1 : Fib(N - 1) + Fib(N - 2);
+            }
+
+            static int FibLoop(int N)
+            {
+                int a1 = 1;
+                int a2 = 1;
+                int t = a2;
+
+                for (int i = 2; i < N; i++)
+                {
+                    t = a1 + a2;
+                    a1 = a2;
+                    a2 = t;
+                }
+
+                return t;
+            }
+
+            // 1  1  2  3  5  8  13  21  34  55
+            // fib(1) = 1
+            // fib(2) = 1
+            // fib(n) = fib(n-1) fib(n-2), n >= 3
+
+            for (int i = 1; i <= 25; i++)
+            {
+                Console.WriteLine($"Fib({i,2}) = {Fib(i)}  {FibLoop(i)}");
+            }
+
+            static string Numbers(int n)
+            {
+                return n < 10 ? n.ToString() : $"{n % 10} {Numbers(n / 10)}";
+            }
+
+            //Выведите все цифры натурального числа N по одной
+            Console.WriteLine(Numbers(1234654));
+        }
+        static void Params()
+        {
+
+            //static int Sum(int V1) { return V1; }
+            //static int Sum(int V1, int V2) { return V1 + V2; }
+            //static int Sum(int V1, int V2, int V3) { return V1 + V2 + V3; }
+            //static int Sum(int V1, int V2, int V3, int V4) { return V1 + V2 + V3 + V4; }
+            //static int Sum(int V1, int V2, int V3, int V4, int V5) { return V1 + V2 + V3 + V4 + V5; }
+            //static int Sum(int V1, int V2, int V3, int V4, int V5, int V6) { return V1 + V2 + V3 + V4 + V5 + V6; }
+            //static int Sum(int[] Args)
+            //{
+            //    int result = 0;
+
+            //    foreach (var e in Args)
+            //    {
+            //        result += e;
+            //    }
+
+            //    return result;
+            //}
+
+            //// Менеджер проекта просит написать метод, которыый будет 
+            //// Находить сумму наперед неизвестное количества целых чисел
+
+            //var res = Sum(1);
+            //res = Sum(1, 9);
+            //res = Sum(1, 9, 9);
+            //res = Sum(1, 9, 9, 0);
+            //res = Sum(1, 9, 9, 0, 2);
+            //res = Sum(1, 9, 9, 0, 2, 8);
+
+            //int[] col = new int[] { 2, 8, 0, 9, 9, 0 };
+
+            //Console.WriteLine(res);
+
+            //res = Sum(col);
+            //res = Sum(new int[] { 2, 8, 0, 9, 9, 0, 0, 1, 3, 5 });
+            //Console.WriteLine(res);
+
+            //res = Sum(new int[] { 2, 8, 0, 9 });
+            //Console.WriteLine(res);
+
+            //res = Sum(new int[] { 2, 8 });
+            //Console.WriteLine(res);
+
+            //res = Sum(new int[] { 2 });
+            //Console.WriteLine(res);
+
+            static int Sum(params int[] Args)
+            {
+                int result = 0;
+
+                foreach (var e in Args)
+                {
+                    result += e;
+                }
+
+                return result;
+            }
+
+            var res = Sum(1);
+            res = Sum(1, 9);
+            res = Sum(1, 9, 9);
+            res = Sum(1, 9, 9, 0);
+            res = Sum(1, 9, 9, 0, 2);
+            res = Sum(1, 9, 9, 0, 2, 8);
+
+            int[] col = new int[] { 2, 8, 0, 9, 9, 0 };
+
+            Console.WriteLine(res);
+
+            res = Sum(col);
+            res = Sum(new int[] { 2, 8, 0, 9, 9, 0, 0, 1, 3, 5 });
+            Console.WriteLine(res);
+
+            res = Sum(new int[] { 2, 8, 0, 9 });
+            Console.WriteLine(res);
+
+            res = Sum(new int[] { 2, 8 });
+            Console.WriteLine(res);
+
+            res = Sum(new int[] { 2 });
+            Console.WriteLine(res);
+
+            //static int Sum(int Factor, params int[] Args)
+            //{
+            //    int result = 0;
+
+            //    foreach (var e in Args)
+            //    {
+            //        result += e;
+            //    }
+
+            //    return result * Factor;
+            //}
+
+            //static int Sum(int Factor, string Msg, params int[] Args) { return 0; }
+            //static int Sum(double Factor, string Msg, params int[] Args) { return 0; }
+            //static int Sum(double Factor, string Msg, params double[] Args) { return 0; }
+
+            //var res = Sum(1);
+            //res = Sum(1, 9);
+            //res = Sum(1, 9, 9);
+            //res = Sum(1, 9, 9, 0);
+            //res = Sum(1, 9, 9, 0, 2);
+            //res = Sum(1, 9, 9, 0, 2, 8);
+
+            //int[] col = new int[] { 2, 8, 0, 9, 9, 0 };
+
+            //Console.WriteLine(res);
+
+            //res = Sum(13, col);
+            //res = Sum(13, new int[] { 2, 8, 0, 9, 9, 0, 0, 1, 3, 5 });
+            //Console.WriteLine(res);
+
+            //res = Sum(8, 2, 8, 0, 9);
+            //Console.WriteLine(res);
+
+            //res = Sum(5, new int[] { 2, 8 });
+            //Console.WriteLine(res);
+
+            //res = Sum(3, new int[] { 2 });
+            //Console.WriteLine(res);
+        }
+        static void MethodExp()
+        {
+            ///// <summary>
+            ///// Метод откладывающий закрытие консоли на Interval секунд 
+            ///// </summary>
+            ///// <param name="Interval">Количество секунд до закрытия консоли
+            ///// </param>
+            //static void Pause(int Interval)
+            //{
+            //    Thread.Sleep(Interval * 1000);
+            //}
+
+            ///// <summary>
+            ///// Метод, заполняющий массив Col
+            ///// </summary>
+            ///// <param name="Col">Массив целых чисел, который нужно заполнить</param>
+            //static void Fill(int[] Col)
+            //{
+            //    Random r = new Random();
+            //    for (int i = 0; i < Col.Length; i++)
+            //    {
+            //        Col[i] = r.Next(100);
+            //    }
+            //}
+
+            ///// <summary>
+            ///// Метод, выводы массива Col в консоль
+            ///// </summary>
+            ///// <param name="Col">Массив целых чисел, который нужно вывести в консоль</param>
+            //static void Print(int[] Col)
+            //{
+            //    Random r = new Random();
+            //    for (int i = 0; i < Col.Length; i++)
+            //    {
+            //        Console.Write($"{Col[i]} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+            ///// <summary>
+            ///// Метод, поиска максимального значения в массиве
+            ///// </summary>
+            ///// <param name="Col">Массив целых чисел, в котором нужно найти максимальный элемент</param>
+            ///// <returns>Максимальное значение в массиве</returns>
+            //static int Max(int[] Col)
+            //{
+            //    if (Col.Length < 0) return -1;
+
+            //    int localMax = Col[0];
+
+            //    for (int i = 1; i < Col.Length; i++)
+            //    {
+            //        if (Col[i] > localMax) localMax = Col[i];
+            //    }
+
+            //    return localMax;
+            //}
+
+            ///// <summary>
+            ///// Метод, поиска минимального значения в массиве
+            ///// </summary>
+            ///// <param name="Col">Массив целых чисел, в котором нужно найти минимальный элемент</param>
+            ///// <returns>Минимальное значение в массиве</returns>
+            //static int Min(int[] Col)
+            //{
+            //    if (Col.Length <= 0) return -1;
+
+            //    int localMin = Col[0];
+
+            //    for (int i = 1; i < Col.Length; i++)
+            //    {
+            //        if (Col[i] < localMin) localMin = Col[i];
+            //    }
+
+            //    return localMin;
+            //}
+
+            //Random r = new Random();
+            //int N = r.Next(10, 20);
+
+
+            //int[] arr = new int[N];
+
+
+            //Fill(arr);
+            //Print(arr);
+            //Console.WriteLine($"maxArr = {Max(arr)}");
+            //Console.WriteLine($"minArr = {Min(arr)}\n");
+
+            //int M = r.Next(10, 20);
+            //int[] brr = new int[N];
+            //Pause(5);
+
+            //Fill(brr);
+            ////Fill(brr, Count);
+            ////Fill(brr, Count, BottomRange, UpperRange);
+            //Print(brr);
+            //Console.WriteLine($"maxBrr = {Max(brr)}");
+            //Console.WriteLine($"minBrr = {Min(brr)}\n");
+
+            //#region Важно
+
+            //// Сигнатура метода - это набор типов, которые возвращает метод и
+            //// принимает в качестве параметров.
+
+            //#endregion
+
+            /// <summary>
+            /// Метод, заполняющий массив Col
+            /// </summary>
+            /// <param name="Col">Массив целых чисел, который нужно заполнить</param>
+            static void Fill(int[] Col)
+            {
+                Random r = new Random();
+                for (int i = 0; i < Col.Length; i++)
+                {
+                    Col[i] = r.Next(100);
+                }
+            }
+
+            /// <summary>
+            /// Метод, заполняющий первых Count элементов массив Col
+            /// </summary>
+            /// <param name="Col">Массив целых чисел, который нужно заполнить</param>
+            /// <param name="Count">Количество элементов, которые нужно изменить</param>
+            static void Fill2(int[] Col, int Count)
+            {
+                Random r = new Random();
+                for (int i = 0; i < Count; i++)
+                {
+                    Col[i] = r.Next(100);
+                }
+            }
+
+            /// <summary>
+            /// Метод, заполняющий первых Count элементов массив Col числами из диапазона BottomRange UpperRange.
+            /// BottomRange должен быть строго меньше UpperRange
+            /// </summary>
+            /// <param name="Col">Массив целых чисел, который нужно заполнить</param>
+            /// <param name="Count">Количество элементов, которые нужно изменить</param>
+            /// <param name="BottomRange">Нижняя граница диапазона</param>
+            /// <param name="UpperRange">Верхняя граница диапазона</param>
+            static void Fill4(int[] Col, int Count, int BottomRange, int UpperRange)
+            {
+                Random r = new Random();
+                for (int i = 0; i < Count; i++)
+                {
+                    Col[i] = r.Next(BottomRange, UpperRange);
+                }
+            }
+
+
+            /// <summary>
+            /// Метод, заполняющий элементы массив Col числами из диапазона BottomRange UpperRange.
+            /// BottomRange должен быть строго меньше UpperRange
+            /// </summary>
+            /// <param name="Col">Массив целых чисел, который нужно заполнить</param>
+            /// <param name="BottomRange">Нижняя граница диапазона</param>
+            /// <param name="UpperRange">Верхняя граница диапазона</param>
+            static void Fill3(int[] Col, int BottomRange, int UpperRange)
+            {
+                Random r = new Random();
+                for (int i = 0; i < Col.Length; i++)
+                {
+                    Col[i] = r.Next(BottomRange, UpperRange);
+                }
+            }
+
+            /// <summary>
+            /// Метод, выводы массива Col в консоль
+            /// </summary>
+            /// <param name="Col">Массив целых чисел, который нужно вывести в консоль</param>
+            static void Print(int[] Col)
+            {
+
+
+                Random r = new Random();
+                for (int i = 0; i < Col.Length; i++)
+                {
+                    Console.Write($"{Col[i],3}");
+                }
+                Console.WriteLine();
+            }
+
+
+            #region Перегрузка метода
+
+            // Перегрузка метода - это набор методов, имеющих одинаковое имя,
+            // отличающиеся количеством формальных параметров или их типом
+
+            #endregion
+
+            int[] arr = new int[20];
+
+            Fill2(arr, 10);  // static void Fill(int[] Col, int Count)
+            Print(arr);
+            Console.ReadKey();
+
+            Fill(arr); //static void Fill(int[] Col)
+            Print(arr);
+            Console.ReadKey();
+
+
+            Fill3(arr, -10, 0); //  static void Fill(int[] Col, int BottomRange, int UpperRange)
+            Print(arr);
+            Console.ReadKey();
+
+
+            Fill4(arr, 10, 1, 30); //  static void Fill(int[] Col, int Count, int BottomRange, int UpperRange)
+            Print(arr);
+            Console.ReadKey();
+        }
+        static void Method()
+        {
+            // 1. Разделение логики: использование методов
+
+            // Есть два массива содержащие не менее 10 и не более 20 элементов элементов. 
+            // Организовать заполнение и вывод на экран каждого из них
+            // Найти максимальный и минимальный элементы в каждом массиве
+
+            #region Пример 1
+
+            Random r = new Random();
+
+            // Первый массив
+            int N = r.Next(10, 20);
+
+            int[] arr = new int[N];
+            int[] brr = new int[N];
+
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = r.Next(20);
+                brr[i] = r.Next(20);
+            }
+
+            // Поиск
+            int maxArr = arr[0];
+            int minArr = arr[0];
+            int maxBrr = brr[0];
+            int minBrr = brr[0];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > maxArr) maxArr = arr[i];
+                if (arr[i] < minArr) minArr = arr[i];
+
+                if (brr[i] > maxBrr) maxBrr = brr[i];
+                if (brr[i] < minBrr) minBrr = brr[i];
+            }
+
+            Console.WriteLine("arr");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write($"{arr[i],3}");
+            }
+
+            Console.WriteLine($"\nmaxArr = {maxArr}");
+            Console.WriteLine($"minArr = {minArr}");
+
+            Console.WriteLine("\nbrr");
+
+            for (int i = 0; i < brr.Length; i++)
+            {
+                Console.Write($"{brr[i],3}");
+            }
+            Console.WriteLine();
+            Console.WriteLine($"maxBrr = {maxBrr}");
+            Console.WriteLine($"minBrr = {minBrr}");
+
+            #endregion
+
+            // Есть два массива содержащие не менее 10 и не более 20 элементов элементов. 
+            // Организовать заполнение и вывод на экран каждого из них
+            // Найти максимальный и минимальный элементы в каждом массиве
+
+            #region Пример 1
+
+            _ = new Random();
+
+            // Первый массив
+            _ = r.Next(10, 30);
+            _ = new int[N];
+            Console.WriteLine("arr");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = r.Next(20);
+                Console.Write($"{arr[i]} ");
+            }
+            Console.WriteLine();
+
+            // Максимум
+            int max = arr[0];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max) max = arr[i];
+            }
+            Console.WriteLine($"max = {max}");
+
+
+            // Минимум
+            int min = arr[0];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] < min) min = arr[i];
+            }
+            Console.WriteLine($"min = {min}");
+
+
+            // Второй массив
+            Console.WriteLine("\nbrr");
+
+            int M = r.Next(10, 30);
+            _ = new int[M];
+            for (int i = 0; i < brr.Length; i++)
+            {
+                brr[i] = r.Next(20);
+                Console.Write($"{brr[i]} ");
+            }
+            Console.WriteLine();
+
+            // Максимум
+            max = brr[0];
+
+            for (int i = 0; i < brr.Length; i++)
+            {
+                if (brr[i] > max) max = brr[i];
+            }
+            Console.WriteLine($"max = {max}");
+
+            // Минимум
+            min = brr[0];
+
+            for (int i = 0; i < brr.Length; i++)
+            {
+                if (brr[i] < min) min = brr[i];
+            }
+            Console.WriteLine($"min = {min}");
+
+
+            #region Примечание
+
+            Console.WriteLine($"arrMax = {arr.Max()}");
+            Console.WriteLine($"arrMix = {arr.Min()}");
+            Console.WriteLine($"brrMax = {brr.Max()}");
+            Console.WriteLine($"brrMix = {brr.Min()}");
+
+            #endregion
+
+            #endregion
+
+            /// <summary>
+            /// Метод, позволяющий сделать задержку закрытия консоли
+            /// </summary>
+            static void Delay()
+            {
+                Console.ReadKey();
+            }
+
+            /// <summary>
+            /// Метод, позволяющий вывести сообщение "Hello World" в консоль
+            /// </summary>
+            static void HelloWorld()
+            {
+                Console.WriteLine("Hello World");
+            }
+
+            /// <summary>
+            /// Метод, позволяющий вывести сообщение в консоль
+            /// </summary>
+            /// <param name="Text">Текст сообщения</param>
+            static void Print(string Text)
+            {
+                Console.WriteLine(Text);
+            }
+
+            #region Теория
+
+            // Метод может быть создан внутри класса, 
+            // Общая структура 
+            //
+            // 
+            // УровниДоступа МодификаторыДоступа ВозвращаемыйТип ИмяМетода(ПараметрыМетода)
+            // {
+            //    Тело метода
+            //    return
+            // }
+            // 
+            // УровниДоступа: public, protected, internal, private. 
+            //   С помощью четырех модификаторов доступа можно объявить шесть уровней доступности.
+            //
+            // МодификаторыДоступа: static, abstract, async, extern, override, virtual
+            //
+            // ВозвращаемыйТип: int, double, string и т.д.
+            //                  void если ничего возвращать не нужно
+            // 
+            // ИмяМетода: Строчные и прописные буквы латинского алфавита, цифры, _
+            //            цифра не может быть на первом месте
+            // 
+            // ПараметрыМетода: аргументы, над которыми, как правило производятся какие-то действия
+            //                  Формальные парамметры - параметры указанные при описании метода
+            //                  Фактические параметры - параметры указанные при вызове метода
+            // 
+            // Соглашение об именах для методов - описательное имя для каждого слова начинается с прописной буквы.
+
+            // Вызов метода:
+            // Написать имя метода и указать фактические параметры, если они есть
+
+            // Пример 1. Вызов метода void HelloWorld()
+            HelloWorld();
+
+            // Пример 2. Вызов метода void Print(string Text)
+            Print("Shagitov");
+
+            // Пример 3. Вызов метода void Delay()
+            Delay();
+
+            #endregion
+
+            // 2. Параметры методов, модификаторы параметров, возвращение значений
+            //
+            //
+            // УровниДоступа МодификаторыДоступа ВозвращаемыйТип ИмяМетода(ПараметрыМетода)
+            // {
+            //    Тело метода
+            // }
+            //
+            // УровниДоступа: [ private, public, protected, internal ]. 
+            //   С помощью четырех модификаторов доступа можно объявить шесть уровней доступности.
+            //
+            // МодификаторыДоступа: static [ , abstract, async, extern, override, virtual ]
+            //
+            // ВозвращаемыйТип: int, double, string и т.д.
+            //                  void если ничего возвращать не нужно
+            // 
+            // ИмяМетода: Строчные и прописные буквы латинского алфавита, цифры, _
+            //            цифра не может быть на первом месте
+            // 
+            // ПараметрыМетода: аргументы, над которыми, как правило производятся какие-то действия
+            //                  Формальные парамметры - параметры указанные при описании метода
+            //                  Фактические параметры - параметры указанные при вызове метода
+
+
+            // static ВозвращаемыйТип ИмяМетода(ПараметрыМетода)
+            // {
+            //    Тело метода
+            // }
+
+            ////
+            //// 01. Первая группа
+            ////
+            //// ┌───────────────────────────────────────────┐
+            //// │                                           │
+            //// │                Что-то делает              │
+            //// │                                           │
+            //// └───────────────────────────────────────────┘
+            ////
+            ////
+            //// 02. Вторая группа
+            ////
+            ////    │    Что-то     │
+            ////    │   принимает   │
+            ////    │  аргументами  │
+            //// ┌──┘               └────────────────────────┐
+            //// │                                           │
+            //// │                Что-то делает              │
+            //// │                                           │
+            //// └───────────────────────────────────────────┘
+            ////
+            ////
+            //// 03. Третья группа
+            ////
+            //// ┌───────────────────────────────────────────┐
+            //// │                                           └──────
+            //// │                Что-то делает                     >>> выдаёт результат своей работы
+            //// │                                           ┌──────
+            //// └───────────────────────────────────────────┘
+            ////
+            //// 04. Четвертая группа
+            ////
+            ////    │    Что-то     │
+            ////    │   принимает   │
+            ////    │  аргументами  │
+            //// ┌──┘               └────────────────────────┐
+            //// │                                           └──────
+            //// │                Что-то делает                     >>> выдаёт результат своей работы
+            //// │                                           ┌──────
+            //// └───────────────────────────────────────────┘
+
+            #region Есть и другие
+
+            ////                              │               │
+            ////                              │       ^       │
+            ////                              │      ^^^      │
+            ////                              │     ^^^^^     │
+            ////                              │               │
+            ////                              │    Что-то     │
+            ////                              │  возвращает   │
+            ////                              │  аргументами  │
+            //// ┌────────────────────────────┘               └────┐
+            //// │                                                 │
+            //// │                Что-то делает                    │
+            //// │                                                 │
+            //// └─────────────────────────────────────────────────┘
+
+
+            ////    │               │         │               │
+            ////    │    Что-то     │         │       ^       │
+            ////    │   принимает   │         │      ^^^      │
+            ////    │  аргументами  │         │     ^^^^^     │
+            ////    │               │         │               │
+            ////    │     vvvvv     │         │    Что-то     │
+            ////    │      vvv      │         │  возвращает   │
+            ////    │       v       │         │  аргументами  │
+            //// ┌──┘               └─────────┘               └────┐
+            //// │                                                 │
+            //// │                Что-то делает                    │
+            //// │                                                 │
+            //// └─────────────────────────────────────────────────┘
+
+
+
+            ////                              │               │
+            ////                              │      ^        │
+            ////                              │     ^^^       │
+            ////                              │    ^^^^^      │
+            ////                              │               │
+            ////                              │    Что-то     │
+            ////                              │  возвращает   │
+            ////                              │  аргументами  │
+            //// ┌────────────────────────────┘               └────┐
+            //// │                                                 └──────
+            //// │                Что-то делает                           >>> выдаёт результат своей работы
+            //// │                                                 ┌──────
+            //// └─────────────────────────────────────────────────┘
+
+
+
+            ////    │               │         │               │
+            ////    │    Что-то     │         │      ^        │
+            ////    │   принимает   │         │     ^^^       │
+            ////    │  аргументами  │         │    ^^^^^      │
+            ////    │               │         │               │
+            ////    │     vvvvv     │         │    Что-то     │
+            ////    │      vvv      │         │  возвращает   │
+            ////    │       v       │         │  аргументами  │
+            //// ┌──┘               └─────────┘               └────┐
+            //// │                                                 └──────
+            //// │                Что-то делает                           >>> выдаёт результат своей работы
+            //// │                                                 ┌──────
+            //// └─────────────────────────────────────────────────┘
+
+
+
+            #region ¯\_(ツ)_/¯
+
+            ////    │     vvvvv     │        
+            ////    │      vvv      │        
+            ////    │       v       │          
+            //// ┌──┘               └──────────────────────────────────────────┐
+            //// │      Что-то делает                                          │
+            //// │                                                             │   
+            //// │       │               │                                     │           
+            //// │       │      vvv      │                                     │             
+            //// │       │       v       │                                     │            
+            //// │    ┌──┘               └────────────────────────┐            │                  
+            //// │    │       Что-то делает                       │            │             
+            //// │    │                                           │            │
+            //// │    │       │               │                   │            │             
+            //// │    │       │      vvv      │                   │            │           
+            //// │    │       │       v       │                   │            │             
+            //// │    │    ┌──┘               └─────┐             │            │                
+            //// │    │    │    Что-то делает       │             │            │
+            //// │    │    │                        │             │            │
+            //// │    │    │     │ V │              │             │            │
+            //// │    │    │   ┌─┘   └──┐           │             │            │
+            //// │    │    │   │        └──────     │             │            │
+            //// │    │    │   |  ???         >>>   │             │            │
+            //// │    │    │   |        ┌──────     └──────       │            │
+            //// │    │    │   └────────┘                >>>      │            │
+            //// │    │    │                        ┌──────       │            │     
+            //// │    │    └────────────────────────┘             │            │                     
+            //// │    │                                           └──────      │
+            //// │    │                                                >>>     │
+            //// │    │                                           ┌──────      └──────
+            //// │    └───────────────────────────────────────────┘                 >>> выдаёт результат своей работы                                
+            //// │                                                             ┌──────
+            //// └─────────────────────────────────────────────────────────────┘
+
+            #endregion
+
+
+            #endregion
+
+            //static void Pause()
+            //{
+            //    Console.ReadKey();
+            //}
+            ///// <summary>
+            ///// Вывод приветствия в консоль
+            ///// </summary>
+            //static void Hi()
+            //{
+            //    Console.WriteLine("Привет!");
+            //}
+
+            ///// <summary>
+            ///// Беспорядок в консоли
+            ///// </summary>
+            //static void ApplauseAndOvations()
+            //{
+            //    Random r = new Random();
+
+            //    for (int i = 0; i < r.Next(1, 5); i++)
+            //    {
+            //        int posX = r.Next(Console.WindowWidth - 5);   // Получение ширины консоли
+            //        int posY = r.Next(Console.WindowHeight - 1);  // Получение высоты консоли
+            //        Console.SetCursorPosition(posX, posY + 1);  // Установка курсора в случайную позицию на экране
+            //        Console.Write(r.Next(2) == 0 ? "Ура!" : "Ууу!");  // Вывод одного из радостных сообщений
+            //    }
+            //}
+            //#region 01. Первая группа
+
+            //////
+            ////// ┌───────────────────────────────────────────┐
+            ////// │                                           │
+            ////// │                Что-то делает              │
+            ////// │                                           │
+            ////// └───────────────────────────────────────────┘
+            //////
+            //////
+            ////   static void MethodName()
+            ////   {
+            ////
+            ////   }
+
+            //#endregion
+
+            //Hi(); // Вызов метода Hi
+            //ApplauseAndOvations(); // Вызов метода ApplauseAndOvations
+            //Pause(); // Вызов метода Pause
+
+            /// <summary>
+            /// Метод откладывающий закрытие консоли на Interval секунд 
+            /// </summary>
+            /// <param name="Interval">Количество секунд до закрытия консоли
+            /// </param>
+            static void Pause(int Interval)
+            {
+                Thread.Sleep(Interval * 1000);
+            }
+
+            /// <summary>
+            /// Вывод персонифицированного приветствия в консоль
+            /// </summary>
+            /// <param name="Name">Имя, кото нужно поприветствовать</param>
+            static void Hi(string Name)
+            {
+                Random r = new Random();
+
+                string text = string.Empty;
+
+                switch (r.Next(5))
+                {
+                    case 0: text = $"Привет, {Name}!"; break;
+                    case 1: text = $"Добрый день, {Name}!"; break;
+                    case 2: text = $"Приветствую тебя, {Name}!"; break;
+                    case 3: text = $"Рад тебя видеть, {Name}!"; break;
+                    default: text = $"Я так ждал тебя, {Name}!"; break;
+                }
+
+                Console.WriteLine(text);
+            }
+
+            /// <summary>
+            /// Упорядоченный беспорядок на экране нужное количество раз
+            /// </summary>
+            /// <param name="Text1">Первый текст для вывода на экран</param>
+            /// <param name="Text2">Второй текст для вывода на экран</param>
+            /// <param name="Count">Сколько раз нужно вывести один из случайным образом выбранных текстов</param>
+            static void ApplauseAndOvations(string Text1, string Text2, int Count)
+            {
+                Random r = new Random();
+                int max = new int[] { Text1.Length, Text1.Length }.Max();
+
+                for (int i = 0; i < Count; i++)
+                {
+                    int posX = r.Next(Console.WindowWidth - max);   // Получение ширины консоли
+                    int posY = r.Next(Console.WindowHeight);        // Получение высоты консоли
+                    Console.SetCursorPosition(posX, posY + 1);      // Установка курсора в случайную позицию на экране
+                    Console.Write(r.Next(2) == 0 ? Text1 : Text2);  // Вывод одного из радостных сообщений
+                }
+            }
+
+            #region 02. Вторая группа
+            ////
+            ////    │    Что-то     │
+            ////    │   принимает   │
+            ////    │  аргументами  │
+            //// ┌──┘               └────────────────────────┐
+            //// │                                           │
+            //// │                Что-то делает              │
+            //// │                                           │
+            //// └───────────────────────────────────────────┘
+            // 
+            //   static void MethodName(ФормаьныеПараметры)
+            //   {
+            //
+            //   }
+
+            #endregion
+
+            //Hi("Илон"); // Вызов метода Hi
+            ApplauseAndOvations("Огого!", "Ёёёёууу!", 70); // Вызов метода ApplauseAndOvations
+            Pause(1); // Вызов метода Pause
+            Console.Clear();
+            Console.ReadKey();
+
+            /// <summary>
+            /// Метод генерации строки из набора случайных символов
+            /// </summary>
+            /// <param name="Count">Количество символов</param>
+            /// <returns>Случайная строка</returns>
+            static string GetRandomString(int Count)
+            {
+                return Guid.NewGuid().ToString().Substring(0, Count);
+            }
+
+            /// <summary>
+            /// Метод, возвращающий полный путь к текущему приложению
+            /// </summary>
+            /// <returns>Полный путь к текущему приложению</returns>
+
+            /// <summary>
+            /// Метод, возвращающий максимальное из двух чисел
+            /// </summary>
+            /// <param name="Value1">Первое число</param>
+            /// <param name="Value2">Второе число</param>
+            /// <returns>Максимальнео число</returns>
+            static int Max(int Value1, int Value2)
+            {
+                return Value1 > Value2 ? Value1 : Value2;
+            }
+
+            /// <summary>
+            /// Метод, принимающий массив целых чисел и возвращающий массив с противолоными числами
+            /// </summary>
+            /// <param name="Args">Входной массив</param>
+            /// <returns>Преобразованный массив</returns>
+            static int[] Inverse(int[] Args)
+            {
+                int[] t = new int[Args.Length];
+
+                for (int i = 0; i < Args.Length; i++)
+                {
+                    t[i] = -Args[i];
+                }
+                return t;
+            }
+
+            #region 04. Четвертая группа
+            //// 
+            ////
+            ////    │    Что-то     │
+            ////    │   принимает   │
+            ////    │  аргументами  │
+            //// ┌──┘               └────────────────────────┐
+            //// │                                           └──────
+            //// │                Что-то делает                     >>> выдаёт результат своей работы
+            //// │                                           ┌──────
+            //// └───────────────────────────────────────────┘
+            //
+            // 
+            //   static ТипДанных MethodName(ФормаьныеПараметры)
+            //   {
+            //      
+            //   }
+
+            #endregion
+
+            Console.WriteLine(GetRandomString(5));    // Вызов метода GetRandomString
+            Console.WriteLine(GetRandomString(10));   // Вызов метода GetRandomString
+            Console.WriteLine(GetRandomString(15));   // Вызов метода GetRandomString
+
+            int[] col = { 1, 3, 5, 7, 9 };
+
+            foreach (var e in col) Console.Write($"{e} ");
+            Console.WriteLine();
+            int[] inverseCol = Inverse(col);          // Вызов метода Inverse
+            foreach (var e in inverseCol) Console.Write($"{e} ");
+        }
         static void ForEach()
         {
             // 7. Цикл foreach
