@@ -11,10 +11,646 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            Recursion();
+            Files();
             Console.ReadLine();
         }
 
+        static void Files()
+        {
+            #region File
+
+            //// using System.IO;
+            //// Предоставляет статические методы для создания, копирования, удаления, перемещения и открытия 
+
+            //string text = File.ReadAllText(@"e:\data.txt"); // Открывает текстовый файл, считывает все строки файла и затем закрывает файл.
+            //Console.WriteLine(text);
+
+            //string[] lines = File.ReadAllLines(@"e:\data.txt"); // Открывает текстовый файл, считывает все строки файла и затем закрывает файл.
+
+            //foreach (var line in lines) Console.WriteLine($">>{line}<<");
+
+            //lines = new string[] { "один", "два", "три" };
+            //File.WriteAllLines(@"e:\data2.txt", lines); // Создает новый файл, записывает в него указанный массив строк и затем закрывает файл
+
+            //text = "Пример текста";
+            //File.WriteAllText(@"e:\data3.txt", text);   // Создает новый файл, записывает в него указанную строку и затем закрывает файл.
+            //                                            // Если целевой файл уже существует, он будет переопределен.
+
+
+            ////File.AppendAllLines
+            ////File.AppendAllText
+
+            //File.Copy(@"e:\data3.txt", @"e:\newdata3.txt"); // Копирует существующий файл в новый файл. Перезапись файла с тем же именем не
+            //                                                // разрешена.
+
+            //File.Exists(@"e:\newdata3.txt"); // Определяет, существует ли заданный файл.
+
+            //File.Delete(@"e:\newdata3.txt"); // Удаляет указанный файл.
+
+            //File.Exists(@"e:\newdata3.txt"); // Определяет, существует ли заданный файл.
+
+            //File.Move(@"e:\data3.txt", @"d:\newdata3.txt"); // Перемещает заданный файл в новое местоположение и разрешает переименование файла.
+
+
+            #endregion
+            #region FileInfo
+
+            ////using System.IO;
+            //// Предоставляет свойства и методы экземпляра для создания, копирования, удаления,
+            //// перемещения и открытия файлов, а также позволяет создавать объекты System.IO.FileStream.
+            //// Этот класс не наследуется. Просмотреть исходный код .NET Framework для этого
+            //// типа Reference Source.
+
+            //FileInfo fileInfo = new FileInfo(@"E:\data.txt");
+
+            //Console.WriteLine(fileInfo.Attributes);     // Archive
+            //Console.WriteLine(fileInfo.Exists);         // True
+            //Console.WriteLine(fileInfo.Extension);      // .txt
+            //Console.WriteLine(fileInfo.IsReadOnly);     // False
+            //Console.WriteLine(fileInfo.LastAccessTime); // 22.08.2025 18:52:14
+            //Console.WriteLine(fileInfo.LastWriteTime);  // 22.08.2025 18:52:14
+
+            //Console.WriteLine(fileInfo.FullName);       // E:\data.txt
+            //Console.WriteLine(fileInfo.Name);           // data.txt
+            //Console.WriteLine(fileInfo.DirectoryName);  // E:\
+
+            #endregion
+            #region Directory, DirectoryInfo
+
+            // using System.IO;
+            // Предоставляет статические методы для создания, перемещения и перечисления в каталогах и вложенных каталогах. 
+
+            //Directory.CreateDirectory
+            //Directory.Delete
+            //Directory.Exists
+            //Directory.Move
+
+
+            DirectoryInfo directoryInfo = new DirectoryInfo(@"c:\");
+
+            //directoryInfo.Attributes
+            //directoryInfo.Create
+            //directoryInfo.Delete
+            //directoryInfo.Exists
+            //directoryInfo.FullName
+            //directoryInfo.Name
+            //directoryInfo.Root
+            //directoryInfo.GetDirectories
+            //directoryInfo.GetFiles
+
+            GetDir(@"C:\SAVE\SYS");
+            //GetDir(@"C:\Program Files\Windows Defender");
+
+
+
+            #endregion
+            #region Streams
+            //var dirs = new DirectoryInfo(@"c:\").GetDirectories();  // dirs хранит все каталоги диска C:\
+
+            //StreamWriter streamWriter = new StreamWriter("cDirs.txt");  // Создание "потока" для работы с файлом cDirs.txt
+
+            //foreach (DirectoryInfo dir in dirs)
+            //{
+            //    streamWriter.WriteLine(dir.FullName);   // Записать текущее имя каталога в файл
+            //    Console.WriteLine($">> {dir.FullName}");
+            //}
+
+            //Console.ReadKey();
+            //streamWriter.Flush();
+            //streamWriter.Close();                   // Закрываем "поток"
+
+            //// Замечание 1. После работы с поток обязательно нужно закрыть при помощи void Close();
+            //// или хотя бы записать в файл текущие данные, находящиеся в буфере при помощи void Flush();
+            //// streamWriter.Flush();
+
+            //// Замечание 2. StreamWriter разработан для вывода символов в определенной кодировке, 
+            //// тогда как классы, производные от Stream предназначены для ввода и вывода байтов.
+
+            //// Замечание 3. Для более удобной работы с потоками (в общем случае и не только) в C# есть 
+            //// оператор using предоставляющий удобный синтаксис, обеспечивающий правильное использование объектов IDisposable
+            ////
+            ////using (StreamWriter sw = new StreamWriter("cDirs.txt"))  // Создание "потока" для работы с файлом cDirs.txt
+            ////{
+            ////    foreach (DirectoryInfo dir in dirs)
+            ////    {
+            ////        sw.WriteLine(dir.Name);   // Записать текущее имя каталога в файл
+            ////    }
+            ////}
+
+
+            //// Поток для чтения
+
+            //using (StreamReader sr = new StreamReader("cDirs.txt"))  // Создание "потока" для работы с файлом cDirs.txt
+            //{
+            //    while (!sr.EndOfStream)
+            //    {
+            //        Console.WriteLine(sr.ReadLine());   // Записать текущее имя каталога в файл
+            //    }
+            //}
+
+
+            #endregion
+            #region Catalog
+            //// Требуется создать файл - аналог записной книжки.
+            //// В файле хранится 
+            //// Имя автора записи
+            //// Дата
+            //// Описание заметки
+
+            ////using (StreamWriter sw = new StreamWriter("db.csv", true, Encoding.Unicode))
+            ////{
+            ////    char key = 'д';
+
+            ////    do
+            ////    {
+            ////        string note = string.Empty;
+            ////        Console.Write("\nВведите имя автора записи: ");
+            ////        note += $"{Console.ReadLine()}\t";
+
+            ////        string now = DateTime.Now.ToShortTimeString();
+            ////        Console.WriteLine($"Время заметки {now}");
+            ////        note += $"{now}\t";
+
+            ////        Console.Write("Введите описание заметки: ");
+            ////        note += $"{Console.ReadLine()}\t";
+            ////        sw.WriteLine(note);
+            ////        Console.Write("Продожить н/д"); key = Console.ReadKey(true).KeyChar;
+            ////    } while (char.ToLower(key) == 'д');
+            ////}
+
+            //#region Чтение
+
+
+
+            //using (StreamReader sr = new StreamReader("data.csv", Encoding.Unicode))
+            //{
+            //    string line;
+            //    Console.WriteLine($"{"Автор",15}{" Время",8} {"Описание"}");
+
+            //    while ((line = sr.ReadLine()) != null)
+            //    {
+            //        string[] data = line.Split('\t');
+            //        Console.WriteLine($"{data[0],15}{data[1],8} {data[2]}");
+            //    }
+            //}
+
+            //#endregion
+
+            #endregion
+            #region Add
+            ////using (StreamReader sr = new StreamReader("db.txt", Encoding.Unicode))
+            ////{
+            ////    while (!sr.EndOfStream)
+            ////    {
+            ////        var c = sr.Read();
+            ////        //Console.WriteLine($"{c} - {(char)c}");
+            ////    }
+            ////}
+
+            ////Console.WriteLine();
+
+            ////using (StreamReader sr = new StreamReader("db.txt", Encoding.Unicode))
+            ////{
+            ////    Console.WriteLine(sr.ReadToEnd());
+            ////}
+
+
+
+            //#region BinaryWriter, BinaryReader
+
+            ////Console.WriteLine($"Нажмите Enter для продолжения\n");
+
+            ////Console.ReadKey(); Console.Clear();
+
+            ////string[] names = { "Юлия", "Ирина", "Светлана", "Екатерина", "Алиса" };
+
+            ////string path = @"BinaryNames.dat";
+
+
+            ////using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate)))
+            ////{
+            ////    // записываем в файл значение каждого поля структуры
+            ////    foreach (var name in names)
+            ////    {
+            ////        writer.Write(name);
+            ////    }
+            ////}
+            ////Console.WriteLine($"Файл {path} успешно создать. Нажмите Enter для продолжения\n");
+            ////Console.ReadLine();
+
+            ////using (BinaryReader reader = new BinaryReader(File.Open(path, FileMode.Open)))
+            ////{
+            ////    // пока не достигнут конец файла
+            ////    // считываем каждое значение из файла
+            ////    while (reader.PeekChar() > -1)
+            ////    {
+            ////        string name = reader.ReadString();
+            ////        Console.WriteLine(name);
+            ////    }
+            ////}
+
+            //#endregion
+
+            //#region FileStream
+
+            ////Console.WriteLine($"Нажмите Enter для продолжения\n");
+
+            ////Console.ReadKey(); Console.Clear();
+            ////Console.Write("Введите строку: ");
+            ////string text = Console.ReadLine();
+
+            ////// запись в файл
+            ////using (FileStream fstream = new FileStream(@"note.txt", FileMode.Create))
+            ////{
+            ////    byte[] array = System.Text.Encoding.Default.GetBytes(text); // преобразуем строку в байты
+            ////    fstream.Write(array, 0, array.Length);                      // запись массива байтов в файл
+            ////}
+
+            ////// чтение из файла
+            ////using (FileStream fstream = File.OpenRead(@"note.txt"))
+            ////{
+
+            ////    byte[] array = new byte[fstream.Length];    // преобразуем строку в байты
+
+            ////    fstream.Read(array, 0, array.Length);       // считываем данные
+
+            ////    text = System.Text.Encoding.Default.GetString(array);    // декодируем байты в строку
+            ////    Console.WriteLine($"Текст : {text}");
+            ////}
+
+            ////Console.ReadLine();
+
+            //#endregion
+
+            //#region GZipStream
+
+            //string source = "voina-i-mir.txt";
+            //string compressed = "voina-i-mir.zip";
+            //using (FileStream ss = new FileStream(source, FileMode.OpenOrCreate))
+            //{
+            //    using (FileStream ts = File.Create(compressed))   // поток для записи сжатого файла
+            //    {
+            //        // поток архивации
+            //        using (GZipStream cs = new GZipStream(ts, CompressionMode.Compress))
+            //        {
+            //            ss.CopyTo(cs); // копируем байты из одного потока в другой
+            //            Console.WriteLine("Сжатие файла {0} завершено. Было: {1}  стало: {2}.",
+            //                              source,
+            //                              ss.Length,
+            //                              ts.Length);
+            //        }
+            //    }
+            //}
+
+            //Console.WriteLine($"Нажмите Enter для продолжения\n");
+
+            //Console.ReadKey();
+
+
+            //using (FileStream ss = new FileStream(compressed, FileMode.OpenOrCreate))  // поток для чтения из сжатого файла
+            //{
+
+            //    using (FileStream ts = File.Create($"{source}_.txt")) // поток для записи восстановленного файла
+            //    {
+            //        // поток разархивации
+            //        using (GZipStream ds = new GZipStream(ss, CompressionMode.Decompress))
+            //        {
+            //            ds.CopyTo(ts);
+            //            Console.WriteLine($"{source} восстановлен");
+
+            //            Console.WriteLine("Востановление файла {0} завершено. Было: {1}  стало: {2}.",
+            //                              source,
+            //                              ss.Length,
+            //                              ts.Length);
+            //        }
+            //    }
+            //}
+            //#endregion
+            #endregion
+            #region StringBuilder
+            #region Проблема string
+
+            //string s1 = "Првет";
+            //string s2 = s1.Insert(2, "и");
+            //Console.WriteLine($"s1 = {s1}, s2 = {s2}");
+            //Console.WriteLine("Объём выделенной памяти");
+            //Console.WriteLine($"s1 = {s1.Length * 2} байт, s2 = {s2.Length * 2} байт");
+            //Console.WriteLine(s1[1]);
+            //s1[1] = '!';
+
+            #endregion
+
+            #region StringBuilder
+
+            // using System.Text;
+            // StringBuilder // Предоставляет изменяемую строку символов.
+
+            StringBuilder sb1 = new StringBuilder("Првет");
+            Console.WriteLine($"\nДлина sb1 = {sb1.Length}");
+            Console.WriteLine($"Вместимость sb1 = {sb1.Capacity}");
+
+            StringBuilder sb2 = new StringBuilder(100);
+            Console.WriteLine($"\nДлина sb2 = {sb2.Length}");
+            Console.WriteLine($"Вместимость sb2 = {sb2.Capacity}");
+
+            //public StringBuilder();
+            //  public StringBuilder(int capacity);
+            //  public StringBuilder(string value);
+            //public StringBuilder(string value, int capacity);
+            //public StringBuilder(int capacity, int maxCapacity);
+            //public StringBuilder(string value, int startIndex, int length, int capacity);
+
+            sb2.Append("Один "); // Добавляет копию указанной строки к данному экземпляру.
+            Console.WriteLine($"\nsb2 = {sb2}, sb2.Length = {sb2.Length}, sb2.Capacity = {sb2.Capacity}");
+
+            sb2.AppendFormat("{0} {1} ", "Два", "Три"); // Добавляет к данному экземпляру строку, возвращаемую в результате обработки строки
+                                                        // составного формата
+
+            Console.WriteLine($"\nsb2 = {sb2}, sb2.Length = {sb2.Length}, sb2.Capacity = {sb2.Capacity}");
+
+            sb2.AppendLine(); // Добавляет знак завершения строки по умолчанию в конец
+            Console.WriteLine($"\nsb2 = {sb2}, sb2.Length = {sb2.Length}, sb2.Capacity = {sb2.Capacity}");
+
+            sb2.AppendLine("Четыре"); // Добавляет копию указанной строки и знак завершения строки по умолчанию в конец
+                                      // текущего объекта 
+            Console.WriteLine($"\nsb2 = {sb2}, sb2.Length = {sb2.Length}, sb2.Capacity = {sb2.Capacity}");
+
+
+            sb2.Remove(14, 9); // Удаляет указанный диапазон символов из данного экземпляра.
+            Console.WriteLine(sb2);
+
+            sb2.Replace('Д', 'д'); // Замещает все вхождения указанного символа в данном экземпляре на другой указанный знак.
+            sb2.Replace('Т', 'т'); // Замещает все вхождения указанного символа в данном экземпляре на другой указанный знак.
+            sb2.Replace('О', 'о'); // Замещает все вхождения указанного символа в данном экземпляре на другой указанный знак.
+            //public StringBuilder Replace(string oldValue, string newValue);
+            //public StringBuilder Replace(string oldValue, string newValue, int startIndex, int count);
+            //public StringBuilder Replace(char oldChar, char newChar);
+            //public StringBuilder Replace(char oldChar, char newChar, int startIndex, int count);
+
+            sb2[4] = '!';
+
+            Console.WriteLine(sb2);
+
+
+            #endregion
+
+            #region Рекомендации по использованию 
+
+            //String StringBuilder
+            // Небольшом количество операций и изменений элементов строки
+            // Когда требуется выполнять поиск, например IndexOf, т е StringBuilder не имеет подобных методов.
+
+            // 
+            // Если неизвестно количество операций, которые будут произвоится над строками в процессе работы программы
+
+
+            #endregion
+
+            #endregion
+            #region StringReaderWriter
+            // using System.IO;
+            //  Реализует объект System.IO.TextWriter для записи сведений в строку. 
+            // Сведения хранятся в базовом System.Text.StringBuilder.
+
+            StringBuilder sb = new StringBuilder(100);
+            string s = "Ролик 5. Расширенная работа со строками: StringReader и StringWriter; изменяемые строки: StringBuilder";
+            sb.Append(s);
+            Console.WriteLine(sb);
+
+            using (StringWriter sw = new StringWriter(sb))
+            {
+                sw.Write("!!!");
+            };
+            Console.WriteLine(sb);
+
+            // Реализует System.IO.TextReader считывает данные из строки.
+            using (StringReader sr = new StringReader(s))
+            {
+                char[] buf = new char[5];
+                sr.ReadBlock(buf, 0, buf.Length);
+            };
+            #endregion
+        }
+        static void GetDir(string path, string trim = "")
+        {
+            DirectoryInfo directoryInfo = new DirectoryInfo(path);  // Получаем информацию о текущем каталоге
+
+            foreach (var item in directoryInfo.GetDirectories())    // Перебираем все подкаталоги текущего каталога
+            {
+                Console.WriteLine($"{trim}{item.Name}");            // Выводим информацию о нём
+                GetDir(item.FullName, trim + "    ");               // Запускаем "просмотре" вложенного каталога
+            }
+
+            foreach (var item in directoryInfo.GetFiles())          // Перебираем все файлы текущего каталога
+            {
+                Console.WriteLine($"{trim}{item.Name}");            // Выводим информацию о них
+            }
+        }
+        static void Chars()
+        {
+            char c = 'c';
+            // Char.IsDigit         // Показывает, относится ли указанный символ Юникода к категории десятичных цифр.
+            // Char.IsLetter        // Показывает, относится ли указанный символ Юникода к категории букв Юникода.
+            // Char.IsLower         // Показывает, относится ли указанный символ Юникода к категории букв нижнего регистра.
+            // Char.IsUpper         // Показывает, относится ли указанный символ Юникода к категории букв верхнего регистра.
+
+            char[] symbols = "symbols".ToCharArray();
+            foreach (var item in symbols) Console.Write($"{item} ");
+
+            string s = new String(symbols);
+        }
+        static void Strings()
+        {
+            string str = "Visual alusiV";
+            Console.WriteLine($"str = {str} ");
+            // Возвращает индекс с отсчетом от нуля первого вхождения указанного символа Юникода в данной строке.
+            Console.WriteLine($"str.IndexOf('i') = {str.IndexOf('i')}");
+            Console.WriteLine($"str.IndexOf('%') = {str.IndexOf('%')}");
+
+            // Возвращает позицию индекса с отсчетом от нуля последнего вхождения указанного
+            // символа Юникода в пределах данного экземпляра.
+            Console.WriteLine($"str.LastIndexOf('i') = {str.LastIndexOf('i')}");
+
+            // Отсчитываемое от нуля значение индекса параметра value, если этот знак найден;
+            // в противном случае — значение -1.
+            Console.WriteLine($"str.LastIndexOf('z') = {str.LastIndexOf('z')}");
+
+            // Возвращает новую строку, в которой указанная строка вставляется в указанной позиции
+            // индекса в данном экземпляре.
+            string s = str.Insert(str.IndexOf(' ') + 1, "C# ");
+            Console.WriteLine($"s = {s}");
+
+            // Возвращает новую строку, в которой были удалены все символы, начиная с указанной позиции
+            Console.WriteLine($"str.Remove(6) = {str.Remove(6)}");
+            // Возвращает новую строку, в которой были удалены все символы, начиная с указанной позиции count элементов
+            Console.WriteLine($"str.Remove(6, 3) = {str.Remove(6, 3)}");
+
+            // Возвращает новую строку, в которой все вхождения заданного знака Юникода в текущем
+            // экземпляре заменены другим заданным знаком Юникода.
+            Console.WriteLine($"str.Replace('a','z') = {str.Replace('a', 'z')}");
+
+
+            // Извлекает подстроку из данного экземпляра. Подстрока начинается в указанном положении
+            // символов и продолжается до конца строки.
+            Console.WriteLine($"str.Substring(4) = {str.Substring(4)}");
+
+
+            Console.WriteLine($"str.ToUpper() = {str.ToUpper()}");
+            Console.WriteLine($"str.ToLower() = {str.ToLower()}");
+
+
+            //str.Trim();       // Удаляет все начальные и конечные символы-разделители из текущего объекта System.String.
+            //str.TrimEnd();    // Удаляет все конечные символы-разделители из текущего объекта System.String.
+            //str.TrimStart();  // Удаляет все начальные символы-разделители из текущего объекта System.String.
+
+            // Разбивает строку на подстроки в зависимости от символов в массиве.
+            string[] array = "1 2 3 4,5 6;7 8 9;10".Split(' ', ',', ';');
+
+
+            string test = null;
+
+            Console.WriteLine($"String.IsNullOrEmpty(test) = {String.IsNullOrEmpty(test)}");    // True
+
+            test = String.Empty;
+            Console.WriteLine($"String.IsNullOrEmpty(test) = {String.IsNullOrEmpty(test)}");    // True
+
+            test = "Skill";
+            Console.WriteLine($"String.IsNullOrEmpty(test) = {String.IsNullOrEmpty(test)}");    // False
+
+        }
+        static void MathDateConvert()
+        {
+
+            #region Convert
+            // Преобразует значение одного базового типа данных к другому базовому типу данных.
+
+            //bool
+            //byte
+            //char
+            //DateTime
+            //decimal
+            //double
+            //short
+            //int
+            //long
+            //sbyte
+            //float
+            //string
+            //ushort
+            //uint
+            //ulong
+
+            //int i = Convert.ToByte("20");
+            //byte j = 0 ;
+            //j = (byte)int.Parse("2011");
+            //i = Convert.ToByte(12.45);
+            //i = Convert.ToByte(56.78f);
+            //i = Convert.ToByte(89.09m);
+
+            #endregion
+
+            #region Math
+
+            //// Console.ReadKey();
+            //// Предоставляет константы и статические методы для тригонометрических, логарифмических
+            //// и иных общих математических функций. 
+
+            //// Вычислить площадь окружности. Радиусом 2;
+            ////               
+            //// S окр. = πr²
+
+            ////Math.PI // Представляет отношение длины окружности к ее диаметру, определяемое константой
+            ////Math.E //Представляет основание натурального логарифма, определяемое константой e.
+
+            //// Math.Abs - Возвращает абсолютное значение числа 
+
+            //// Sin, Cos, Tan, Atan, Tanh и т.д.
+            //// Log, Log10
+            //// Max, Min
+            //// var result = Math.Max(11,22);
+
+            ////Возвращает наименьшее целое число, которое больше или равно заданному десятичному
+            //Console.WriteLine(Math.Ceiling(1.2));   // 2
+            //Console.WriteLine(Math.Ceiling(-1.2));  // -1
+
+            //// Возвращает значение e, возведенное в указанную степень.
+            //Console.WriteLine(Math.Exp(2)); // e²
+
+            //// Возвращает наибольшее целое число, которое меньше или равно указанному десятичному числу.
+            //Console.WriteLine(Math.Floor(1.2)); // 1
+            //Console.WriteLine(Math.Floor(-1.2)); // -2
+
+            //// Возвращает указанное число, возведенное в указанную степень.
+            //Console.WriteLine(Math.Pow(4,3));       // 4³
+            //Console.WriteLine(Math.Pow(2020,2));    // 2020²
+
+            //// Округляет десятичное значение до указанного числа дробных разрядов.
+            //Console.WriteLine(Math.Round(1.2345)); // 1
+            //Console.WriteLine(Math.Round(1.5345)); // 2
+            //Console.WriteLine(Math.Round(-1.5345)); // -2
+            //Console.WriteLine(Math.Round(-1.56789,3)); // -1,568
+
+
+            //// Возвращает целое число, указывающее знак 8-разрядного целого числа со знаком.
+            //Console.WriteLine(Math.Sign(-20));  // -1
+            //Console.WriteLine(Math.Sign(20));   // 1
+
+
+
+            //int r = 2;
+            //double s = Math.PI * Math.Pow(r, 2);
+            //Console.WriteLine(s);
+
+            //Console.ReadKey();
+            #endregion
+
+            #region DateTime TimeSpan
+
+            //Console.ReadKey();
+
+            DateTime date = new DateTime(2020, 09, 28, 01, 30, 00);
+            Console.WriteLine($"{date}"); // 28.09.2020 1:30:00
+
+            // date.Year         // Возвращает компонент года даты, представленной этим экземпляром.
+            // date.Month        // Возвращает компонент месяца даты, представленной этим экземпляром.
+            // date.Day          // Возвращает день месяца, представленный этим экземпляром.
+            // date.Hour         // Возвращает компонент часа даты, представленной этим экземпляром.
+            // date.Minute       // Возвращает компонент минуты даты, представленной этим экземпляром.
+            // date.Second       // Возвращает компонент секунды даты, представленной этим экземпляром.
+            // date.Millisecond  // Возвращает компонент миллисекунд для даты, представленной в данном экземпляре. 
+
+            Console.WriteLine(date.ToShortTimeString());        // Получение только времени    1:30
+            Console.WriteLine(date.ToShortDateString());        // Получение только даты       28.09.2020
+
+            DateTime newDate = date.AddDays(10);
+            Console.WriteLine($"{newDate}"); // 08.10.2020 1:30:00
+
+            // Console.WriteLine(DateTime.Now);     // Возвращает System.DateTime, которому присвоены текущие дата и время 
+            // данного компьютера, выраженные как местное время.
+
+            TimeSpan span = newDate - date;
+            Console.WriteLine(span);                     // 10.00:00:00
+            Console.WriteLine(span.TotalMinutes);        // 14400
+
+
+            Console.Clear();
+
+            date = DateTime.Now;
+
+            double sum = 0;
+
+            for (int k = 0; k <= 1_000_000_000; k++)
+            {
+                sum += k;
+            }
+
+            Console.WriteLine($"sum = {sum}");
+
+            TimeSpan timeSpan = DateTime.Now.Subtract(date);
+            Console.WriteLine($"timeSpan.TotalMilliseconds = {timeSpan.TotalMilliseconds}");
+
+            #endregion
+        }
         static void Recursion()
         {
             static int Fib(int N)
