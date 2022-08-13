@@ -11,10 +11,345 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            Files();
+            Computers();
             Console.ReadLine();
         }
 
+        static void Computers()
+        {
+            #region Computer1
+
+            //Computer1 computer1 = new Computer1("Computer 1");
+
+
+            //computer1.ActivationBIOS();
+            //computer1.ActivationOS();
+            //computer1.Greeting();
+
+            //computer1.Calculation();
+
+            //computer1.Parting();
+            //computer1.DeactivationOS();
+            //computer1.DeactivationBIOS();
+
+            //Console.ReadKey();
+            //Console.WriteLine();
+
+            #endregion
+
+            #region Computer2
+
+
+            //Computer2 computer2 = new Computer2("Computer 2");
+
+            //computer2.PowerOff();
+            //computer2.PowerOff();
+            //computer2.PowerOff();
+
+            //computer2.PowerOn();
+
+            //Console.ReadKey();
+
+
+
+            #endregion
+
+            #region Computer3
+
+            Computer3 computer3 = new Computer3("Computer 3");
+
+            for (int i = 0; i < 3; i++)
+            {
+                computer3.Power();
+                Console.WriteLine(computer3.Indicator);
+
+                Console.ReadKey();
+            }
+
+
+            Console.ReadKey();
+
+
+            #endregion
+        }
+        static void StructWorker()
+        {
+            #region Конструкторы
+
+            //    /// <summary>
+            //    /// Создание сотрудника
+            //    /// </summary>
+            //    /// <param name="FirstName">Имя</param>
+            //    /// <param name="LastName">Фамилия</param>
+            //    /// <param name="Position">Должность</param>
+            //    /// <param name="Department">Отдел</param>
+            //    /// <param name="Salary">Оплата труда</param>
+            //    public Worker(string FirstName, string LastName, string Position, uint Salary, string Department)
+            //    {
+            //        this.firstName = FirstName;
+            //        this.lastName = LastName;
+            //        this.position = Position;
+            //        this.department = Department;
+            //        this.salary = Salary;
+            //    }
+
+            #endregion
+
+            #region Методы
+
+            //    public string Print()
+            //    {
+            //        return $"{this.firstName,15} {this.lastName,15} {this.department,15} {this.position,15} {this.salary,10}";
+            //    }
+
+            #endregion
+
+            #region Свойства
+
+            //    /// <summary>
+            //    /// Имя
+            //    /// </summary>
+            //    public string FirstName { get { return this.firstName; } set { this.firstName = value; } }
+
+            //    /// <summary>
+            //    /// Фамилия
+            //    /// </summary>
+            //    public string LastName { get { return this.lastName; } set { this.lastName = value; } }
+
+            //    /// <summary>
+            //    /// Должность
+            //    /// </summary>
+            //    public string Position { get { return this.position; } set { this.position = value; } }
+
+            //    /// <summary>
+            //    /// Отдел
+            //    /// </summary>
+            //    public string Department { get { return this.department; } set { this.department = value; } }
+
+            //    /// <summary>
+            //    /// Оплата труда
+            //    /// </summary>
+            //    public uint Salary { get { return this.salary; } set { this.salary = value; } }
+
+            //    /// <summary>
+            //    /// Почасовая оплата
+            //    /// </summary>
+            //    public double HourRate
+            //    {
+            //        get
+            //        {
+            //            byte workingDays = 25; // Рабочих дней в месяце
+            //            byte workingHours = 8; // Рабочих часов в день
+            //            return ((double)Salary) / workingDays / workingHours;
+            //        }
+            //    }
+
+            #endregion
+
+            #region Поля
+
+            //    /// <summary>
+            //    /// Поле "Имя"
+            //    /// </summary>
+            //    private string firstName;
+
+            //    /// <summary>
+            //    /// Поле "Фамилия"
+            //    /// </summary>
+            //    private string lastName;
+
+            //    /// <summary>
+            //    /// Поле "Должность"
+            //    /// </summary>
+            //    private string position;
+
+            //    /// <summary>
+            //    /// Поле "Отдел"
+            //    /// </summary>
+            //    private string department;
+
+            //    /// <summary>
+            //    /// Поле "Оплата труда"
+            //    /// </summary>
+            //    private uint salary;
+
+            #endregion
+        }
+        static void AccessModifiers()
+        {
+            Cat cat = new Cat();
+
+            cat.Nickname = "Кличка 1";
+
+            #region Модификаторы доступа
+
+            //public – публичный член класс, он доступен из любого места в коде, 
+            //         а также из других программ и сборок
+
+            //private – закрытый член класса, он полностью противоположен public.
+            //          Закрытый член класса доступен только из кода в том же классе
+
+            //protected – такой член класса доступен из любого места в текущем классе или 
+            //            в производных классах.При этом производные классы могут располагаться в других сборках
+
+            //internal – члены класса доступны из любого места кода в той же сборке, 
+            //           однако он недоступен для других программ и сборок
+
+            //protected internal – совмещает функционал двух модификаторов.
+            //                     Члены класса с таким модификатором доступны из текущей сборки и 
+            //                     из производных классов
+
+            //private protected – такой член класса доступен из любого места в текущем классе или 
+            //                    в производных классах, которые определены в той же сборке
+
+            #endregion
+
+            Worker w = new Worker("Программист", 1111, "Иван", "Иванов", new DateTime(1980, 1, 2));
+            Console.WriteLine(w.Print());
+
+            w = new Worker("Иван IV");
+            Console.WriteLine(w.Print());
+
+            //Repository1 db1 = new Repository1(
+            //    new Worker("Должность_1", 10000, "Имя_1"),
+            //    new Worker("Должность_2", 10000, "Имя_2"),
+            //    new Worker("Должность_3", 10000, "Имя_3"),
+            //    new Worker("Должность_4", 10000, "Имя_4"),
+            //    new Worker("Должность_5", 10000, "Имя_5")
+            //    );
+
+            //Console.WriteLine(db1.Workers[0].Print());
+
+            #region db2
+            //Repository2 db2 = new Repository2(
+            //     new Worker("Должность_1", 10000, "Имя_1"),
+            //     new Worker("Должность_2", 10000, "Имя_2"),
+            //     new Worker("Должность_3", 10000, "Имя_3"),
+            //     new Worker("Должность_4", 10000, "Имя_4"),
+            //     new Worker("Должность_5", 10000, "Имя_5")
+            //     );
+
+
+            //Console.WriteLine(db2[0].Print());
+
+            //db2[0] = new Worker("Должность_777", 10000, "Имя_777");
+
+            //Console.WriteLine(db2[0].Print());
+            //Console.ReadKey();
+            #endregion
+
+            #region db3
+
+            //Repository3 db3 = new Repository3(
+            //     new Worker("Должность_1", 10000, "Имя_444"),
+            //     new Worker("Должность_2", 10000, "Имя_2"),
+            //     new Worker("Должность_3", 10000, "Имя_3"),
+            //     new Worker("Должность_4", 10000, "Имя_4"),
+            //     new Worker("Должность_5", 10000, "Имя_5")
+            //     );
+
+
+            //Console.WriteLine(db3[0]);
+
+
+            //Console.ReadKey();
+            #endregion
+
+            Repository4 db4 = new Repository4(
+                 new Worker("Должность_1", 10000, "Имя_444"),
+                 new Worker("Должность_2", 10000, "Имя_2"),
+                 new Worker("Должность_3", 10000, "Имя_3"),
+                 new Worker("Должность_4", 10000, "Имя_4"),
+                 new Worker("Должность_5", 10000, "Имя_5")
+                 );
+
+
+            Console.WriteLine(db4[0]);
+
+            Console.WriteLine(db4["*"]);
+        }
+        static void Structures()
+        {
+            // Структуры и введение в ООП
+
+
+            #region Задание 1.
+
+
+            // Заказчик просит вас написать приложение по учёту финансов
+            // и продемонстрировать его работу.
+            // Суть задачи в следующем: 
+            // Руководство фирмы по 12 месяцам ведет учет расходов и поступлений средств. 
+            // За год получены два массива – расходов и поступлений.
+            // Определить прибыли по месяцам
+            // Количество месяцев с положительной прибылью.
+            // Добавить возможность вывода трех худших показателей по месяцам, с худшей прибылью, 
+            // если есть несколько месяцев, в некоторых худшая прибыль совпала - вывести их все.
+            // Организовать дружелюбный интерфейс взаимодействия и вывода данных на экран
+
+            // Пример
+            //       
+            // Месяц      Доход, тыс. руб.  Расход, тыс. руб.     Прибыль, тыс. руб.
+            //     1              100 000             80 000                 20 000
+            //     2              120 000             90 000                 30 000
+            //     3               80 000             70 000                 10 000
+            //     4               70 000             70 000                      0
+            //     5              100 000             80 000                 20 000
+            //     6              200 000            120 000                 80 000
+            //     7              130 000            140 000                -10 000
+            //     8              150 000             65 000                 85 000
+            //     9              190 000             90 000                100 000
+            //    10              110 000             70 000                 40 000
+            //    11              150 000            120 000                 30 000
+            //    12              100 000             80 000                 20 000
+            // 
+            // Худшая прибыль в месяцах: 7, 4, 1, 5, 12
+            // Месяцев с положительной прибылью: 10
+
+            int[] income = new int[12];         // массив хранящий доходы
+            int[] consumption = new int[12];    // массив хранящий расходы
+            int[] arrived = new int[12];        // массив хранящий прибыль
+
+            #endregion
+
+            #region MonthlyReport
+
+            MonthlyReport january = new MonthlyReport();
+
+            january.Month = "Январь";
+            january.Income = 10_000;
+            january.consumption = 3_000;
+            january.arrived = january.Income - january.consumption;
+
+
+            // Январь: Доход: 10000 Расход: 3000 Прибыль: 7000
+            Console.WriteLine("{0}: Доход: {1} Расход: {2} Прибыль: {3}",
+                                january.Month,
+                                january.Income,
+                                january.consumption,
+                                january.arrived);
+            #endregion
+
+            #region Worker
+
+            Worker worker = new Worker()
+            {
+                Position = "Инженер",
+                FirstName = "Роберт",
+                LastName = "Иванов",
+                Salary = 10_000,
+                DateOfBirth = new DateTime(1990, 09, 28)
+            };
+
+            #endregion
+
+            #region Замечание
+
+            // В Visual Studio 2017 нет шаблона структуры, 
+            // поэтому нужно добавить класс, а затем сменить тип вручную.
+
+            #endregion
+        }
         static void Files()
         {
             #region File
