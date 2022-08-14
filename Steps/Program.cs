@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Xml.Linq;
 
 namespace Steps
 {
@@ -11,10 +12,732 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            Computers();
+            SerializationComplicatedJson();
             Console.ReadLine();
         }
 
+        static void SerializationComplicatedJson()
+        {
+            #region Parse
+
+            //string json = File.ReadAllText("telegram.json");
+            //Console.WriteLine(json); Console.ReadLine();Console.Clear();
+
+            //Console.WriteLine(JObject.Parse(json)["ok"].ToString());
+
+            //var messages = JObject.Parse(json)["result"].ToArray();
+            //Console.WriteLine();
+            //foreach (var item in messages)
+            //{
+            //    Console.WriteLine(item["message"]["message_id"].ToString());
+            //    Console.WriteLine(item["message"]["text"].ToString());
+            //    Console.WriteLine(item["message"]["chat"]["username"].ToString());
+            //    Console.WriteLine();
+            //}
+
+            //Console.ReadLine(); Console.Clear();
+            #endregion
+
+            #region Create
+
+
+            //JArray array = new JArray();
+
+            //JObject mainTree = new JObject();
+
+
+            //mainTree["ok"] = true;
+
+            //JObject o = new JObject();
+            //o["update_id"] = 1880746;
+            //o["message_id"] = 886;
+
+            //array.Add(o);
+            //array.Add(o);
+            //array.Add(o);
+
+            //mainTree["messages"] = array;
+
+            //JObject userObj = new JObject();
+            //userObj["id"] = 220310598;
+            //userObj["first_name"] = "С.K.";
+            //userObj["username"] = "sk";
+
+            //mainTree["user"] = userObj;
+
+
+            //string json = mainTree.ToString();
+
+            //Console.WriteLine(json);
+
+            #endregion
+
+            #region _
+
+            //List<Worker> list = new List<Worker>();
+
+            //JObject data = new JObject();
+            //JArray jArray = new JArray();
+
+            //for (uint i = 1; i <= 5; i++)
+            //{
+            //    JObject obj = new JObject
+            //    {
+            //        ["FirstName"] = $"Имя_{i}",
+            //        ["LastName"] = $"Фамилия_{i}",
+            //        ["Position"] = $"Должность_{i}",
+            //        ["Department"] = $"Отдел_{i}",
+            //        ["Salary"] = i * 1000
+            //    };
+
+            //    jArray.Add(obj);
+            //}
+
+            //Console.WriteLine(jArray.ToString());
+
+
+
+            #endregion
+        }
+        static void SerializationComplicatedXml()
+        {
+            #region XDocument.Parse
+
+
+            //string xml = System.IO.File.ReadAllText("_weather.xml");
+
+            //var col = XDocument.Parse(xml)
+            //                   .Descendants("MMWEATHER")
+            //                   .Descendants("REPORT")
+            //                   .Descendants("TOWN")
+            //                   .Descendants("FORECAST")
+            //                   .ToList();
+
+            //foreach (var item in col)
+            //{
+            //    Console.WriteLine($"\n\n{item}");
+            //}
+
+            //Console.ReadLine(); Console.Clear();
+
+            //foreach (var item in col)
+            //{
+            //    Console.WriteLine("day: {0} month: {1} year: {2}",
+            //                        item.Attribute("day").Value,
+            //                        item.Attribute("month").Value,
+            //                        item.Attribute("year").Value);
+            //}
+
+            //Console.ReadLine(); Console.Clear();
+
+            //foreach (var item in col)
+            //{
+            //    Console.WriteLine("min: {0} max: {1}",
+            //                        item.Element("TEMPERATURE").Attribute("min").Value,
+            //                        item.Element("TEMPERATURE").Attribute("max").Value);
+            //}
+
+            //Console.ReadLine(); Console.Clear();
+
+
+            //string city = XDocument.Parse(xml)
+            //                       .Element("MMWEATHER")
+            //                       .Element("REPORT")
+            //                       .Element("TOWN")
+            //                       .Attribute("sname").Value;
+
+            //Console.WriteLine(city);
+
+            #endregion
+
+            #region XDocument.Create
+
+            XElement myMMWEATHER = new XElement("MMWEATHER");
+            XElement myTOWN = new XElement("TOWN");
+            XElement myFORECAST = new XElement("FORECAST");
+            XElement myTEMPERATURE = new XElement("TEMPERATURE");
+
+            XAttribute xAttributeMin = new XAttribute("min", 7);
+            XAttribute xAttributeMax = new XAttribute("max", 10);
+
+            myTEMPERATURE.Add(xAttributeMin, xAttributeMax);
+            myFORECAST.Add(myTEMPERATURE);
+
+            XAttribute xAttributeCityName = new XAttribute("sname", "Москва");
+
+
+            myTOWN.Add(myFORECAST, xAttributeCityName);
+            myTOWN.Add(myFORECAST);
+            myTOWN.Add(myFORECAST);
+            myTOWN.Add(myFORECAST);
+
+            myMMWEATHER.Add(myTOWN);
+
+            myMMWEATHER.Save("_myWeather.xml");
+
+            #endregion
+
+        }
+        static void SerializationXml()
+        {
+            #region class Worker
+            //public class Worker
+            //{
+            //    #region Конструкторы
+
+            //    public Worker()
+            //    {
+
+            //    }
+
+            //    /// <summary>
+            //    /// Создание сотрудника
+            //    /// </summary>
+            //    /// <param name="FirstName">Имя</param>
+            //    /// <param name="LastName">Фамилия</param>
+            //    /// <param name="Position">Должность</param>
+            //    /// <param name="Department">Отдел</param>
+            //    /// <param name="Salary">Оплата труда</param>
+            //    public Worker(string FirstName, string LastName, string Position, uint Salary, string Department)
+            //    {
+            //        this.firstName = FirstName;
+            //        this.lastName = LastName;
+            //        this.position = Position;
+            //        this.department = Department;
+            //        this.salary = Salary;
+            //    }
+
+            //    #endregion
+
+            //    #region Методы
+
+            //    public string Print()
+            //    {
+            //        return $"{this.firstName,15} {this.lastName,15} {this.department,15} {this.position,15} {this.salary,10}";
+            //    }
+
+            //    #endregion
+
+            //    #region Свойства
+
+            //    /// <summary>
+            //    /// Имя
+            //    /// </summary>
+            //    public string FirstName { get { return this.firstName; } set { this.firstName = value; } }
+
+            //    /// <summary>
+            //    /// Фамилия
+            //    /// </summary>
+            //    public string LastName { get { return this.lastName; } set { this.lastName = value; } }
+
+            //    /// <summary>
+            //    /// Должность
+            //    /// </summary>
+            //    public string Position { get { return this.position; } set { this.position = value; } }
+
+            //    /// <summary>
+            //    /// Отдел
+            //    /// </summary>
+            //    public string Department { get { return this.department; } set { this.department = value; } }
+
+            //    /// <summary>
+            //    /// Оплата труда
+            //    /// </summary>
+            //    public uint Salary { get { return this.salary; } set { this.salary = value; } }
+
+            //    /// <summary>
+            //    /// Почасовая оплата
+            //    /// </summary>
+            //    public double HourRate
+            //    {
+            //        get
+            //        {
+            //            byte workingDays = 25; // Рабочих дней в месяце
+            //            byte workingHours = 8; // Рабочих часов в день
+            //            return ((double)Salary) / workingDays / workingHours;
+            //        }
+            //    }
+
+            //    #endregion
+
+            //    #region Поля
+
+            //    /// <summary>
+            //    /// Поле "Имя"
+            //    /// </summary>
+            //    private string firstName;
+
+            //    /// <summary>
+            //    /// Поле "Фамилия"
+            //    /// </summary>
+            //    private string lastName;
+
+            //    /// <summary>
+            //    /// Поле "Должность"
+            //    /// </summary>
+            //    private string position;
+
+            //    /// <summary>
+            //    /// Поле "Отдел"
+            //    /// </summary>
+            //    private string department;
+
+            //    /// <summary>
+            //    /// Поле "Оплата труда"
+            //    /// </summary>
+            //    private uint salary;
+
+            //    #endregion
+            //}
+            #endregion
+            #region XML:Создание и чтение файлов
+            //class Program
+            //{
+
+            //    /// <summary>
+            //    /// Метод сериализации Worker
+            //    /// </summary>
+            //    /// <param name="СoncreteWorker">Экземпляр для сериализации</param>
+            //    /// <param name="Path">Путь к файлу</param>
+            //    static void SerializeWorker(Worker СoncreteWorker, string Path)
+            //    {
+            //        // Создаем сериализатор на основе указанного типа 
+            //        XmlSerializer xmlSerializer = new XmlSerializer(typeof(Worker));
+
+            //        // Создаем поток для сохранения данных
+            //        Stream fStream = new FileStream(Path, FileMode.Create, FileAccess.Write);
+
+            //        // Запускаем процесс сериализации
+            //        xmlSerializer.Serialize(fStream, СoncreteWorker);
+
+            //        // Закрываем поток
+            //        fStream.Close();
+            //    }
+
+            //    /// <summary>
+            //    /// Метод десериализации Worker
+            //    /// </summary>
+            //    /// <param name="СoncreteWorker">Экземпляр для сериализации</param>
+            //    /// <param name="Path">Путь к файлу</param>
+            //    static Worker DeserializeWorker(string Path)
+            //    {
+            //        Worker tempWorker = new Worker();
+            //        // Создаем сериализатор на основе указанного типа 
+            //        XmlSerializer xmlSerializer = new XmlSerializer(typeof(Worker));
+
+            //        // Создаем поток для чтения данных
+            //        Stream fStream = new FileStream(Path, FileMode.Open, FileAccess.Read);
+
+            //        // Запускаем процесс десериализации
+            //        tempWorker = xmlSerializer.Deserialize(fStream) as Worker;
+
+            //        // Закрываем поток
+            //        fStream.Close();
+
+            //        // Возвращаем результат
+            //        return tempWorker;
+            //    }
+
+            //    /// <summary>
+            //    /// Метод сериализации List<Worker >
+            //    /// </summary>
+            //    /// <param name="СoncreteWorker">Коллекция для сериализации</param>
+            //    /// <param name="Path">Путь к файлу</param>
+            //    static void SerializeWorkerList(List<Worker> СoncreteWorkerList, string Path)
+            //    {
+            //        // Создаем сериализатор на основе указанного типа 
+            //        XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Worker>));
+
+            //        // Создаем поток для сохранения данных
+            //        Stream fStream = new FileStream(Path, FileMode.Create, FileAccess.Write);
+
+            //        // Запускаем процесс сериализации
+            //        xmlSerializer.Serialize(fStream, СoncreteWorkerList);
+
+            //        // Закрываем поток
+            //        fStream.Close();
+            //    }
+
+            //    /// <summary>
+            //    /// Метод десериализации Worker
+            //    /// </summary>
+            //    /// <param name="СoncreteWorker">Экземпляр для сериализации</param>
+            //    /// <param name="Path">Путь к файлу</param>
+            //    static List<Worker> DeserializeWorkerList(string Path)
+            //    {
+            //        List<Worker> tempWorkerCol = new List<Worker>();
+            //        // Создаем сериализатор на основе указанного типа 
+            //        XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Worker>));
+
+            //        // Создаем поток для чтения данных
+            //        Stream fStream = new FileStream(Path, FileMode.Open, FileAccess.Read);
+
+            //        // Запускаем процесс десериализации
+            //        tempWorkerCol = xmlSerializer.Deserialize(fStream) as List<Worker>;
+
+            //        // Закрываем поток
+            //        fStream.Close();
+
+            //        // Возвращаем результат
+            //        return tempWorkerCol;
+            //    }
+
+
+            //    static void Main(string[] args)
+            //    {
+            //        #region Worker
+
+            //        Worker worker = new Worker("Bill", "Gates", "CEO", uint.MaxValue, "Microsoft Corporation");
+            //        Console.WriteLine(worker.Print());
+
+            //        SerializeWorker(worker, "_bill.xml");
+
+            //        worker = DeserializeWorker("_satya.xml");
+            //        Console.WriteLine(worker.Print());
+
+            //        #endregion
+
+            //        #region List<Worker>
+
+            //        List<Worker> list = new List<Worker>();
+
+            //        for (uint i = 1; i <= 5; i++)
+            //        {
+            //            list.Add(new Worker($"Имя_{i}", $"Фамилия_{i}", $"Должность_{i}", i * 1000, $"Департамент_{i}"));
+            //        }
+
+            //        SerializeWorkerList(list, "_listWorker.xml");
+
+            //        list = DeserializeWorkerList("_listWorker.xml");
+
+            //        #endregion
+            //    }
+            //}
+            #endregion
+        }
+        static void SerializationInto()
+        {
+            // Сериализация — процесс перевода какой-либо структуры данных в последовательность битов
+            // Десериализации — восстановление начального состояния структуры данных из битовой последовательности 
+
+            #region csv
+
+            // Имя_1,Фамилия_1,Должность_778,4931,Отдел_94
+            // Имя_2,Фамилия_2,Должность_368,3838,Отдел_88
+            // Имя_3,Фамилия_3,Должность_731,4746,Отдел_4
+            // Имя_4,Фамилия_4,Должность_917,3765,Отдел_7
+            // Имя_5,Фамилия_5,Должность_671,1791,Отдел_96
+            // Имя_6,Фамилия_6,Должность_753,1671,Отдел_99
+            // Имя_7,Фамилия_7,Должность_162,4487,Отдел_28
+            // Имя_8,Фамилия_8,Должность_294,2937,Отдел_5
+            // Имя_9,Фамилия_9,Должность_125,2318,Отдел_35
+            // Имя_10,Фамилия_10,Должность_151,2657,Отдел_50
+            // Имя_11,Фамилия_11,Должность_425,2367,Отдел_89
+
+            #endregion
+
+            #region xml
+            // <?xml version="1.0"?>
+            // <ArrayOfWorker xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            //   <Worker>
+            //     <FirstName>Имя_1</FirstName>
+            //     <LastName>Фамилия_1</LastName>
+            //     <Position>Должность_1</Position>
+            //     <Department>Департамент_1</Department>
+            //     <Salary>1000</Salary>
+            //   </Worker>
+            //   <Worker>
+            //     <FirstName>Имя_2</FirstName>
+            //     <LastName>Фамилия_2</LastName>
+            //     <Position>Должность_2</Position>
+            //     <Department>Департамент_2</Department>
+            //     <Salary>2000</Salary>
+            //   </Worker>
+            //   <Worker>
+            //     <FirstName>Имя_3</FirstName>
+            //     <LastName>Фамилия_3</LastName>
+            //     <Position>Должность_3</Position>
+            //     <Department>Департамент_3</Department>
+            //     <Salary>3000</Salary>
+            //   </Worker>
+            //   <Worker>
+            //     <FirstName>Имя_4</FirstName>
+            //     <LastName>Фамилия_4</LastName>
+            //     <Position>Должность_4</Position>
+            //     <Department>Департамент_4</Department>
+            //     <Salary>4000</Salary>
+            //   </Worker>
+            //   <Worker>
+            //     <FirstName>Имя_5</FirstName>
+            //     <LastName>Фамилия_5</LastName>
+            //     <Position>Должность_5</Position>
+            //     <Department>Департамент_5</Department>
+            //     <Salary>5000</Salary>
+            //   </Worker>
+            // </ArrayOfWorker>
+
+            #endregion
+
+            #region json
+
+            // 
+            // [
+            //   {
+            //     "FirstName": "Имя_1",
+            //     "LastName": "Фамилия_1",
+            //     "Position": "Должность_1",
+            //     "Department": "Отдел_1",
+            //     "Salary": 1000
+            //   },
+            //   {
+            //     "FirstName": "Имя_2",
+            //     "LastName": "Фамилия_2",
+            //     "Position": "Должность_2",
+            //     "Department": "Отдел_2",
+            //     "Salary": 2000
+            //   },
+            //   {
+            //     "FirstName": "Имя_3",
+            //     "LastName": "Фамилия_3",
+            //     "Position": "Должность_3",
+            //     "Department": "Отдел_3",
+            //     "Salary": 3000
+            //   },
+            //   {
+            //     "FirstName": "Имя_4",
+            //     "LastName": "Фамилия_4",
+            //     "Position": "Должность_4",
+            //     "Department": "Отдел_4",
+            //     "Salary": 4000
+            //   },
+            //   {
+            //     "FirstName": "Имя_5",
+            //     "LastName": "Фамилия_5",
+            //     "Position": "Должность_5",
+            //     "Department": "Отдел_5",
+            //     "Salary": 5000
+            //   }
+            // ]
+
+            #endregion
+        }
+        static void OtherCollections()
+        {
+            #region Dictionary
+
+
+            Dictionary<string, string> pairs = new Dictionary<string, string>();
+            //         ключ ,  значение
+            // Add -  Добавляет указанные ключ и значение в словарь
+            // Count -  Возвращает число пар "ключ-значение", содержащихся в словаре
+            // Clear - Удаляет все ключи и значения из словаря 
+            // [] - Возвращает или задает значение, связанное с указанным ключом
+            // ContainsKey - Определяет, содержится ли указанный ключ в словаре
+            // Remove - Удаляет значение с указанным ключом из словаря
+            // Keys - Возвращает коллекцию, содержащую ключи из словаря 
+            // Values - Возвращает коллекцию, содержащую значения из словаря 
+            // KeyValuePair<string, string>
+
+            //pairs.Add("Учитель", "Teacher");
+            //pairs.Add("Проверка", "Check");
+            //pairs.Add("Компьютер", "Computer");
+            //pairs.Add("Автомобиль", "Car");
+
+            //Console.WriteLine("\npairs");
+            //foreach (KeyValuePair<string, string> e in pairs) Console.WriteLine($"{e} ");      // Вывод всех пар       
+
+            //Console.WriteLine($"\n\npairs[\"Учитель\"] = {pairs["Учитель"]}"); // Teacher
+
+            //Console.WriteLine("\npairs.Keys");
+            //foreach (var e in pairs.Keys) Console.Write($"{e} ");      // Вывод всех ключей
+
+            //Console.WriteLine("\n\npairs.Values");
+            //foreach (var e in pairs.Values) Console.Write($"{e} ");      // Вывод всех Значений
+
+            //Console.WriteLine("\n\nУдаление \"Учитель\"");
+
+            //pairs.Remove("Учитель");  // Удаление по ключу
+
+            //Console.WriteLine("\npairs");
+            //foreach (KeyValuePair<string, string> e in pairs) Console.WriteLine($"{e} ");      // Вывод всех пар      
+
+            //Console.WriteLine("\n");
+
+            //Console.WriteLine($"Элементов в словаре: {pairs.Count}"); // 3
+            //pairs.Clear();             // Очистить словарь
+            //Console.WriteLine("pairs.Clear(); выполнен");
+            //Console.WriteLine($"Элементов в словаре: {pairs.Count}"); // 0
+
+            #endregion
+
+            #region Queue
+
+            //Queue<int> queue = new Queue<int>();
+
+            //// Enqueue - Добавляет объект в конец очереди
+            //// Dequeue - Удаляет объект из начала очереди и возвращает его
+            ////
+            //// Peek - Возвращает объект, находящийся в начале очереди, но не удаляет его
+            //// Count - Получает число элементов, содержащихся в очереди
+            //// Clear - Удаляет все объекты из очереди
+            //// First In First Out = FIFO
+
+            //queue.Enqueue(1);
+            //queue.Enqueue(2);
+            //queue.Enqueue(3);
+            //queue.Enqueue(4);
+            //queue.Enqueue(5);
+
+            //foreach (var e in queue) Console.Write($"{e} "); // 1 2 3 4 5
+            //Console.WriteLine("\n");
+
+            //Console.WriteLine($"queue.Dequeue() = {queue.Dequeue()}"); // 1
+            //foreach (var e in queue) Console.Write($"{e} "); // 2 3 4 5
+            //Console.WriteLine("\n");
+
+
+            //Console.WriteLine($"queue.Peek() = {queue.Peek()}"); // 2
+            //foreach (var e in queue) Console.Write($"{e} "); // 2 3 4 5
+            //Console.WriteLine("\n");
+
+
+            #endregion
+
+            #region Stack
+
+
+            // Stack<int> stack = new Stack<int>();
+            // First In Last Out - FILO
+
+            // Push - Вставляет объект как верхний элемент стека
+            // Pop - Удаляет и возвращает объект, находящийся в начале Stack.
+            //
+            // Peek -  Возвращает объект, находящийся в начале Stack, без его удаления.
+            // Count - Получает число элементов, содержащихся в стеке
+            // Clear - Удаляет все объекты из стека
+
+            //stack.Push(1);
+            //stack.Push(2);
+            //stack.Push(3);
+            //stack.Push(4);
+            //stack.Push(5);
+
+            //foreach (var e in stack) Console.Write($"{e} "); // 5 4 3 2 1
+            //Console.WriteLine("\n");
+
+            //Console.WriteLine($"stack.Pop() = {stack.Pop()}"); // 5
+            //foreach (var e in stack) Console.Write($"{e} "); // 4 3 2 1
+            //Console.WriteLine("\n");
+
+
+            //Console.WriteLine($"stack.Peek() = {stack.Peek()}"); // 4
+            //foreach (var e in stack) Console.Write($"{e} "); // 4 3 2 1
+            //Console.WriteLine("\n");
+
+            #endregion
+
+            #region HashSet
+
+            //Console.ReadLine();
+            //// Add - Добавляет указанный элемент в коллекцию
+            //// Remove - Удаляет указанный элемент из коллекции
+            //// Contains - Определяет, содержит ли указанный элемент
+            //// UnionWith - Изменяет текущий объект так, чтобы он содержал все элементы, 
+            ////             имеющиеся в нем или в указанной коллекции либо как в нем, так и в указанной коллекции
+            //// IntersectWith - Изменяет текущий объект так, чтобы он содержал только элементы, 
+            ////                 которые имеются в этом объекте и в указанной коллекции
+            //// ExceptWith - Удаляет все элементы в указанной коллекции из текущего объекта
+            //// IsSubsutOf - Определяет, является ли объект подмножеством указанной коллекции
+            //// IsSuperSetOf - Определяет, является ли объект супермножеством указанной коллекции
+            //// IsProperSubsetOf - Определяет, является ли объект строгим подмножеством указанной коллекции
+            //// IsProperSupersetOf - Определяет, является ли объект строгим супермножеством указанной коллекции
+
+            //HashSet<int> set1 = new HashSet<int>(new int[] { 1, 1, 1, 1, 1, 1, 1, 2, 3, 4, 5, 5 });
+            //Console.WriteLine("set1: ");
+
+            //foreach (var e in set1) { Console.Write($"{e} "); }
+
+            //Console.WriteLine($"\n\nЭлемент '3' Присутствует в set1: {set1.Contains(3)}");
+            //Console.WriteLine($"Элемент '20' Присутствует в set1: {set1.Contains(20)}\n");
+
+            //Console.WriteLine("set2: ");
+
+            //HashSet<int> set2 = new HashSet<int>() { 1, 3, 5, 7, 9, 11, 15 };
+            //foreach (var e in set2) { Console.Write($"{e} "); }
+
+            //set1.UnionWith(set2);
+
+            //Console.WriteLine("\n\nset1 после UnionWith: ");
+            //foreach (var e in set1) { Console.Write($"{e} "); }
+
+            //set1.ExceptWith(new int[] { 3, 5, 15 });
+
+            //Console.WriteLine("\n\nset1 после ExceptWith(new int[] { 3, 5, 15 }): ");
+            //foreach (var e in set1) { Console.Write($"{e} "); }
+
+            //// A: 1 2 3 4 5
+            //// B: 1 3 5 7 9 
+            //// A ꓴ B = 1 2 3 4 5 7 9
+            //// A ꓵ B = 1 3 5
+            //// A \ B = 2 4 
+            //// B \ A = 7 9
+            //// A ∆ B = 2 4 7 9
+
+            #endregion
+
+            #region Other
+
+            // System.Collections.Generic.SortedSet
+            // System.Collections.Generic.SortedList
+            // System.Collections.Generic.SortedDictionary
+
+            #endregion
+        }
+        static void List()
+        {
+            #region List<T>
+
+            // Add - Добавляет объект в конец
+            // AddRange -  Добавляет элементы указанной коллекции в конец списка
+            // Remove - Удаляет первое вхождение указанного объекта из коллекции 
+            // RemoveAt - Удаляет элемент списка с указанным индексом
+            // Contains - Определяет, входит ли элемент в коллекцию
+            // IndexOf - Осуществляет поиск указанного объекта и возвращает отсчитываемый от нуля индекс
+            //           первого вхождения, найденного в пределах всего списка
+            // LastIndexOf - Осуществляет поиск указанного объекта и возвращает отсчитываемый от нуля индекс
+            //               последнего вхождения, найденного в пределах всего списка 
+            // [] - Возвращает или задает элемент по указанному индексу
+            // Insert - Вставляет элемент в коллекцию по указанному индексу
+            // Count - Получает число элементов, содержащихся в коллекции
+            // Clear - Удаляет все элементы из коллекции 
+            //Сортировка списка
+            // Sort или Sort(функция_сравнения)
+            // Reverse
+
+            List<int> list = new List<int>();
+
+            //  List<int> list = new List<int>(){ 1, 2, 3, 4, 5 };
+            list.Add(145);
+            list.Add(2);
+            list[1] = 11;
+
+            for (int i = 0; i < 10; i++)
+            {
+                list.Add(i);
+            }
+
+            for (int i = 0; i < list.Count; i++) Console.Write($"{list[i]} ");
+
+            list.Sort();
+            Console.WriteLine("\n");
+            for (int i = 0; i < list.Count; i++) Console.Write($"{list[i]} ");
+
+
+            // SortedList<> - аналог List<>, за исключением того, что отсортирован по умолчаию
+
+
+            #endregion
+        }
         static void Computers()
         {
             #region Computer1
@@ -5622,6 +6345,30 @@ namespace Steps
         }
         static void Dictionary()
         {
+            #region Создать частотный словарь 
+
+            List<int> list = new List<int>();
+
+            Random r = new Random();
+            for (int i = 0; i < 1000; i++)
+            {
+                list.Add(r.Next(20));
+            }
+
+            var dictionary = new Dictionary<int, int>();
+
+            foreach (var e in list)
+            {
+                if (!dictionary.ContainsKey(e)) dictionary.Add(e, 0);
+                dictionary[e]++;
+            }
+
+            foreach (KeyValuePair<int, int> e in dictionary)
+            {
+                Console.WriteLine($"{e.Key,3} встречается {e.Value,4} р.");
+            }
+
+            #endregion
             var people = new Dictionary<int, string>();
             people.Add(1, "John");
             people.Add(2, "Bob");

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MMWEATHER>
+  <TOWN sname="Москва">
+    <FORECAST>
+      <TEMPERATURE min="7" max="10" />
+    </FORECAST>
+    <FORECAST>
+      <TEMPERATURE min="7" max="10" />
+    </FORECAST>
+    <FORECAST>
+      <TEMPERATURE min="7" max="10" />
+    </FORECAST>
+    <FORECAST>
+      <TEMPERATURE min="7" max="10" />
+    </FORECAST>
+  </TOWN>
+</MMWEATHER>
