@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace Steps
 {
-    public class Program
+    public static class Program
     {
         static void Main(string[] args)
         {
