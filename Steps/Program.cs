@@ -12,7 +12,7 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            SerializationComplicatedJson();
+            List();
             Console.ReadLine();
         }
 
