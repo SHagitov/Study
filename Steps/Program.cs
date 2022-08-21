@@ -12,10 +12,25 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            List();
+            Classes();
             Console.ReadLine();
         }
 
+        static void Classes()
+        {
+            /// Создание котиков
+            Cat cat1 = new Cat("Басик", "Русская голубая кошка");
+            Cat cat2 = new Cat("Мурзик", "Мейн-кун");
+            Cat cat3 = new Cat("Плюмгильда", "Манчкин");
+
+            /// Создание домов
+            House house1 = new House(18, 182, "г. Смоленск, ул. Ленина, д. 1");
+            House house2 = new House(18, 182, "п. Запрудня, ул. Пролетарский проспект, д. 2");
+
+            /// Создание роботов
+            Robot robot = new Robot("С-3PO", "Звёздные воины");
+            Console.WriteLine("Good");
+        }
         static void SerializationComplicatedJson()
         {
             #region Parse
@@ -900,7 +915,7 @@ namespace Steps
         }
         static void AccessModifiers()
         {
-            Cat cat = new Cat();
+            Cat1 cat = new Cat1();
 
             cat.Nickname = "Кличка 1";
 

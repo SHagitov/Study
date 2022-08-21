@@ -30,3 +30,11 @@ M:\Users\Admin\Documents\GitHub\Study\Steps\obj\Debug\Steps.csproj.SuggestedBind
 M:\Users\Admin\Documents\GitHub\Study\Steps\obj\Debug\Steps.csproj.CoreCompileInputs.cache
 M:\Users\Admin\Documents\GitHub\Study\Steps\obj\Debug\Steps.exe
 M:\Users\Admin\Documents\GitHub\Study\Steps\obj\Debug\Steps.pdb
+C:\Users\Marat SHagitov\Documents\GitHub\Study\Steps\bin\Debug\Steps.exe.config
+C:\Users\Marat SHagitov\Documents\GitHub\Study\Steps\bin\Debug\Steps.exe
+C:\Users\Marat SHagitov\Documents\GitHub\Study\Steps\bin\Debug\Steps.pdb
+C:\Users\Marat SHagitov\Documents\GitHub\Study\Steps\obj\Debug\Steps.csproj.AssemblyReference.cache
+C:\Users\Marat SHagitov\Documents\GitHub\Study\Steps\obj\Debug\Steps.csproj.SuggestedBindingRedirects.cache
+C:\Users\Marat SHagitov\Documents\GitHub\Study\Steps\obj\Debug\Steps.csproj.CoreCompileInputs.cache
+C:\Users\Marat SHagitov\Documents\GitHub\Study\Steps\obj\Debug\Steps.exe
+C:\Users\Marat SHagitov\Documents\GitHub\Study\Steps\obj\Debug\Steps.pdb
