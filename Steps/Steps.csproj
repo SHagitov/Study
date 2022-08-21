@@ -48,11 +48,15 @@
     <Compile Include="Cat.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Computer3.cs" />
+    <Compile Include="Druid.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="EvilInheritance.cs" />
+    <Compile Include="Hero.cs" />
     <Compile Include="House.cs" />
+    <Compile Include="Hunter.cs" />
     <Compile Include="Inheritance.cs" />
     <Compile Include="Interfaces.cs" />
+    <Compile Include="IRampage.cs" />
     <Compile Include="MonthlyReport.cs" />
     <Compile Include="MyStack.cs" />
     <Compile Include="Program.cs" />
@@ -60,6 +64,7 @@
     <Compile Include="Repository4.cs" />
     <Compile Include="Robot.cs" />
     <Compile Include="Shapes.cs" />
+    <Compile Include="Warrior.cs" />
     <Compile Include="Worker.cs" />
   </ItemGroup>
   <ItemGroup>
