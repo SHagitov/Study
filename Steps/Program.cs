@@ -186,18 +186,24 @@ namespace Steps
 
         }
 
-        class A { }
-        class B : A { }
-        class C : A { }
-        class D : A { }
-        class E : B { }
-        class MyClass<T1, T2, T3>
+        private class A { }
+
+        private class B : A { }
+
+        private class C : A { }
+
+        private class D : A { }
+
+        private class E : B { }
+
+        private class MyClass<T1, T2, T3>
             where T1 : T2
             where T3 : T1
         {
 
         }
-        static void MyyClass()
+
+        private static void MyyClass()
         {
             MyClass<B, A, E> my = new MyClass<B, A, E>();
             //MyClass<C, A, A> myClass1 = new MyClass<C, A, A>();
