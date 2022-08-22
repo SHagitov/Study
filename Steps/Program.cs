@@ -185,6 +185,17 @@ namespace Steps
             #endregion
 
         }
+
+        class Class1<T>
+        where T : new()
+        {
+            public T field;
+
+            public Class1()
+            {
+                field = new T();
+            }
+        }
         public class SomethingA
         {
             public int[] array;
