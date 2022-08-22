@@ -13,12 +13,29 @@ namespace Steps
     {
         private static void Main(string[] args)
         {
-            Twitter();
+            Exc();
             Console.ReadLine();
         }
 
         static void Exc()
         {
+            try
+            {
+                int[] arr = new int[10];
+
+                Console.Write("Введите  arr[11]: ");
+
+                arr[11] = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine($"Ошибка ввода. e.Message = {e.Message}");
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine($"Ошибка индекса. e.Message = {e.Message}");
+            }
+
             #region Пример 1-5
 
             #region Пример 1
