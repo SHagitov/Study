@@ -186,7 +186,7 @@ namespace Steps
 
         }
 
-        class Class1<T>
+        private class Class1<T>
         where T : new()
         {
             public T field;
