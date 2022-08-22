@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Steps
 {
@@ -12,7 +8,7 @@ namespace Steps
         public static event Action<string, int> CreateCar;
 
         private static int count;
-        private static Random random;
+        private static readonly Random random;
 
         static Car()
         {
@@ -43,7 +39,7 @@ namespace Steps
 
         public override string ToString()
         {
-            return $"{this.Mark} {this.Model} {this.Engine}";
+            return $"{Mark} {Model} {Engine}";
         }
 
     }

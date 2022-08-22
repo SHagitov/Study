@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Steps
 {
     public class Factory
     {
-        private int count;
-        static private Random random;
+        private readonly int count;
+        private static readonly Random random;
 
         static Factory()
         {
@@ -18,7 +15,7 @@ namespace Steps
 
         public Factory(int Count)
         {
-            this.count = Count;
+            count = Count;
             Car.CreateCar += Car_CreateCar;
         }
 
@@ -31,7 +28,7 @@ namespace Steps
         {
             List<Car> cars = new List<Car>();
 
-            for (int i = 0; i < this.count; i++)
+            for (int i = 0; i < count; i++)
             {
                 cars.Add(new Car(
                     Mark: $"Марка_{random.Next(1, 6)}",

@@ -17,12 +17,15 @@ namespace Steps
             Console.ReadLine();
         }
 
-        static void Eventes()
+        private static void Eventes()
         {
-            var factory = new Factory(10);
-            var cars = factory.ToProduce();
+            Factory factory = new Factory(10);
+            List<Car> cars = factory.ToProduce();
 
-            foreach (var item in cars) Console.WriteLine(item);
+            foreach (Car item in cars)
+            {
+                Console.WriteLine(item);
+            }
 
             #region _
 
