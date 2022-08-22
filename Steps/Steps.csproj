@@ -50,6 +50,7 @@
     <Compile Include="Car.cs" />
     <Compile Include="Cat.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Complex.cs" />
     <Compile Include="Computer3.cs" />
     <Compile Include="Content.cs" />
     <Compile Include="DataProcessing.cs" />

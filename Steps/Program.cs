@@ -19,7 +19,24 @@ namespace Steps
 
         private static void Exceptionz()
         {
+            MyClass a = new MyClass() { MyProperty = 10 }; Console.WriteLine(a.MyProperty);
+            MyClass b = new MyClass() { MyProperty = 20 }; Console.WriteLine(b.MyProperty);
 
+            MyClass res = a + b; Console.WriteLine(res.MyProperty);
+            //a = a + b;
+            //a += b;
+            Console.WriteLine();
+
+            Complex k = new Complex() { A = 1, B = 2 };
+            Console.WriteLine(k);
+            Complex l = new Complex() { A = 3, B = 4 };
+            Console.WriteLine(l);
+
+            Complex r = k + l;
+            Console.WriteLine(r);
+
+            Console.WriteLine(k > l);
+            Console.WriteLine(res.MyProperty);
             try
             {
 
@@ -185,6 +202,26 @@ namespace Steps
 
             #endregion
 
+        }
+        public class MyClass
+        {
+            public int MyProperty { get; set; }
+
+            public static MyClass operator +(MyClass x, MyClass y)
+            {
+                return new MyClass() { MyProperty = x.MyProperty + y.MyProperty };
+            }
+
+            public static string operator -(MyClass x, MyClass y)
+            {
+                return "Минус";
+            }
+
+
+            public static string operator *(MyClass x, Complex y)
+            {
+                return "Минус";
+            }
         }
         private static void Twitter()
         {
