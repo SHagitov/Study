@@ -13,10 +13,34 @@ namespace Steps
     {
         private static void Main(string[] args)
         {
-            Invariance();
+            Covariance();
             Console.ReadLine();
         }
+        static void Covariance()
+        {
+            #region 
 
+            List<Kiwi> listKiwi = new List<Kiwi>() { new Kiwi() };
+            List<Bird> listBird = new List<Bird>() { new Bird() };
+            List<Animal> listAnimal = new List<Animal> { new Animal() };
+
+            // Ковариантность даёт возможность использовать более конкретный тип, чем заданный изначально
+
+            IEnumerable<Animal> enumerableAnimal = listKiwi;
+
+            listAnimal = enumerableAnimal.ToList();
+
+            IEnumerable<object> enumerableObject = listKiwi;
+
+            List<object> listObject = enumerableObject.ToList();
+
+            foreach (var item in listObject) Console.WriteLine(item.GetType());
+
+            Console.ReadKey();
+            Console.Clear();
+
+            #endregion
+        }
         private static void Invariance()
         {
             Kiwi concreteKiwi = new Kiwi();
