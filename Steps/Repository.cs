@@ -122,7 +122,7 @@ namespace Steps
             Console.ForegroundColor = ConsoleColor.Gray;
 
 
-            foreach (var worker in Workers) //
+            foreach (Worker worker in Workers) //
             {                                    // Печатаем в консоль всех работников
                 Console.WriteLine(worker);       //
             }                                    //
@@ -164,9 +164,9 @@ namespace Steps
         /// <returns></returns>
         public object Clone()
         {
-            var r = new Repository(0);
+            Repository r = new Repository(0);
 
-            foreach (var e in Workers)
+            foreach (Worker e in Workers)
             {
                 r.Workers.Add(new Worker(e.FirstName, e.LastName, e.Age, e.Salary));
             }

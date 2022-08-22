@@ -21,7 +21,7 @@ namespace Steps
         {
             #region SomethingA
 
-            var a = new SomethingA();
+            SomethingA a = new SomethingA();
             for (int i = 0; i < a.array.Length; i++)
             {
                 Console.Write($"{a.array[i],3} ");
@@ -34,7 +34,7 @@ namespace Steps
 
             #region SomethingB
 
-            var b = new SomethingB();
+            SomethingB b = new SomethingB();
 
             b.Reset();
 
@@ -110,10 +110,10 @@ namespace Steps
 
         private static void RepositoryWorkers()
         {
-            var rep = new Repository(10);
+            Repository rep = new Repository(10);
             rep.Print("Вывод");
 
-            foreach (var item in rep)
+            foreach (object item in rep)
             {
                 Console.WriteLine(item);
             }
@@ -122,7 +122,7 @@ namespace Steps
         private static void Robots()
         {
             Robot robot1 = new Robot("Robot_1", "Test");
-            var robots = new List<Robot> { new Robot("Robot_1", "Test") };
+            List<Robot> robots = new List<Robot> { new Robot("Robot_1", "Test") };
             Robot robot2 = new Robot("Robot_1", "Test");
             Console.WriteLine(robots.Contains(robot2));
             Console.WriteLine(robots.Contains(robot1));
@@ -147,10 +147,10 @@ namespace Steps
 
             List<Cat> cats = new List<Cat>();
 
-            var r = new Random();
+            Random r = new Random();
             for (int i = 1; i <= 10; i++)
             {
-                var c = new Cat($"Котик_{i}", $"Порода_{i}", r.Next(3, 12));
+                Cat c = new Cat($"Котик_{i}", $"Порода_{i}", r.Next(3, 12));
                 cats.Add(c);
                 Console.WriteLine(c);
             }
@@ -158,7 +158,7 @@ namespace Steps
             Console.ReadKey();
             Console.Clear();
 
-            foreach (var e in cats)
+            foreach (Cat e in cats)
             {
                 Console.WriteLine(e);
             }
@@ -240,7 +240,7 @@ namespace Steps
                 new Warrior(),
             };
 
-            foreach (var e in rampages)
+            foreach (IRampage e in rampages)
             {
                 e.UltraAttack(druid);
 
@@ -249,14 +249,14 @@ namespace Steps
 
             Console.WriteLine(druid.HeroInformation());
 
-            foreach (var e in rampages)
+            foreach (IRampage e in rampages)
             {
                 e.Recharge();
 
                 //Console.WriteLine(druid.HeroInformation());
             }
 
-            foreach (var e in rampages)
+            foreach (IRampage e in rampages)
             {
                 e.UltraAttack(druid);
 
@@ -264,7 +264,7 @@ namespace Steps
             }
             Console.WriteLine(druid.HeroInformation());
 
-            foreach (var e in rampages)
+            foreach (IRampage e in rampages)
             {
                 e.UltraAttack(druid);
 
@@ -1892,13 +1892,13 @@ namespace Steps
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(path);  // Получаем информацию о текущем каталоге
 
-            foreach (var item in directoryInfo.GetDirectories())    // Перебираем все подкаталоги текущего каталога
+            foreach (DirectoryInfo item in directoryInfo.GetDirectories())    // Перебираем все подкаталоги текущего каталога
             {
                 Console.WriteLine($"{trim}{item.Name}");            // Выводим информацию о нём
                 GetDir(item.FullName, trim + "    ");               // Запускаем "просмотре" вложенного каталога
             }
 
-            foreach (var item in directoryInfo.GetFiles())          // Перебираем все файлы текущего каталога
+            foreach (FileInfo item in directoryInfo.GetFiles())          // Перебираем все файлы текущего каталога
             {
                 Console.WriteLine($"{trim}{item.Name}");            // Выводим информацию о них
             }
@@ -1912,12 +1912,12 @@ namespace Steps
             // Char.IsUpper         // Показывает, относится ли указанный символ Юникода к категории букв верхнего регистра.
 
             char[] symbols = "symbols".ToCharArray();
-            foreach (var item in symbols)
+            foreach (char item in symbols)
             {
                 Console.Write($"{item} ");
             }
 
-            string s = new String(symbols);
+            string s = new string(symbols);
         }
 
         private static void Strings()
@@ -1970,13 +1970,13 @@ namespace Steps
 
             string test = null;
 
-            Console.WriteLine($"String.IsNullOrEmpty(test) = {String.IsNullOrEmpty(test)}");    // True
+            Console.WriteLine($"String.IsNullOrEmpty(test) = {string.IsNullOrEmpty(test)}");    // True
 
-            test = String.Empty;
-            Console.WriteLine($"String.IsNullOrEmpty(test) = {String.IsNullOrEmpty(test)}");    // True
+            test = string.Empty;
+            Console.WriteLine($"String.IsNullOrEmpty(test) = {string.IsNullOrEmpty(test)}");    // True
 
             test = "Skill";
-            Console.WriteLine($"String.IsNullOrEmpty(test) = {String.IsNullOrEmpty(test)}");    // False
+            Console.WriteLine($"String.IsNullOrEmpty(test) = {string.IsNullOrEmpty(test)}");    // False
 
         }
 
@@ -2159,7 +2159,7 @@ namespace Steps
             {
                 if (N == Word.Length)
                 {
-                    foreach (var e in Word) { Console.Write(e); }
+                    foreach (char e in Word) { Console.Write(e); }
                     Console.WriteLine();
                     return;
                 }
@@ -2308,7 +2308,7 @@ namespace Steps
             {
                 int result = 0;
 
-                foreach (var e in Args)
+                foreach (int e in Args)
                 {
                     result += e;
                 }
@@ -2316,7 +2316,7 @@ namespace Steps
                 return result;
             }
 
-            var res = Sum(1);
+            int res = Sum(1);
             res = Sum(1, 9);
             res = Sum(1, 9, 9);
             res = Sum(1, 9, 9, 0);
@@ -3198,14 +3198,14 @@ namespace Steps
 
             int[] col = { 1, 3, 5, 7, 9 };
 
-            foreach (var e in col)
+            foreach (int e in col)
             {
                 Console.Write($"{e} ");
             }
 
             Console.WriteLine();
             int[] inverseCol = Inverse(col);          // Вызов метода Inverse
-            foreach (var e in inverseCol)
+            foreach (int e in inverseCol)
             {
                 Console.Write($"{e} ");
             }
@@ -3651,7 +3651,7 @@ namespace Steps
 
             _ = new Random();
 
-            var A = new int[4, 4];
+            int[,] A = new int[4, 4];
 
             Console.WriteLine("Исходная матрица A[4x4]: ");
 
@@ -3748,7 +3748,7 @@ namespace Steps
             Console.ReadKey();
 
             #endregion
-            var data = new int[] { 1, 5, 2, 5, 4, 6, 5, 7, 6, 8, 6, 9, 5, 1 };
+            int[] data = new int[] { 1, 5, 2, 5, 4, 6, 5, 7, 6, 8, 6, 9, 5, 1 };
 
             Console.WriteLine("Исходный массив: ");
 
@@ -6318,7 +6318,7 @@ namespace Steps
             // В зависимости от настроек языкового стандарта программы
             // выводимые символы могут отличаться. 
             Console.WriteLine();
-            var date = new DateTime(2025, 09, 28, 01, 30, 59);
+            DateTime date = new DateTime(2025, 09, 28, 01, 30, 59);
             Console.WriteLine(date);                    // 
                                                         // 
                                                         //
@@ -6586,7 +6586,7 @@ namespace Steps
 
         private static void Variable()
         {
-            var asdf1234 = 20.19;
+            double asdf1234 = 20.19;
 
             Console.WriteLine(asdf1234);
             Console.ReadKey();
@@ -6723,10 +6723,10 @@ namespace Steps
             Console.WriteLine($"Original a = {a}, b = {b}");
             Swap(ref a, ref b);
             Console.WriteLine($"Swapped a = {a}, b = {b}");
-            var list = new List<int>();
+            List<int> list = new List<int>();
             AddNumber(list);
 
-            foreach (var item in list)
+            foreach (int item in list)
             {
                 Console.WriteLine(item);
             }
@@ -6760,7 +6760,7 @@ namespace Steps
             Console.ReadKey();
             Console.WriteLine("Enter a number, please");
             string line = Console.ReadLine();
-            bool wasParsed = int.TryParse(line, out var number);
+            bool wasParsed = int.TryParse(line, out int number);
             if (wasParsed)
             {
                 Console.WriteLine();
@@ -6837,7 +6837,7 @@ namespace Steps
 
         private static void StackQueue()
         {
-            var queque = new Queue<int>();
+            Queue<int> queque = new Queue<int>();
             queque.Enqueue(1);
             queque.Enqueue(2);
             queque.Enqueue(3);
@@ -6852,12 +6852,12 @@ namespace Steps
 
             Console.WriteLine("Iterate over the queue");
 
-            foreach (var x in queque)
+            foreach (int x in queque)
             {
                 Console.WriteLine(x);
             }
             Console.ReadLine();
-            var stack = new Stack<int>();
+            Stack<int> stack = new Stack<int>();
             stack.Push(1);
             stack.Push(2);
             stack.Push(3);
@@ -6872,7 +6872,7 @@ namespace Steps
 
             Console.WriteLine("Iterate over the stack");
 
-            foreach (var x in stack)
+            foreach (int x in stack)
             {
                 Console.WriteLine(x);
             }
@@ -6891,9 +6891,9 @@ namespace Steps
                 list.Add(r.Next(20));
             }
 
-            var dictionary = new Dictionary<int, int>();
+            Dictionary<int, int> dictionary = new Dictionary<int, int>();
 
-            foreach (var e in list)
+            foreach (int e in list)
             {
                 if (!dictionary.ContainsKey(e))
                 {
@@ -6909,7 +6909,7 @@ namespace Steps
             }
 
             #endregion
-            var people = new Dictionary<int, string>
+            Dictionary<int, string> people = new Dictionary<int, string>
             {
                 { 1, "John" },
                 { 2, "Bob" },
@@ -6925,18 +6925,18 @@ namespace Steps
             string name = people[1];
             Console.WriteLine(name);
 
-            var keys = people.Keys;
-            foreach (var x in keys)
+            Dictionary<int, string>.KeyCollection keys = people.Keys;
+            foreach (int x in keys)
             {
                 Console.WriteLine(x);
             }
-            var values = people.Values;
-            foreach (var x in values)
+            Dictionary<int, string>.ValueCollection values = people.Values;
+            foreach (string x in values)
             {
                 Console.WriteLine(x);
             }
 
-            foreach (var pair in people)
+            foreach (KeyValuePair<int, string> pair in people)
             {
                 Console.WriteLine($"{pair.Key} {pair.Value}");
             }
@@ -6963,7 +6963,7 @@ namespace Steps
 
         private static void ListDemo()
         {
-            var intList = new List<int>
+            List<int> intList = new List<int>
             {
                 1,
                 2,
@@ -7002,7 +7002,7 @@ namespace Steps
             }
             Console.WriteLine();
 
-            foreach (var x in intList)
+            foreach (int x in intList)
             {
                 Console.Write($"{x} ");
             }
@@ -7023,14 +7023,14 @@ namespace Steps
             int[] anotherCopy = new int[10];
             copy.CopyTo(anotherCopy, 0);
             Array.Reverse(copy);
-            foreach (var t in copy)
+            foreach (int t in copy)
             {
                 Console.WriteLine(t);
             }
             Console.WriteLine();
 
             Array.Sort(copy);
-            foreach (var t in copy)
+            foreach (int t in copy)
             {
                 Console.WriteLine(t);
             }
@@ -7698,11 +7698,11 @@ namespace Steps
 
         private static void VariablesScope()
         {
-            var a = 1;
+            int a = 1;
             {
-                var b = 2;
+                int b = 2;
                 {
-                    var c = 3;
+                    int c = 3;
                     Console.WriteLine(a);
                     Console.WriteLine(b);
                     Console.WriteLine(c);
@@ -7743,7 +7743,7 @@ namespace Steps
         {
             int x = -1;
             Dictionary<int, string> dict = new Dictionary<int, string>();
-            var dictt = new Dictionary<int, string>();
+            Dictionary<int, string> dictt = new Dictionary<int, string>();
             object obj1 = 1;
             Console.WriteLine(x);
             Console.ReadKey();

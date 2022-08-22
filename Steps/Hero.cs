@@ -47,7 +47,7 @@ namespace Steps
         /// <param name="HitPoint">Запас здоровья</param>
         public Hero(string Name, byte Level, uint HitPoint)
         {
-            if (Name == String.Empty || Hero.dbNames.Contains(Name))
+            if (Name == string.Empty || Hero.dbNames.Contains(Name))
             {
                 Name = $"{Guid.NewGuid().ToString().Substring(0, 5)} #{Hero.defIndexName++}";
             }
@@ -131,7 +131,7 @@ namespace Steps
         /// <returns></returns>
         public string HeroInformation()
         {
-            return String.Format("Name:{0,10} |  Level:{1,4} |  HitPoint:{2,6} |  Type:{3,12}",
+            return string.Format("Name:{0,10} |  Level:{1,4} |  HitPoint:{2,6} |  Type:{3,12}",
                 Name,
                 Level,
                 HitPoint,

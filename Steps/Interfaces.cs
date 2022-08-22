@@ -12,7 +12,7 @@ namespace Steps
     {
         public static void AddRange(this IBaseCollection collection, IEnumerable<object> objects)
         {
-            foreach (var obj in objects)
+            foreach (object obj in objects)
             {
                 collection.Add(obj);
             }
