@@ -1878,7 +1878,6 @@ namespace Steps
         }
         static void Chars()
         {
-            char c = 'c';
             // Char.IsDigit         // Показывает, относится ли указанный символ Юникода к категории десятичных цифр.
             // Char.IsLetter        // Показывает, относится ли указанный символ Юникода к категории букв Юникода.
             // Char.IsLower         // Показывает, относится ли указанный символ Юникода к категории букв нижнего регистра.
@@ -3004,23 +3003,23 @@ namespace Steps
             /// Вывод персонифицированного приветствия в консоль
             /// </summary>
             /// <param name="Name">Имя, кото нужно поприветствовать</param>
-            static void Hi(string Name)
-            {
-                Random r = new Random();
+            //static void Hi(string Name)
+            //{
+            //    Random r = new Random();
 
-                string text = string.Empty;
+            //    string text = string.Empty;
 
-                switch (r.Next(5))
-                {
-                    case 0: text = $"Привет, {Name}!"; break;
-                    case 1: text = $"Добрый день, {Name}!"; break;
-                    case 2: text = $"Приветствую тебя, {Name}!"; break;
-                    case 3: text = $"Рад тебя видеть, {Name}!"; break;
-                    default: text = $"Я так ждал тебя, {Name}!"; break;
-                }
+            //    switch (r.Next(5))
+            //    {
+            //        case 0: text = $"Привет, {Name}!"; break;
+            //        case 1: text = $"Добрый день, {Name}!"; break;
+            //        case 2: text = $"Приветствую тебя, {Name}!"; break;
+            //        case 3: text = $"Рад тебя видеть, {Name}!"; break;
+            //        default: text = $"Я так ждал тебя, {Name}!"; break;
+            //    }
 
-                Console.WriteLine(text);
-            }
+            //    Console.WriteLine(text);
+            //}
 
             /// <summary>
             /// Упорядоченный беспорядок на экране нужное количество раз
@@ -3087,10 +3086,10 @@ namespace Steps
             /// <param name="Value1">Первое число</param>
             /// <param name="Value2">Второе число</param>
             /// <returns>Максимальнео число</returns>
-            static int Max(int Value1, int Value2)
-            {
-                return Value1 > Value2 ? Value1 : Value2;
-            }
+            //static int Max(int Value1, int Value2)
+            //{
+            //    return Value1 > Value2 ? Value1 : Value2;
+            //}
 
             /// <summary>
             /// Метод, принимающий массив целых чисел и возвращающий массив с противолоными числами
@@ -3870,18 +3869,18 @@ namespace Steps
 
             int count = 0;
 
-            for (int i = 0; i < 1_000; i++)
-            {
-                //if (i % 2 == 0) continue;
-                for (int j = 0; j < 1_000; j++)
-                {
-                    break;
-                    //Console.Write($"({i} {j})  ");
+            //for (int i = 0; i < 1_000; i++)
+            //{
+            //    //if (i % 2 == 0) continue;
+            //    for (int j = 0; j < 1_000; j++)
+            //    {
+            //        break;
+            //        //Console.Write($"({i} {j})  ");
 
 
-                }
-                count++;
-            }
+            //    }
+            //    count++;
+            //}
 
             Console.WriteLine($"count = {count}");
 
@@ -5157,44 +5156,44 @@ namespace Steps
             #region Пример записи 2
             Console.ReadKey();
 
-            if (true)
-            {
+            //if (true)
+            //{
 
-            }
-            else
-            {
-                if (true)
-                {
+            //}
+            //else
+            //{
+            //    if (true)
+            //    {
 
-                }
-                else
-                {
-                    if (true)
-                    {
+            //    }
+            //    else
+            //    {
+            //        if (true)
+            //        {
 
-                    }
-                    else
-                    {
+            //        }
+            //        else
+            //        {
 
-                    }
-                }
-            }
+            //        }
+            //    }
+            //}
 
-            if (x < 1)
-            {
-                Console.WriteLine("x < 1");
-            }
-            else
-            {
-                if (x > 1)
-                {
-                    Console.WriteLine("x > 1");
-                }
-                else
-                {
-                    Console.WriteLine("x = 1");
-                }
-            }
+            //if (x < 1)
+            //{
+            //    Console.WriteLine("x < 1");
+            //}
+            //else
+            //{
+            //    if (x > 1)
+            //    {
+            //        Console.WriteLine("x > 1");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("x = 1");
+            //    }
+            //}
 
             #endregion
             // Заказчик просит написать программу, которая определяет текущую температуру 
@@ -6189,9 +6188,6 @@ namespace Steps
             byte age = 37;
             ulong yearOfBirth = 1799;
 
-
-            string pattern = "Имя: {0} Фамилия: {1} Специализация: {2} Возраст: {3} Год рождения: {4}";
-
             #region newPattern
 
             string newPattern = "Имя: {0} \nФамилия: {1} \nСпециализация: {2} \nВозраст: {3} \nГод рождения: {4}";
@@ -6297,12 +6293,6 @@ namespace Steps
         }
         static void BoolTypes()
         {
-            // Тип bool может хранить логическое значение, которое принимает значение 
-            // правда или ложь. 
-            // Эти значения указываются с ключевыми словами true и false
-
-            bool flag = true;   // переменной flag присвоить истину
-            flag = false;       // переменной flag присвоить ложь
         }
         static void CharTypes()
         {
@@ -6349,23 +6339,6 @@ namespace Steps
         }
         static void IntegerTypes()
         {
-            // Существует четыре типа целых чисел со знаком, 
-            // которые можно использовать в зависимости от того,
-            // насколько большое(или маленькое) число нужно хранить
-
-            // Целые числа со знаком
-            sbyte int8 = 2;   // от -128 дo +127
-            short int16 = 1;  // от -32768 дo +32767
-            int int32 = 0;    // от -2^31 дo +2^31-1 >>> от -2 147 483 648 до +2 147 483 647
-            long int64 = -1;  // от -2^63 дo +2^63-1 >>> от -9 223 372 036 854 775 808 до +9 223 372 036 854 775 807
-
-            // Типы без знака можно использовать, если нужно хранить только положительные значения
-
-            // Целые числа без знака
-            byte uInt8 = 0;     // от 0 дo 255
-            ushort uInt16 = 1;  // от 0 дo 65535
-            uint uInt32 = 2;    // от 0 дo 2^32-1 >>> от 0 до 4 294 967 296
-            ulong uInt64 = 3;   // от 0 дo 2^64-1 >>> от 0 до 18 446 744 073 709 551 616
 
 
             // Замечание 1 Работает с C# 7.0
@@ -6381,64 +6354,11 @@ namespace Steps
             int binNumber = 0b11100;        // 0b11100 - это 28 в десятичной форме записи
             Console.WriteLine(binNumber);   // 28
 
-            // Замечание 2 Работает с C# 7.0
-            // Добавлено использование разделителей цифр (_) для улучшения читабельности длинных чисел.
-            // Этот разделитель цифр может появляться в любом месте числа
-            int number = 1000000000;
-            int _number = 1_000_000_______000;
-
 
         }
         static void Variable()
         {
-            // Переменная - это "контейнер" для хранения данных
-
-            //            ────────────────┐             
-            // ┌──────────┐               │             
-            // │   6174   │ Значение      │ Переменная  
-            // └──────────┘               │             
-            //      box     Идентификатор |             
-            //            ────────────────┘             
-
-
-            // Переменные используются для хранения данных в памяти во 
-            // время выполнения программы
-
-            // Переменная объявляется следующим образом:
-            // Ключевое слово var за которым следует идетификатор переменной,
-            // далее оператор присваивания и значение переменной, 
-            // инструкция заканчивается точкой с запятой
-            // 
-            // Примеры
-            var a = 28;
-            var b = 84.5;
-            var c = "Первая программа написанная на языке Visual C#";
-
-            // Замечание
-            // Имя (идентификатор переменной) может содержать
-            // латинские строчные и прописные буквы
-            // символ нижнего подчеркивание - "_"
-            // цифры,
-            // ! но цифра не может быть на первом месте
-
-            // Пример того, как не нужно писать код
-            var g = 1;
-            var ab = 2;
-            var qwerty = "Я программист!";
             var asdf1234 = 20.19;
-            var zx_cv = 28;
-            var ___gg777_oy19___ = "Сегодня отличный день";
-            //var 799abcde = "упс..."; //- ошибка 
-
-            // ! Важно 
-            // Привыкать к осмысленному именованию переменных
-
-            var age = 28;
-            var weight = 84.5;
-            var title = "Первая программа написанная на языке Visual C#";
-            var month = "March";
-            var schoolName = "SkillBox";
-            var csharpCreater = "Anders Hejlsberg";
 
             Console.WriteLine(asdf1234);
             Console.ReadKey();
@@ -6469,7 +6389,7 @@ namespace Steps
             {
                 number = int.Parse(result);
             }
-            catch (OverflowException ex)
+            catch (OverflowException)
             {
 
             }
@@ -7535,25 +7455,9 @@ namespace Steps
         static void Variables()
         {
             int x = -1;
-            int y;
-            y = 8;
-            Int32 x1 = -1;
-            //uint z = -1;
-            float f = 1.1f;
-            double d = 2.3;
-            int x8 = 0;
-            int x88 = new int();
-            var a = 1;
-            var z = 1.2;
             Dictionary<int, string> dict = new Dictionary<int, string>();
             var dictt = new Dictionary<int, string>();
-            decimal money = 3.0m;
-            char character = 'A';
-            string name = "John";
-            bool canMove = true;
-            bool canPlay = false;
             object obj1 = 1;
-            char @char = 'Z';
             Console.WriteLine(x);
             Console.ReadKey();
         }
