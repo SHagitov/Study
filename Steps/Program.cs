@@ -16,7 +16,8 @@ namespace Steps
             MyyClass();
             Console.ReadLine();
         }
-        static void Invariance()
+
+        private static void Invariance()
         {
             Kiwi concreteKiwi = new Kiwi();
 
@@ -45,10 +46,14 @@ namespace Steps
             // который изначально задан  в обобщении
 
         }
-        class Animal { }        // Животное
-        class Dog : Animal { }   // Собака
-        class Bird : Animal { } // Птица
-        class Kiwi : Bird { }   // Птица Киви
+
+        private class Animal { }        // Животное
+
+        private class Dog : Animal { }   // Собака
+
+        private class Bird : Animal { } // Птица
+
+        private class Kiwi : Bird { }   // Птица Киви
         private static void Example0()
         {
             //static void Swap(ref int A, ref int B) { int c = A; A = B; B = c; }
