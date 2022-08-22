@@ -4174,9 +4174,7 @@ namespace Steps
 
                 if (numbs[head] == 1 && numbs[tail] == 0)  // Если головной элемент = 1 и хвостовой = 0
                 {
-                    int temp = numbs[head];             //
-                    numbs[head] = numbs[tail];          // Меняем их местами
-                    numbs[tail] = temp;                 //
+                    (numbs[tail], numbs[head]) = (numbs[head], numbs[tail]);             //
 
                     head++;                             // Сдвигаем голову 
                     tail--;                             // и хвост
@@ -6738,9 +6736,7 @@ namespace Steps
         private static void Swap(ref int a, ref int b)
         {
             Console.WriteLine($"Original a = {a}, b = {b}");
-            int tmp = a;
-            a = b;
-            b = tmp;
+            (b, a) = (a, b);
             Console.WriteLine($"Swapped a = {a}, b = {b}");
         }
 
