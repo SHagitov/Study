@@ -46,7 +46,7 @@
         /// <returns>Строковое представление информации</returns>
         public override string ToString()
         {
-            return $"{FirstName,15} {LastName,15} {Age,10} {Salary.ToString("## ###"),10} руб.";
+            return $"{FirstName,15} {LastName,15} {Age,10} {Salary,10:## ###} руб.";
         }
     }
 

@@ -3,7 +3,7 @@
     /// <summary>
     /// Ультра атака
     /// </summary>
-    interface IRampage
+    internal interface IRampage
     {
         /// <summary>
         /// Количество зарядов

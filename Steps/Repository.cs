@@ -12,17 +12,17 @@ namespace Steps
         /// <summary>
         /// База данных имён
         /// </summary>
-        static readonly string[] firstNames;
+        private static readonly string[] firstNames;
 
         /// <summary>
         /// База данных фамилий
         /// </summary>
-        static readonly string[] lastNames;
+        private static readonly string[] lastNames;
 
         /// <summary>
         /// Генератор псевдослучайных чисел
         /// </summary>
-        static Random randomize;
+        private static Random randomize;
 
         /// <summary>
         /// Статический конструктор, в котором "хранятся"

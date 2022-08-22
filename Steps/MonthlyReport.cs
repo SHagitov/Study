@@ -3,7 +3,7 @@
     /// <summary>
     /// Структура, описывающая данные по месяцам
     /// </summary>
-    struct MonthlyReport
+    internal struct MonthlyReport
     {
         /// <summary>
         /// Название месяца

@@ -42,7 +42,7 @@ namespace Steps
             {
                 throw new InvalidOperationException();
             }
-            _items[--Count] = default(T);
+            _items[--Count] = default;
         }
 
         public T Peek()

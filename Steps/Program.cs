@@ -11,13 +11,13 @@ namespace Steps
 
     public static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             RepositoryWorkers();
             Console.ReadLine();
         }
 
-        static void Something()
+        private static void Something()
         {
             #region SomethingA
 
@@ -75,7 +75,7 @@ namespace Steps
         }
         public class SomethingB
         {
-            int index;
+            private int index;
 
             //  Возвращает элемент, соответствующий текущей позиции 
             public int Current() { return array[index]; }
@@ -91,8 +91,7 @@ namespace Steps
             // Устанавливает перечислитель в его начальное положение, т. е. перед первым элементом
             public void Reset() { index = -1; }
 
-
-            int[] array;
+            private int[] array;
             public SomethingB()
             {
                 array = Enumerable.Range(11, 10).ToArray();
@@ -108,7 +107,8 @@ namespace Steps
             //public int Count { get { return this.array.Length; } }
 
         }
-        static void RepositoryWorkers()
+
+        private static void RepositoryWorkers()
         {
             var rep = new Repository(10);
             rep.Print("Вывод");
@@ -118,7 +118,8 @@ namespace Steps
                 Console.WriteLine(item);
             }
         }
-        static void Robots()
+
+        private static void Robots()
         {
             Robot robot1 = new Robot("Robot_1", "Test");
             var robots = new List<Robot> { new Robot("Robot_1", "Test") };
@@ -159,7 +160,8 @@ namespace Steps
 
             foreach (var e in cats) Console.WriteLine(e);
         }
-        static void Interface()
+
+        private static void Interface()
         {
             //namespace Example
             //{
@@ -222,7 +224,8 @@ namespace Steps
             //    }
             //}
         }
-        static void HeroClass()
+
+        private static void HeroClass()
         {
             Druid druid = new Druid("druid", 1, 500);
 
@@ -373,7 +376,8 @@ namespace Steps
             #endregion
 
         }
-        static void Classes()
+
+        private static void Classes()
         {
             /// Создание котиков
             //Cat cat1 = new Cat("Басик", "Русская голубая кошка");
@@ -388,7 +392,8 @@ namespace Steps
             Robot robot = new Robot("С-3PO", "Звёздные воины");
             Console.WriteLine("Good");
         }
-        static void SerializationComplicatedJson()
+
+        private static void SerializationComplicatedJson()
         {
             #region Parse
 
@@ -471,7 +476,8 @@ namespace Steps
 
             #endregion
         }
-        static void SerializationComplicatedXml()
+
+        private static void SerializationComplicatedXml()
         {
             #region XDocument.Parse
 
@@ -550,7 +556,8 @@ namespace Steps
             #endregion
 
         }
-        static void SerializationXml()
+
+        private static void SerializationXml()
         {
             #region class Worker
             //public class Worker
@@ -787,7 +794,8 @@ namespace Steps
             //}
             #endregion
         }
-        static void SerializationInto()
+
+        private static void SerializationInto()
         {
             // Сериализация — процесс перевода какой-либо структуры данных в последовательность битов
             // Десериализации — восстановление начального состояния структуры данных из битовой последовательности 
@@ -893,7 +901,8 @@ namespace Steps
 
             #endregion
         }
-        static void OtherCollections()
+
+        private static void OtherCollections()
         {
             #region Dictionary
 
@@ -1065,7 +1074,8 @@ namespace Steps
 
             #endregion
         }
-        static void List()
+
+        private static void List()
         {
             #region List<T>
 
@@ -1110,7 +1120,8 @@ namespace Steps
 
             #endregion
         }
-        static void Computers()
+
+        private static void Computers()
         {
             #region Computer1
 
@@ -1167,7 +1178,8 @@ namespace Steps
 
             #endregion
         }
-        static void StructWorker()
+
+        private static void StructWorker()
         {
             #region Конструкторы
 
@@ -1270,7 +1282,8 @@ namespace Steps
 
             #endregion
         }
-        static void AccessModifiers()
+
+        private static void AccessModifiers()
         {
             //Cat1 cat = new Cat1();
 
@@ -1363,7 +1376,8 @@ namespace Steps
 
             //Console.WriteLine(db4["*"]);
         }
-        static void Structures()
+
+        private static void Structures()
         {
             // Структуры и введение в ООП
 
@@ -1445,7 +1459,8 @@ namespace Steps
 
             #endregion
         }
-        static void Files()
+
+        private static void Files()
         {
             #region File
 
@@ -1861,7 +1876,8 @@ namespace Steps
             };
             #endregion
         }
-        static void GetDir(string path, string trim = "")
+
+        private static void GetDir(string path, string trim = "")
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(path);  // Получаем информацию о текущем каталоге
 
@@ -1876,7 +1892,8 @@ namespace Steps
                 Console.WriteLine($"{trim}{item.Name}");            // Выводим информацию о них
             }
         }
-        static void Chars()
+
+        private static void Chars()
         {
             // Char.IsDigit         // Показывает, относится ли указанный символ Юникода к категории десятичных цифр.
             // Char.IsLetter        // Показывает, относится ли указанный символ Юникода к категории букв Юникода.
@@ -1888,7 +1905,8 @@ namespace Steps
 
             string s = new String(symbols);
         }
-        static void Strings()
+
+        private static void Strings()
         {
             string str = "Visual alusiV";
             Console.WriteLine($"str = {str} ");
@@ -1947,7 +1965,8 @@ namespace Steps
             Console.WriteLine($"String.IsNullOrEmpty(test) = {String.IsNullOrEmpty(test)}");    // False
 
         }
-        static void MathDateConvert()
+
+        private static void MathDateConvert()
         {
 
             #region Convert
@@ -2080,7 +2099,8 @@ namespace Steps
 
             #endregion
         }
-        static void Recursion()
+
+        private static void Recursion()
         {
             static int Fib(int N)
             {
@@ -2219,7 +2239,8 @@ namespace Steps
             //Infinity();
             NotInfinity(5);
         }
-        static void Params()
+
+        private static void Params()
         {
 
             //static int Sum(int V1) { return V1; }
@@ -2343,7 +2364,8 @@ namespace Steps
             //res = Sum(3, new int[] { 2 });
             //Console.WriteLine(res);
         }
-        static void MethodExp()
+
+        private static void MethodExp()
         {
             ///// <summary>
             ///// Метод откладывающий закрытие консоли на Interval секунд 
@@ -2556,7 +2578,8 @@ namespace Steps
             Print(arr);
             Console.ReadKey();
         }
-        static void Method()
+
+        private static void Method()
         {
             // 1. Разделение логики: использование методов
 
@@ -3138,7 +3161,8 @@ namespace Steps
             int[] inverseCol = Inverse(col);          // Вызов метода Inverse
             foreach (var e in inverseCol) Console.Write($"{e} ");
         }
-        static void ForEach()
+
+        private static void ForEach()
         {
             // 7. Цикл foreach
 
@@ -3229,7 +3253,8 @@ namespace Steps
 
             #endregion
         }
-        static void JaggedArray2()
+
+        private static void JaggedArray2()
         {
             // 6. Массив массивов
 
@@ -3359,7 +3384,8 @@ namespace Steps
 
             #endregion
         }
-        static void MultiAray()
+
+        private static void MultiAray()
         {
             // 5. Многомерные массивы: использование, задание
             int[,,] matrix3D = new int[3, 4, 5];
@@ -3431,7 +3457,8 @@ namespace Steps
             Console.ReadKey();
 
         }
-        static void Array2D()
+
+        private static void Array2D()
         {
             // 4. Двумерные массивы: использование, задание
 
@@ -3594,7 +3621,8 @@ namespace Steps
 
             #endregion
         }
-        static void ArrayMethods()
+
+        private static void ArrayMethods()
         {
             // 2. Основные методы работы с одномерными массивами
             #region Задача 4
@@ -3888,7 +3916,8 @@ namespace Steps
             #endregion
 
         }
-        static void Arrays()
+
+        private static void Arrays()
         {
             // 1. Одномерные массивы: инициализация, определения, использование, задание
 
@@ -4104,7 +4133,8 @@ namespace Steps
 
             #endregion
         }
-        static void DoWhileLoop()
+
+        private static void DoWhileLoop()
         {
             // Цикл do-while продолжает выполнение блока кода, только если условие продолжение истинно.
             // Условие проверяется только в конце каждой итерации.
@@ -4340,7 +4370,8 @@ namespace Steps
 
             Console.WriteLine($"Сокращённая дробь {numerator / a}/{denominator / a}");
         }
-        static void WhileLoop()
+
+        private static void WhileLoop()
         {
             // Цикл while выполняет блок кода, только если его условие истинно и 
             // будет продолжаться до тех пор, пока условие остается верным.
@@ -4510,7 +4541,8 @@ namespace Steps
 
             Console.WriteLine($"Сокращённая дробь {numerator / a}/{denominator / a}");
         }
-        static void ForLoop()
+
+        private static void ForLoop()
         {
             // В C# есть три+одна циклическая конструкция (оператор). 
             // Они используются для выполнения определенной 
@@ -4636,7 +4668,8 @@ namespace Steps
 
             Console.WriteLine($"Среднее = {average / 10}");
         }
-        static void Reiteration()
+
+        private static void Reiteration()
         {
             // Пример 1. Сгенерировать 10 случайных чисел от -8 до 9
 
@@ -4788,7 +4821,8 @@ namespace Steps
 
             Console.WriteLine($"Сокращённая дробь {numerator / a}/{denominator / a}");
         }
-        static void Switch()
+
+        private static void Switch()
         {
             // Целое число может принимть множество вариантов
             // Применение if-else для всех значений может быть громоздко
@@ -4974,7 +5008,8 @@ namespace Steps
 
             #endregion
         }
-        static void TernaryOperator()
+
+        private static void TernaryOperator()
         {
             // Тернарный оператор
 
@@ -5084,7 +5119,8 @@ namespace Steps
 
             Console.WriteLine(outputString);
         }
-        static void IfElse()
+
+        private static void IfElse()
         {
             // Условные операторы используются для выполнения различных блоков кода на основе разных условий
 
@@ -5420,7 +5456,8 @@ namespace Steps
 
             #endregion
         }
-        static void Random()
+
+        private static void Random()
         {
             Random randomize = new Random();    // Создание переменной randomize для получения псевослучайных чисел
 
@@ -5464,7 +5501,8 @@ namespace Steps
 
 
         }
-        static void DataRead()
+
+        private static void DataRead()
         {
             // Вывод данных
             string name = "Билл Гейтс";
@@ -5493,7 +5531,8 @@ namespace Steps
 
 
         }
-        static void MathLogicalOperations()
+
+        private static void MathLogicalOperations()
         {
             int x1 = 30, x2 = 150,  // Координаты вершин прямоугольника
                 y1 = 20, y2 = 90;
@@ -5515,7 +5554,8 @@ namespace Steps
 
 
         }
-        static void LogicalOperations()
+
+        private static void LogicalOperations()
         {
 
 
@@ -5622,7 +5662,8 @@ namespace Steps
 
             #endregion
         }
-        static void OperationsPriority()
+
+        private static void OperationsPriority()
         {
 
             // 
@@ -5638,7 +5679,8 @@ namespace Steps
 
 
         }
-        static void IncrementAndDecrement()
+
+        private static void IncrementAndDecrement()
         {
 
             #region +=
@@ -5774,7 +5816,8 @@ namespace Steps
 
             #endregion
         }
-        static void ArithmeticOperations()
+
+        private static void ArithmeticOperations()
         {
             // Арифметические операции -,*,/,+
 
@@ -5887,7 +5930,8 @@ namespace Steps
 
             #endregion
         }
-        static void ConvertTo()
+
+        private static void ConvertTo()
         {
             string inputString = "2029";
             //int intValue = int.Parse(inputString);
@@ -5944,7 +5988,8 @@ namespace Steps
             #endregion
 
         }
-        static void ParseConversion()
+
+        private static void ParseConversion()
         {
             //string inputString = "2029";
             //int intValue = (int)inputString;     // Ошибка CS0029  
@@ -5966,7 +6011,8 @@ namespace Steps
             // System.OverflowException: Значение было недопустимо 
             // малым или недопустимо большим для беззнакового байта.
         }
-        static void ImplicitTypeСonversion()
+
+        private static void ImplicitTypeСonversion()
         {
             #region Тиды данных
 
@@ -5998,7 +6044,8 @@ namespace Steps
 
             Console.WriteLine(d);
         }
-        static void ExplicitTypeConversion()
+
+        private static void ExplicitTypeConversion()
         {
             #region Тиды данных
 
@@ -6038,7 +6085,8 @@ namespace Steps
             int q = (int)((byte)d);
 
         }
-        static void DataTypeConversion()
+
+        private static void DataTypeConversion()
         {
             #region Тиды данных
 
@@ -6072,7 +6120,8 @@ namespace Steps
 
 
         }
-        static void NumbersAfterPoint()
+
+        private static void NumbersAfterPoint()
         {
             //double d = 123456.654321;
             //Console.WriteLine(d);                       // 123456.654321
@@ -6116,7 +6165,8 @@ namespace Steps
 
 
         }
-        static void StringInterpolation()
+
+        private static void StringInterpolation()
         {
             string firstName = "Александр";
             string lastName = "Пушкин";
@@ -6178,7 +6228,8 @@ namespace Steps
 
 
         }
-        static void EscapeSequences()
+
+        private static void EscapeSequences()
         {
 
             string firstName = "Александр";
@@ -6218,7 +6269,8 @@ namespace Steps
 
 
         }
-        static void FormattedOutput()
+
+        private static void FormattedOutput()
         {
             // Составное форматирование
             string firstName = "Александр";
@@ -6282,7 +6334,8 @@ namespace Steps
 
 
         }
-        static void StringTypes()
+
+        private static void StringTypes()
         {
             // Тип данных string используется для хранения строковых констант.
             // Они обрамляются двойными кавычками. 
@@ -6291,10 +6344,12 @@ namespace Steps
             word = "Привет, мир!";
             Console.WriteLine(word);
         }
-        static void BoolTypes()
+
+        private static void BoolTypes()
         {
         }
-        static void CharTypes()
+
+        private static void CharTypes()
         {
             // Тип char может содержать один Unicode-символ 
             char VarChar1 = 'a'; Console.WriteLine(VarChar1); // a
@@ -6304,7 +6359,8 @@ namespace Steps
             char VarChar5 = '9'; Console.WriteLine(VarChar5); // 9
             char VarChar6 = '§'; Console.WriteLine(VarChar6); // 󠅒󠅒
         }
-        static void FloatPointTypes()
+
+        private static void FloatPointTypes()
         {
             // Типы с плавающей точкой могут хранить действительные числа с разной точностью.
 
@@ -6337,7 +6393,8 @@ namespace Steps
 
 
         }
-        static void IntegerTypes()
+
+        private static void IntegerTypes()
         {
 
 
@@ -6356,14 +6413,16 @@ namespace Steps
 
 
         }
-        static void Variable()
+
+        private static void Variable()
         {
             var asdf1234 = 20.19;
 
             Console.WriteLine(asdf1234);
             Console.ReadKey();
         }
-        static void Exceptions()
+
+        private static void Exceptions()
         {
             FileStream file = null;
             try
@@ -6406,7 +6465,8 @@ namespace Steps
             Console.WriteLine(number);
             Console.ReadLine();
         }
-        static void MyyStack()
+
+        private static void MyyStack()
         {
             MyStack<int> ms = new MyStack<int>();
             ms.Push(1);
@@ -6425,7 +6485,8 @@ namespace Steps
             Console.WriteLine(ms.Peek());
             Console.ReadLine();
         }
-        static void EvilInheritance()
+
+        private static void EvilInheritance()
         {
             Ishape rect = new Rect() { Height = 2, Width = 5 };
             Ishape square = new Square() { SideLength = 10 };
@@ -6438,14 +6499,16 @@ namespace Steps
             //AreaCalculator.CalcSquare(square);
             Console.ReadLine();
         }
-        static void Interfaces()
+
+        private static void Interfaces()
         {
             List<object> list = new List<object> { 1, 2, 3 };
             IBaseCollection collection = new BaseList(4);
             collection.Add(1);
             collection.AddRange(list);
         }
-        static void Polymorphism()
+
+        private static void Polymorphism()
         {
             Shape[] shapes = new Shape[2];
             shapes[0] = new Triangle(10, 20, 30);
@@ -6458,13 +6521,15 @@ namespace Steps
             }
             Console.ReadLine();
         }
-        static void Inheritance()
+
+        private static void Inheritance()
         {
             ModelXTerminal terminal = new ModelXTerminal("123");
             terminal.Connect();
             Console.ReadLine();
         }
-        static void BoxingUnboxing()
+
+        private static void BoxingUnboxing()
         {
             int x = 1;
             object obj = x;
@@ -6478,7 +6543,8 @@ namespace Steps
             Console.WriteLine(number);
             Console.ReadKey();
         }
-        static void SwapExample()
+
+        private static void SwapExample()
         {
             int a = 1;
             int b = 2;
@@ -6494,7 +6560,8 @@ namespace Steps
             }
             Console.ReadKey();
         }
-        static void Swap(ref int a, ref int b)
+
+        private static void Swap(ref int a, ref int b)
         {
             Console.WriteLine($"Original a = {a}, b = {b}");
             int tmp = a;
@@ -6502,13 +6569,15 @@ namespace Steps
             b = tmp;
             Console.WriteLine($"Swapped a = {a}, b = {b}");
         }
-        static void AddNumber(List<int> numbers)
+
+        private static void AddNumber(List<int> numbers)
         {
             numbers.Add(1);
             numbers.Add(2);
             numbers.Add(3);
         }
-        static void calculating()
+
+        private static void calculating()
         {
             if (Calculator.TryDivide(456, 2, out double result))
             {
@@ -6533,7 +6602,8 @@ namespace Steps
             }
             Console.ReadKey();
         }
-        static void ArrayStartingIndexOne()
+
+        private static void ArrayStartingIndexOne()
         {
             Array myArray = Array.CreateInstance(typeof(int), new[] { 5 }, new[] { 1 });
             myArray.SetValue(2020, 1);
@@ -6549,7 +6619,8 @@ namespace Steps
             }
             Console.ReadKey();
         }
-        static void JaggedArray1()
+
+        private static void JaggedArray1()
         {
             int[][] jaggedArray = new int[4][];
             jaggedArray[0] = new int[1];
@@ -6578,7 +6649,8 @@ namespace Steps
             }
             Console.ReadKey();
         }
-        static void MultidimArrays()
+
+        private static void MultidimArrays()
         {
             int[,] r1 = new int[3, 3] { { 1, 2, 3 }, { 2, 3, 4 }, { 3, 4, 5 } };
             int[,] r2 = { { 1, 2, 3 }, { 4, 5, 6 } };
@@ -6592,7 +6664,8 @@ namespace Steps
             }
             Console.ReadKey();
         }
-        static void StackQueue()
+
+        private static void StackQueue()
         {
             var queque = new Queue<int>();
             queque.Enqueue(1);
@@ -6635,7 +6708,8 @@ namespace Steps
             }
             Console.ReadKey();
         }
-        static void Dictionary()
+
+        private static void Dictionary()
         {
             #region Создать частотный словарь 
 
@@ -6710,7 +6784,8 @@ namespace Steps
             people.Clear();
             Console.ReadKey();
         }
-        static void ListDemo()
+
+        private static void ListDemo()
         {
             var intList = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8 };
             intList.Add(777);
@@ -6747,7 +6822,8 @@ namespace Steps
             }
             Console.ReadKey();
         }
-        static void ArrayType()
+
+        private static void ArrayType()
         {
             int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             //работает только с сортированным массивом
@@ -6792,7 +6868,8 @@ namespace Steps
 
             Console.ReadKey();
         }
-        static void Factorial()
+
+        private static void Factorial()
         {
             Console.WriteLine("Enter n > 0");
             int n = int.Parse(Console.ReadLine());
@@ -6804,7 +6881,8 @@ namespace Steps
             Console.WriteLine(factorial.ToString());
             Console.ReadKey();
         }
-        static void Average()
+
+        private static void Average()
         {
             int[] numbers = new int[10];
 
@@ -6832,7 +6910,8 @@ namespace Steps
             Console.WriteLine($"average = {average}");
             Console.ReadKey();
         }
-        static void Fibonacci()
+
+        private static void Fibonacci()
         {
             Console.WriteLine("Enter the number of Fibonacci numbers you want to generate");
             int n = int.Parse(Console.ReadLine());
@@ -6858,7 +6937,8 @@ namespace Steps
             }
             Console.ReadKey();
         }
-        static void SwitchCase()
+
+        private static void SwitchCase()
         {
             Console.WriteLine("Введите порядковый номер месяца");
             int month = int.Parse(Console.ReadLine());
@@ -6924,7 +7004,8 @@ namespace Steps
             Console.WriteLine(name);
             Console.ReadKey();
         }
-        static void BreakContinue()
+
+        private static void BreakContinue()
         {
             int[] a = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             foreach (int n in a)
@@ -6974,7 +7055,8 @@ namespace Steps
             }
             Console.ReadKey();
         }
-        static void WhileDoWhile()
+
+        private static void WhileDoWhile()
         {
             //int age = 0;
             //while(age < 18)
@@ -7001,7 +7083,8 @@ namespace Steps
             }
             Console.ReadKey();
         }
-        static void NestedFor()
+
+        private static void NestedFor()
         {
             int[] numbers = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
                                              -1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18};
@@ -7021,7 +7104,8 @@ namespace Steps
             }
             Console.ReadKey();
         }
-        static void ForForeach()
+
+        private static void ForForeach()
         {
             int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             for (int i = 0; i < numbers.Length; i++)
@@ -7046,7 +7130,8 @@ namespace Steps
             }
             Console.ReadKey();
         }
-        static void HomeworkGetMax()
+
+        private static void HomeworkGetMax()
         {
             int a = int.Parse(Console.ReadLine());
             int b = int.Parse(Console.ReadLine());
@@ -7069,7 +7154,8 @@ namespace Steps
             Console.WriteLine($"Max={max}");
             Console.ReadKey();
         }
-        static void DateTimeIntro()
+
+        private static void DateTimeIntro()
         {
             DateTime now = DateTime.Now;
             Console.WriteLine(now.ToString());
@@ -7082,7 +7168,8 @@ namespace Steps
             Console.WriteLine(ts.Days.ToString());
             Console.ReadKey();
         }
-        static void IntroToArrays()
+
+        private static void IntroToArrays()
         {
             int[] a1;
             a1 = new int[10];
@@ -7113,7 +7200,8 @@ namespace Steps
             //s1[0] = 'z';
             Console.ReadKey();
         }
-        static void MathDemo()
+
+        private static void MathDemo()
         {
             Console.WriteLine(Math.Pow(2, 3));
             Console.WriteLine(Math.Sqrt(9));
@@ -7123,7 +7211,8 @@ namespace Steps
             Console.WriteLine(Math.Round(1.5));
             Console.ReadKey();
         }
-        static void Comment()
+
+        private static void Comment()
         {
             // a single-line comment
             /*
@@ -7140,7 +7229,8 @@ namespace Steps
             //we need to tweak the index to match the expected outcome
             a++;
         }
-        static void CastingAndParsing()
+
+        private static void CastingAndParsing()
         {
             byte t = 3; // 0000 0011
             int i = t; // 0000 0000 0000 0000 0000 0000 0000 0011
@@ -7162,7 +7252,8 @@ namespace Steps
             Console.WriteLine(result);
             Console.ReadKey();
         }
-        static void ConsoleBasics()
+
+        private static void ConsoleBasics()
         {
             //Console.WriteLine("Hi, please tell me your name");
             //string name = Console.ReadLine();
@@ -7183,7 +7274,8 @@ namespace Steps
             Console.Write("New style\n");
             Console.ReadKey();
         }
-        static void ComparingStrings()
+
+        private static void ComparingStrings()
         {
             string str1 = "abcde";
             string str2 = "abcde";
@@ -7205,7 +7297,8 @@ namespace Steps
             Console.WriteLine(areEqual);
             Console.ReadKey();
         }
-        static void StringFormat()
+
+        private static void StringFormat()
         {
             string name = "John";
             int age = 30;
@@ -7244,7 +7337,8 @@ namespace Steps
             Console.WriteLine(result);
             Console.ReadKey();
         }
-        static void StringBuilderDemo()
+
+        private static void StringBuilderDemo()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("My ");
@@ -7256,7 +7350,8 @@ namespace Steps
             Console.WriteLine(str);
             Console.ReadKey();
         }
-        static void StringModifications()
+
+        private static void StringModifications()
         {
             string nameConcat = string.Concat("My ", "name ", "is ", "Marat");
             Console.WriteLine(nameConcat);
@@ -7285,7 +7380,8 @@ namespace Steps
             Console.WriteLine(john.Trim());
             Console.ReadKey();
         }
-        static void StringEmptiness()
+
+        private static void StringEmptiness()
         {
             string str = string.Empty;
             string empty = "";
@@ -7321,7 +7417,8 @@ namespace Steps
             Console.WriteLine(isNullOrWhiteSpace);
             Console.ReadKey();
         }
-        static void QueryingString()
+
+        private static void QueryingString()
         {
             string name = "abracadabra";
             bool containsA = name.Contains('a');
@@ -7345,7 +7442,8 @@ namespace Steps
             Console.WriteLine(substrFromTo);
             Console.ReadKey();
         }
-        static void StaticAndInstanceMembers()
+
+        private static void StaticAndInstanceMembers()
         {
             string name = "abracadabra";
             bool containsA = name.Contains('a');
@@ -7360,7 +7458,8 @@ namespace Steps
             Console.WriteLine(xStr);
             Console.ReadKey();
         }
-        static void ComparisonOperations()
+
+        private static void ComparisonOperations()
         {
             int x = 1;
             int y = 2;
@@ -7378,7 +7477,8 @@ namespace Steps
             Console.WriteLine(result);
             Console.ReadKey();
         }
-        static void MathOperations()
+
+        private static void MathOperations()
         {
             int x = 1;
             int y = 8;
@@ -7397,7 +7497,8 @@ namespace Steps
             Console.WriteLine(b);
             Console.ReadKey();
         }
-        static void OverFlow()
+
+        private static void OverFlow()
         {
             checked
             {
@@ -7411,7 +7512,8 @@ namespace Steps
 
             }
         }
-        static void VariablesScope()
+
+        private static void VariablesScope()
         {
             var a = 1;
             {
@@ -7431,7 +7533,8 @@ namespace Steps
             //Console.WriteLine(c);
             Console.ReadKey();
         }
-        static void Literals()
+
+        private static void Literals()
         {
             int x = 0b1010;
             int y = 0b1000;
@@ -7452,7 +7555,8 @@ namespace Steps
             Console.WriteLine('\u0420');
             Console.ReadKey();
         }
-        static void Variables()
+
+        private static void Variables()
         {
             int x = -1;
             Dictionary<int, string> dict = new Dictionary<int, string>();

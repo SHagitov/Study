@@ -5,7 +5,7 @@ namespace Steps
     /// <summary>
     /// Герой "Hunter"
     /// </summary>
-    class Hunter : Hero, IRampage
+    internal class Hunter : Hero, IRampage
     {
         /// <summary>
         /// Девиз

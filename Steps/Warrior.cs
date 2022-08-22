@@ -5,7 +5,7 @@ namespace Steps
     /// <summary>
     /// Герой "Warrior"
     /// </summary>
-    class Warrior : Hero, IRampage
+    internal class Warrior : Hero, IRampage
     {
 
         /// <summary>
@@ -13,8 +13,7 @@ namespace Steps
         /// </summary>
         public override void Motto() { Console.WriteLine($"{this.Name}: Мой молот готов служить всезнающему!"); }
 
-
-        uint blockDamage;
+        private uint blockDamage;
 
 
 
