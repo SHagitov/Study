@@ -17,23 +17,40 @@ namespace Steps
         /// </summary>
         public string Breed;
     }
-    class Cat
+    /// <summary>
+    /// Ходят слухи, что все любят котиков...
+    /// </summary>
+    /// <summary>
+    /// Ходят слухи, что все любят котиков...
+    /// </summary>
+    public class Cat
     {
         /// <summary>
         /// Создание экземпляра котика
         /// </summary>
         /// <param name="Nickname">Кличка</param>
         /// <param name="Breed">Порода</param>
-        public Cat(string Nickname, string Breed)
+        public Cat(string Nickname, string Breed, int Weight)
         {
             this.Nickname = Nickname;
             this.breed = Breed;
+            this.weight = Weight;
         }
 
         /// <summary>
         /// Порода
         /// </summary>
         private string breed;
+
+        /// <summary>
+        /// Вес
+        /// </summary>
+        private int weight;
+
+        /// <summary>
+        /// Вес
+        /// </summary>
+        private int Weight { get { return this.weight; } }
 
         /// <summary>
         /// Свойство, описываюее кличку
@@ -65,5 +82,9 @@ namespace Steps
         /// </summary>
         public void ToMew() { Console.WriteLine($"Мяу!"); }
 
+        public override string ToString()
+        {
+            return $"{Nickname,10} {breed,10} {Weight,3}";
+        }
     }
 }

@@ -12,10 +12,61 @@ namespace Steps
     {
         static void Main(string[] args)
         {
-            HeroClass();
+            RepositoryWorkers();
             Console.ReadLine();
         }
 
+        static void RepositoryWorkers()
+        {
+            var rep = new Repository(10);
+            rep.Print("Вывод");
+
+            foreach (var item in rep)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        static void Robots()
+        {
+            Robot robot1 = new Robot("Robot_1", "Test");
+            var robots = new List<Robot> { new Robot("Robot_1", "Test") };
+            Robot robot2 = new Robot("Robot_1", "Test");
+            Console.WriteLine(robots.Contains(robot2));
+            Console.WriteLine(robots.Contains(robot1));
+
+            Console.ReadKey();
+            Console.Clear();
+
+            _ = new Robot("Robot_1", "Test");
+            _ = new List<Robot> { new Robot("Robot_1", "Test") };
+            _ = new Robot("Robot_1", "Test");
+            Console.WriteLine(robots.Contains(robot2));
+            Console.WriteLine(robots.Contains(robot1));
+
+            Console.ReadKey();
+            Console.Clear();
+
+            _ = new Robot("Robot_1", "Test");
+            _ = new List<Robot> { new Robot("Robot_1", "Test") };
+            _ = new Robot("Robot_1", "Test");
+            Console.WriteLine(robots.Contains(robot2));
+            Console.WriteLine(robots.Contains(robot1));
+
+            List<Cat> cats = new List<Cat>();
+
+            var r = new Random();
+            for (int i = 1; i <= 10; i++)
+            {
+                var c = new Cat($"Котик_{i}", $"Порода_{i}", r.Next(3, 12));
+                cats.Add(c);
+                Console.WriteLine(c);
+            }
+
+            Console.ReadKey();
+            Console.Clear();
+
+            foreach (var e in cats) Console.WriteLine(e);
+        }
         static void Interface()
         {
             //namespace Example
@@ -233,9 +284,9 @@ namespace Steps
         static void Classes()
         {
             /// Создание котиков
-            Cat cat1 = new Cat("Басик", "Русская голубая кошка");
-            Cat cat2 = new Cat("Мурзик", "Мейн-кун");
-            Cat cat3 = new Cat("Плюмгильда", "Манчкин");
+            //Cat cat1 = new Cat("Басик", "Русская голубая кошка");
+            //Cat cat2 = new Cat("Мурзик", "Мейн-кун");
+            //Cat cat3 = new Cat("Плюмгильда", "Манчкин");
 
             /// Создание домов
             House house1 = new House(18, 182, "г. Смоленск, ул. Ленина, д. 1");
@@ -1129,9 +1180,9 @@ namespace Steps
         }
         static void AccessModifiers()
         {
-            Cat1 cat = new Cat1();
+            //Cat1 cat = new Cat1();
 
-            cat.Nickname = "Кличка 1";
+            //cat.Nickname = "Кличка 1";
 
             #region Модификаторы доступа
 
@@ -1156,11 +1207,11 @@ namespace Steps
 
             #endregion
 
-            Worker w = new Worker("Программист", 1111, "Иван", "Иванов", new DateTime(1980, 1, 2));
-            Console.WriteLine(w.Print());
+            //Workers w = new Workers("Программист", 1111, "Иван", "Иванов", new DateTime(1980, 1, 2));
+            //Console.WriteLine(w.Print());
 
-            w = new Worker("Иван IV");
-            Console.WriteLine(w.Print());
+            //w = new Workers("Иван IV");
+            //Console.WriteLine(w.Print());
 
             //Repository1 db1 = new Repository1(
             //    new Worker("Должность_1", 10000, "Имя_1"),
@@ -1207,18 +1258,18 @@ namespace Steps
             //Console.ReadKey();
             #endregion
 
-            Repository4 db4 = new Repository4(
-                 new Worker("Должность_1", 10000, "Имя_444"),
-                 new Worker("Должность_2", 10000, "Имя_2"),
-                 new Worker("Должность_3", 10000, "Имя_3"),
-                 new Worker("Должность_4", 10000, "Имя_4"),
-                 new Worker("Должность_5", 10000, "Имя_5")
-                 );
+            //Repository0 db4 = new Repository0(
+            //     new Workers("Должность_1", 10000, "Имя_444"),
+            //     new Workers("Должность_2", 10000, "Имя_2"),
+            //     new Workers("Должность_3", 10000, "Имя_3"),
+            //     new Workers("Должность_4", 10000, "Имя_4"),
+            //     new Workers("Должность_5", 10000, "Имя_5")
+            //     );
 
 
-            Console.WriteLine(db4[0]);
+            //Console.WriteLine(db4[0]);
 
-            Console.WriteLine(db4["*"]);
+            //Console.WriteLine(db4["*"]);
         }
         static void Structures()
         {
@@ -1284,14 +1335,14 @@ namespace Steps
 
             #region Worker
 
-            Worker worker = new Worker()
-            {
-                Position = "Инженер",
-                FirstName = "Роберт",
-                LastName = "Иванов",
-                Salary = 10_000,
-                DateOfBirth = new DateTime(1990, 09, 28)
-            };
+            //Workers worker = new Workers()
+            //{
+            //    Position = "Инженер",
+            //    FirstName = "Роберт",
+            //    LastName = "Иванов",
+            //    Salary = 10_000,
+            //    DateOfBirth = new DateTime(1990, 09, 28)
+            //};
 
             #endregion
 

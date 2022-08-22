@@ -47,7 +47,7 @@ namespace Steps
         /// Получение урона
         /// </summary>
         /// <param name="Damage">Количество урона</param>
-        public void Attacked(uint Damage)
+        public new void Attacked(uint Damage)
         {
             base.Attacked(Damage / blockDamage);
         }

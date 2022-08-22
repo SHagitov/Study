@@ -9,7 +9,7 @@ namespace Steps
     /// <summary>
     /// Робот
     /// </summary>
-    public class Robot
+    public class Robot : IEquatable<Robot>
     {
         /// <summary>
         /// Создание робота
@@ -22,16 +22,22 @@ namespace Steps
             this.dislocation = Dislocation;
         }
 
-        private string dislocation;// Порода
+        private string dislocation;// Место дислокации
 
         /// <summary>
-        /// Порода
+        /// Место дислокации
         /// </summary>
         public string Dislocation { get { return this.dislocation; } }
 
         /// <summary>
-        /// Дислокация
+        /// Никнейм
         /// </summary>
         public string Nickname { get; set; }
+
+        public bool Equals(Robot other)
+        {
+            return this.Nickname == other.Nickname
+                   && this.dislocation == other.dislocation;
+        }
     }
 }
