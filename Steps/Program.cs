@@ -11,12 +11,79 @@ namespace Steps
 
     public static class Program
     {
+        #region ToDo
+
+        // void, void
+        public delegate void DelegateName1();
+
+        // void, string
+        public delegate void DelegateName2(string Message);
+
+        // double, double
+        public delegate double DelegateName3(double Args);
+
+        #endregion
+        // void, void
+        static void Something1() { Console.WriteLine("Something method"); }
+
+        // void, string
+        static void Something2(string Msg) { Console.WriteLine(Msg); }
+
+        // double, double
+        static double Something3(double X) { return X + 10; }
         private static void Main(string[] args)
         {
-            Covariance();
+            Definitions();
             Console.ReadLine();
         }
 
+        static void Definitions()
+        {
+            // var r1 = Something1;
+            // var r2 = Something2;
+            // var r3 = Something3;
+
+            #region ToDo
+
+            DelegateName1 delegateVariable1 = new DelegateName1(Something1);
+            DelegateName2 delegateVariable2 = new DelegateName2(Something2);
+            DelegateName3 delegateVariable3 = new DelegateName3(Something3);
+
+            #region _
+
+
+            Something1();
+
+
+            DelegateName1 delegateVar1 = Something1;
+            delegateVar1();
+
+            DelegateName2 delegateVar2 = Something2;
+            Something2("Строка");
+            delegateVar2("Строка");
+
+            DelegateName3 delegateVar3 = Something3;
+            var res = Something3(2.5);
+            res = delegateVar3(2.5);
+
+            #endregion
+
+            #endregion
+
+            #region Определения
+
+            // Определение 1. Делегат - "переменная", которая хранит в себе ссылку на метод
+
+            // Определение 2. Сигнатура метода — тип, возвращаемый методом и список типов параметров, 
+            //                которые могут быть переданы при вызове метода
+
+            // https://stackoverflow.com/questions/8808703/method-signature-in-c-sharp
+
+            // Определение 3. Делегат — это адрес метода в памяти,
+            //                имеющего ту же сигнатуру, что и у делегата, позволяющий безопасно его вызывать
+
+            #endregion
+        }
         private static void Covariance()
         {
             #region 
@@ -47,44 +114,34 @@ namespace Steps
 
             //namespace Example
             //{
-
             //    abstract class Animal
             //    {
             //        public string Name { get; private set; }
             //        public Animal(string Name) { this.Name = Name; }
             //    }
-
             //    class Bird : Animal
             //    {
             //        public Bird(string Name) : base(Name) { }
             //    }
-
             //    #region ToDo Важно
             //    // interface IAnimal<out T>
-
             //    // T GetAnimal { get; set; }
             //    // void Method(T args);
             //    // Ошибка CS1961  Недопустимое отклонение: 
             //    // Параметр типа "T" должен быть инвариантно, допустимым на "IAnimal<T>.GetAnimal". 
             //    // "T" является ковариантный.Example_1333    
-
             //    #endregion
-
             //    interface IAnimal<out T>
             //        where T : Animal
             //    {
             //        T GetValue { get; }
             //        T GetValueMethod(); 
             //    }
-
             //    class Kiwi : IAnimal<Bird>
             //    {
             //        public Bird GetValue { get { return new Bird("KiwiBirdP"); } }
-
             //        public Bird GetValueMethod() { return new Bird("KiwiBirdM"); }
             //    }
-
-
             //    class Program
             //    {
             //        static void Main(string[] args)
@@ -96,8 +153,113 @@ namespace Steps
             //        }
             //    }
             //}
+            //// IComparable<
+            //namespace Example
+            //{
+            //    abstract class Animal
+            //    {
+            //        public string Name { get; private set; }
+            //        public Animal(string Name) { this.Name = Name; }
+            //    }
+            //    class Bird : Animal
+            //    {
+            //        public Bird(string Name) : base(Name) { }
+            //    }
+            //    #region ToDo Важно
+            //    // interface IAnimal<in T>
+            //    // T GetAnimal { get; set; }
+            //    // void Method(T args);
+            //    // Ошибка CS1961  Недопустимое отклонение: 
+            //    // Параметр типа "T" должен быть ковариантно, допустимым на "IAnimal<T>.a()". 
+            //    // "T" является контравариантный.Example_1334  
+            //    #endregion
+            //    interface IAnimal<in T>
+            //        where T : Animal
+            //    {
+            //        T SetValue { set; }
+            //        void SetValueMethod(T args);
+            //    }
+            //    class Storage<T> : IAnimal<T>
+            //        where T: Animal
+            //    {
+            //        List<Animal> db;
+            //        public Storage()
+            //        {
+            //            db = new List<Animal>();
+            //        }
+            //        public T SetValue { set => db.Add(value); }
+            //        public void SetValueMethod(T args)
+            //        {
+            //            db.Add(args);
+            //        }
+            //    }
+            //    class Program
+            //    {
+            //        static void Main(string[] args)
+            //        {
+            //            // Контравариантность даёт возможность использовать более универсальный тип, чем заданный изначально
+            //            // Ошибка CS0266  Не удается неявно преобразовать 
+            //            // тип "Example_1334.Storage<Example_1334.Animal>" в "Example_1334.IAnimal<Example_1334.Bird>".
+            //            // Существует явное преобразование(возможно, пропущено приведение типов).	
+            //            IAnimal<Bird> concreteStorage = new Storage<Animal>();
+            //            #region ToDo
+            //            concreteStorage.SetValueMethod(new Bird("concreteBird"));
+            //            #endregion
+            //            object[] vs = new string[10];
+            //            vs[1] = "строка";
+            //            vs[0] = 1;
+            //            vs[2] = 2.0;
+            //        }
+            //    }
+            //}
 
+            //namespace Example
+            //{
 
+            //    class Cat
+            //    {
+            //        public string Name { get; set; }
+            //        public static explicit operator Cat(Animal cat)
+            //        {
+            //            return new Cat { Name = cat.Breed };
+            //        }
+            //    }
+
+            //    class Animal
+            //    {
+            //        public string Breed { get; set; }
+            //        public static implicit operator Animal(Cat cat)
+            //        {
+            //            return new Animal { Breed = cat.Name };
+            //        }
+            //    }
+
+            //    class Program
+            //    {
+            //        static void Main(string[] args)
+            //        {
+
+            //            Cat cat = new Cat { Name = "Барсик" };
+            //            Console.WriteLine($"cat.Name = {cat.Name}");
+
+            //            #region  implicit operator
+
+            //            Animal animal = cat;
+            //            Console.WriteLine($"animal.Breed = {animal.Breed}");
+
+            //            #endregion
+
+            //            #region explicit operator
+
+            //            cat = (Cat)animal;
+            //            Console.WriteLine($"cat.Name = {cat.Name}");
+
+            //            #endregion
+
+            //            
+            //        }
+            //    }
+            //}
         }
         private static void Invariance()
         {
