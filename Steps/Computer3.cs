@@ -21,7 +21,7 @@ namespace Steps
         /// <summary>
         /// Индикатор состояния
         /// </summary>
-        public int Indicator { get { return this.condition ? 1 : 0; } }
+        public int Indicator => this.condition ? 1 : 0;
 
         /// <summary>
         /// Создание компьютера

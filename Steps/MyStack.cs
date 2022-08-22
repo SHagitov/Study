@@ -10,10 +10,7 @@ namespace Steps
 
         public int Count { get; private set; }
 
-        public int Capacity
-        {
-            get { return _items.Length; }
-        }
+        public int Capacity => _items.Length;
         public MyStack()
         {
             const int defaultCapacity = 4;

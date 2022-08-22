@@ -32,12 +32,12 @@ namespace Steps
         /// <summary>
         /// Уровень
         /// </summary>
-        public byte Level { get { return this.level; } }
+        public byte Level => this.level;
 
         /// <summary>
         /// Запас здоровья
         /// </summary>
-        public uint HitPoint { get { return this.hitPoint; } }
+        public uint HitPoint => this.hitPoint;
 
         /// <summary>
         /// Создание героя

@@ -29,7 +29,7 @@
         /// <summary>
         /// Количество квартир
         /// </summary>
-        public int FlatCount { get { return this.FloorCount; } }
+        public int FlatCount => this.FloorCount;
 
         /// <summary>
         /// Адрес

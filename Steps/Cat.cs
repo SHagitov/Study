@@ -55,7 +55,7 @@ namespace Steps
         /// <summary>
         /// Свойство, описываюее породу
         /// </summary>
-        public string Breed { get { return "Порода: " + this.breed; } }
+        public string Breed => "Порода: " + this.breed;
 
         /// <summary>
         /// Метод, определеющий логику игры котика
