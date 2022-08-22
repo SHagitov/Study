@@ -17,7 +17,7 @@ namespace Steps
             Console.ReadLine();
         }
 
-        static void Temporary()
+        private static void Temporary()
         {
             #region 
 
