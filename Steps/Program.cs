@@ -38,7 +38,7 @@ namespace Steps
             {
                 Console.WriteLine($"{e.Message}."); // Действие 3
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
