@@ -2243,7 +2243,7 @@ namespace Steps
             {
                 Console.WriteLine("O_- ");
                 Thread.Sleep(100);
-                Count = Count - 1;
+                Count--;
                 if (Count > 0) // Базовый случай
                 {
                     NotInfinity(Count);
@@ -4424,11 +4424,11 @@ namespace Steps
                 {
                     if (a > b)
                     {
-                        a = a - b;
+                        a -= b;
                     }
                     else
                     {
-                        b = b - a;
+                        b -= a;
                     }
 
                     Console.WriteLine($">>> {a} {b}");
@@ -4604,11 +4604,11 @@ namespace Steps
             {
                 if (a > b)
                 {
-                    a = a - b;
+                    a -= b;
                 }
                 else
                 {
-                    b = b - a;
+                    b -= a;
                 }
             }
 
@@ -4891,11 +4891,11 @@ namespace Steps
             {
                 if (a > b)
                 {
-                    a = a - b;
+                    a -= b;
                 }
                 else
                 {
-                    b = b - a;
+                    b -= a;
                 }
             }
 
@@ -4903,11 +4903,11 @@ namespace Steps
             {
                 if (a > b)
                 {
-                    a = a - b;
+                    a -= b;
                 }
                 else
                 {
-                    b = b - a;
+                    b -= a;
                 }
             }
 
@@ -4915,11 +4915,11 @@ namespace Steps
             {
                 if (a > b)
                 {
-                    a = a - b;
+                    a -= b;
                 }
                 else
                 {
-                    b = b - a;
+                    b -= a;
                 }
             }
 
@@ -4927,11 +4927,11 @@ namespace Steps
             {
                 if (a > b)
                 {
-                    a = a - b;
+                    a -= b;
                 }
                 else
                 {
-                    b = b - a;
+                    b -= a;
                 }
             }
 
@@ -5168,14 +5168,7 @@ namespace Steps
             int result = (x < 0.5) ? 0 : 1;  // Тернарный оператор (?:)
             Console.WriteLine($"result = {result}");
 
-            if (x < 0.5)
-            {
-                result = 0;
-            }
-            else
-            {
-                result = 1;
-            }
+            result = x < 0.5 ? 0 : 1;
 
             Console.WriteLine($"result = {result}");
 
@@ -5717,14 +5710,14 @@ namespace Steps
             int pA = 50, pB = 110;  // Координаты точки
 
             // Проверка условия принадлежности точки ограниченной области
-            bool check = ((pA >= x1) && (pA <= x2)) && ((pB >= y1) && (pB <= y2));
+            bool check = (pA >= x1) && (pA <= x2) && (pB >= y1) && (pB <= y2);
             Console.WriteLine(check);
             Console.ReadKey();
             #region _
             Console.ReadKey();
 
             pA = 50; pB = 110;
-            check = ((pA >= x1) && (pA <= x2)) && ((pB >= y1) && (pB <= y2));
+            check = (pA >= x1) && (pA <= x2) && (pB >= y1) && (pB <= y2);
             Console.WriteLine(check);
 
             #endregion
@@ -6259,7 +6252,7 @@ namespace Steps
 
             int h = (int)d;
 
-            int q = (int)((byte)d);
+            int q = (int)(byte)d;
 
         }
 

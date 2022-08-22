@@ -47,12 +47,7 @@ namespace Steps
 
         public T Peek()
         {
-            if (Count == 0)
-            {
-                throw new InvalidOperationException();
-            }
-
-            return _items[Count - 1];
+            return Count == 0 ? throw new InvalidOperationException() : _items[Count - 1];
         }
 
         public IEnumerator<T> GetEnumerator()
