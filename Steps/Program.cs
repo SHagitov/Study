@@ -17,7 +17,7 @@ namespace Steps
             Console.ReadLine();
         }
 
-        static void Exc()
+        private static void Exc()
         {
             try
             {
@@ -154,7 +154,7 @@ namespace Steps
             {
                 Console.WriteLine("Ошибка индекса");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine($"Иная ошибка ");
             }
