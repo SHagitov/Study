@@ -6252,7 +6252,7 @@ namespace Steps
 
             int h = (int)d;
 
-            int q = (int)(byte)d;
+            int q = (byte)d;
 
         }
 
