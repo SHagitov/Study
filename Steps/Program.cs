@@ -13,12 +13,36 @@ namespace Steps
     {
         private static void Main(string[] args)
         {
-            Exc();
+            Exceptionz();
             Console.ReadLine();
         }
 
-        private static void Exc()
+        private static void Exceptionz()
         {
+
+            try
+            {
+
+                throw new SomethingException("Какое-то сообщение", 10);
+
+            }
+            catch (SomethingException e) when (e.ErrorCode == 1)
+            {
+                Console.WriteLine($"{e.Message}. Код = {e.ErrorCode}"); // Действие 1
+            }
+            catch (SomethingException e) when (e.ErrorCode == 2)
+            {
+                Console.WriteLine($"Код = {e.ErrorCode}"); // Действие 2
+            }
+            catch (SomethingException e) when (e.ErrorCode == 8)
+            {
+                Console.WriteLine($"{e.Message}."); // Действие 3
+            }
+            catch (Exception e)
+            {
+
+            }
+
             try
             {
                 int[] arr = new int[10];

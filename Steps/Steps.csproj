@@ -73,6 +73,7 @@
     <Compile Include="Robot.cs" />
     <Compile Include="Shapes.cs" />
     <Compile Include="Something.cs" />
+    <Compile Include="SomethingException.cs" />
     <Compile Include="Temporary.cs" />
     <Compile Include="TwitterMessageArgs.cs" />
     <Compile Include="TwitterUser.cs" />
