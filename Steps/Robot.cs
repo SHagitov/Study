@@ -15,15 +15,13 @@ namespace Steps
         public Robot(string Nickname, string Dislocation)
         {
             this.Nickname = Nickname;
-            this.dislocation = Dislocation;
+            this.Dislocation = Dislocation;
         }
-
-        private string dislocation;// Место дислокации
 
         /// <summary>
         /// Место дислокации
         /// </summary>
-        public string Dislocation { get { return this.dislocation; } }
+        public string Dislocation { get; }
 
         /// <summary>
         /// Никнейм
@@ -33,7 +31,7 @@ namespace Steps
         public bool Equals(Robot other)
         {
             return this.Nickname == other.Nickname
-                   && this.dislocation == other.dislocation;
+                   && this.Dislocation == other.Dislocation;
         }
     }
 }

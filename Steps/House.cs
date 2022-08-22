@@ -14,29 +14,27 @@
         public House(int FloorCount, int flatCount, string address)
         {
             this.floorCount = FloorCount;
-            this.flatCount = flatCount;
-            this.address = address;
+            this.FloorCount = flatCount;
+            this.Address = address;
         }
 
         private int floorCount; // Поле количество этажей
-        private int flatCount;  // Поле количество квартир
-        private string address; // Поле адрес
 
 
         /// <summary>
         /// Количество этажей
         /// </summary>
-        public int FloorCount { get { return this.flatCount; } }
+        public int FloorCount { get; }
 
         /// <summary>
         /// Количество квартир
         /// </summary>
-        public int FlatCount { get { return this.flatCount; } }
+        public int FlatCount { get { return this.FloorCount; } }
 
         /// <summary>
         /// Адрес
         /// </summary>
-        public string Address { get { return this.address; } }
+        public string Address { get; }
 
     }
 }

@@ -34,7 +34,7 @@ namespace Steps
         {
             this.Nickname = Nickname;
             this.breed = Breed;
-            this.weight = Weight;
+            this.Weight = Weight;
         }
 
         /// <summary>
@@ -45,12 +45,7 @@ namespace Steps
         /// <summary>
         /// Вес
         /// </summary>
-        private int weight;
-
-        /// <summary>
-        /// Вес
-        /// </summary>
-        private int Weight { get { return this.weight; } }
+        private int Weight { get; }
 
         /// <summary>
         /// Свойство, описываюее кличку
