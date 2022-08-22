@@ -1,30 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Steps
+﻿namespace Steps
 {
-    class DataProcessing
+    internal class DataProcessing
     {
-        string currentData;
+        private readonly string currentData;
 
         private OptionDataProcessing process;
 
         public void SetProcess(OptionDataProcessing Option)
         {
-            this.process = Option;
+            process = Option;
         }
 
         public DataProcessing(string CurrentData)
         {
-            this.currentData = CurrentData;
+            currentData = CurrentData;
         }
 
         public void ActionProcessing()
         {
-            process(this.currentData);
+            process(currentData);
         }
     }
 }

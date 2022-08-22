@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Steps
 {
@@ -10,7 +6,7 @@ namespace Steps
     {
         public static string GetData()
         {
-            string t = String.Empty;
+            string t = string.Empty;
             for (int i = 0; i < 10; i++)
             {
                 t += Guid.NewGuid().ToString();

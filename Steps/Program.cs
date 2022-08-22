@@ -17,9 +17,9 @@ namespace Steps
             Console.ReadLine();
         }
 
-        static void Dex()
+        private static void Dex()
         {
-            var data = ApiService.GetData();
+            string data = ApiService.GetData();
 
             DataProcessing processing = new DataProcessing(data);
 
@@ -55,7 +55,8 @@ namespace Steps
             processing.SetProcess(e => File.WriteAllText("test123.txt", e));
             processing.ActionProcessing();
         }
-        static void TestMethod(string Msg)
+
+        private static void TestMethod(string Msg)
         {
             Console.WriteLine(Msg);
             System.IO.File.WriteAllText("test.txt", Msg);
