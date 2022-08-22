@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Steps
 {
@@ -11,7 +7,10 @@ namespace Steps
         public int A { get; set; }
         public int B { get; set; }
 
-        public override string ToString() => $"{A} + {B}i";
+        public override string ToString()
+        {
+            return $"{A} + {B}i";
+        }
 
         #region  
 
