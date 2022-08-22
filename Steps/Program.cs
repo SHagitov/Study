@@ -16,7 +16,8 @@ namespace Steps
             Covariance();
             Console.ReadLine();
         }
-        static void Covariance()
+
+        private static void Covariance()
         {
             #region 
 
@@ -34,7 +35,10 @@ namespace Steps
 
             List<object> listObject = enumerableObject.ToList();
 
-            foreach (var item in listObject) Console.WriteLine(item.GetType());
+            foreach (object item in listObject)
+            {
+                Console.WriteLine(item.GetType());
+            }
 
             Console.ReadKey();
             Console.Clear();

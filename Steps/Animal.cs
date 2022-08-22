@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Steps
+﻿namespace Steps
 {
-    class Animal { }        // Животное
+    internal class Animal { }        // Животное
 
-    class Dog : Animal { }   // Собака
+    internal class Dog : Animal { }   // Собака
 
-    class Bird : Animal { } // Птица
+    internal class Bird : Animal { } // Птица
 
-    class Kiwi : Bird { }   // Птица Киви
+    internal class Kiwi : Bird { }   // Птица Киви
 }
