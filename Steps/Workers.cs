@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Steps
+﻿namespace Steps
 {
     /// <summary>
     /// Класс, описывающий модель работника
@@ -54,5 +48,94 @@ namespace Steps
         {
             return $"{FirstName,15} {LastName,15} {Age,10} {Salary.ToString("## ###"),10} руб.";
         }
+    }
+
+    /// <summary>
+    /// Класс, описывающая рабочего
+    /// </summary>
+    public class Worker_1
+    {
+        //    /// <summary>
+        //    /// Должность
+        //    /// </summary>
+        //    public string Position { get; set; }
+
+        //    /// <summary>
+        //    /// Зарплата
+        //    /// </summary>
+        //    public uint Salary { get; set; }
+
+        //    /// <summary>
+        //    /// Имя
+        //    /// </summary>
+        //    public string FirstName { get; set; }
+
+
+        //    /// <summary>
+        //    /// Вывод данных о сотрунике
+        //    /// </summary>
+        //    /// <returns></returns>
+        //    public override string ToString()
+        //    {
+        //        return $"Должность: {Position} Зарплата: {Salary} Имя: {FirstName}";
+        //    }
+
+        //    /// <summary>
+        //    /// Создание сотрудника
+        //    /// </summary>
+        //    /// <param name="Position">Должность</param>
+        //    /// <param name="Salary">Зарплата</param>
+        //    /// <param name="FirstName">Имя</param>
+        //    public Worker_1(string Position, uint Salary, string FirstName)
+        //    {
+        //        this.Position = Position;
+        //        this.Salary = Salary;
+        //        this.FirstName = FirstName;
+        //}
+
+
+        /// <summary>
+        /// Табельный номер
+        /// </summary>
+        //public int Id { get; set; }
+
+        /// <summary>
+        /// Должность
+        /// </summary>
+        //public string Position { get; set; }
+
+        /// <summary>
+        /// Зарплата
+        /// </summary>
+        //public uint Salary { get; set; }
+
+        /// <summary>
+        /// Имя
+        /// </summary>
+        //public string FirstName { get; set; }
+
+
+        /// <summary>
+        /// Вывод данных о сотрунике
+        /// </summary>
+        /// <returns></returns>
+        //public override string ToString()
+        //{
+        //    return $"Id: {Id} Должность: {Position} Зарплата: {Salary} Имя: {FirstName} ";
+        //}
+
+        /// <summary>
+        /// Создание сотрудника
+        /// </summary>
+        /// <param name = "Position" > Должность </ param >
+        /// < param name="Salary">Зарплата</param>
+        /// <param name = "FirstName" > Имя </ param >
+        //public Worker(string Position, uint Salary, string FirstName, int Id)
+        //{
+        //    this.Id = Id;
+        //    this.Position = Position;
+        //    this.Salary = Salary;
+        //    this.FirstName = FirstName;
+        //}
     }
 }
