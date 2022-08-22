@@ -1099,11 +1099,12 @@ namespace Steps
             // Sort или Sort(функция_сравнения)
             // Reverse
 
-            List<int> list = new List<int>();
-
-            //  List<int> list = new List<int>(){ 1, 2, 3, 4, 5 };
-            list.Add(145);
-            list.Add(2);
+            List<int> list = new List<int>
+            {
+                //  List<int> list = new List<int>(){ 1, 2, 3, 4, 5 };
+                145,
+                2
+            };
             list[1] = 11;
 
             for (int i = 0; i < 10; i++)
@@ -1432,11 +1433,12 @@ namespace Steps
 
             #region MonthlyReport
 
-            MonthlyReport january = new MonthlyReport();
-
-            january.Month = "Январь";
-            january.Income = 10_000;
-            january.consumption = 3_000;
+            MonthlyReport january = new MonthlyReport
+            {
+                Month = "Январь",
+                Income = 10_000,
+                consumption = 3_000
+            };
             january.arrived = january.Income - january.consumption;
 
 
@@ -6911,10 +6913,12 @@ namespace Steps
             }
 
             #endregion
-            var people = new Dictionary<int, string>();
-            people.Add(1, "John");
-            people.Add(2, "Bob");
-            people.Add(3, "Alice");
+            var people = new Dictionary<int, string>
+            {
+                { 1, "John" },
+                { 2, "Bob" },
+                { 3, "Alice" }
+            };
 
             people = new Dictionary<int, string>()
                             {
@@ -6963,8 +6967,18 @@ namespace Steps
 
         private static void ListDemo()
         {
-            var intList = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8 };
-            intList.Add(777);
+            var intList = new List<int>
+            {
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                777
+            };
 
             int[] intArray = { -1, -2, -3 };
             intList.AddRange(intArray);
