@@ -7165,30 +7165,16 @@ namespace Steps
 
             string name = string.Empty;
 
-            switch (weddingYears)
+            name = weddingYears switch
             {
-                case 5:
-                    name = "Деревенная свадьба";
-                    break;
-                case 10:
-                    name = "Оловянная свадьба";
-                    break;
-                case 15:
-                    name = "Хрустальная свадьба";
-                    break;
-                case 20:
-                    name = "Фарфоровая свадьба";
-                    break;
-                case 25:
-                    name = "Серебряная свадьба";
-                    break;
-                case 30:
-                    name = "Жемчужная свадьба";
-                    break;
-                default:
-                    name = "Не знаем такого юбилея!";
-                    break;
-            }
+                5 => "Деревенная свадьба",
+                10 => "Оловянная свадьба",
+                15 => "Хрустальная свадьба",
+                20 => "Фарфоровая свадьба",
+                25 => "Серебряная свадьба",
+                30 => "Жемчужная свадьба",
+                _ => "Не знаем такого юбилея!",
+            };
             Console.WriteLine(name);
             Console.ReadKey();
         }
