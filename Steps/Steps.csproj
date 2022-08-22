@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animal.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="Cat.cs" />
     <Compile Include="Class1.cs" />

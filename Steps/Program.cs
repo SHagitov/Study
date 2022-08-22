@@ -13,7 +13,7 @@ namespace Steps
     {
         private static void Main(string[] args)
         {
-            MyyClass();
+            Invariance();
             Console.ReadLine();
         }
 
@@ -46,14 +46,6 @@ namespace Steps
             // который изначально задан  в обобщении
 
         }
-
-        private class Animal { }        // Животное
-
-        private class Dog : Animal { }   // Собака
-
-        private class Bird : Animal { } // Птица
-
-        private class Kiwi : Bird { }   // Птица Киви
         private static void Example0()
         {
             //static void Swap(ref int A, ref int B) { int c = A; A = B; B = c; }
