@@ -65,6 +65,7 @@
     <Compile Include="Robot.cs" />
     <Compile Include="Shapes.cs" />
     <Compile Include="Something.cs" />
+    <Compile Include="Temporary.cs" />
     <Compile Include="Warrior.cs" />
     <Compile Include="Workers.cs" />
   </ItemGroup>
