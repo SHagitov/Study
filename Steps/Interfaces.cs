@@ -21,7 +21,7 @@ namespace Steps
     public class BaseList : IBaseCollection
     {
 
-        private object[] items;
+        private readonly object[] items;
         private int count = 0;
         public BaseList(int initialCapacity)
         {

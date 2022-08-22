@@ -11,9 +11,9 @@ namespace Steps
         /// <summary>
         /// Девиз
         /// </summary>
-        public override void Motto() { Console.WriteLine($"{this.Name}: Мой молот готов служить всезнающему!"); }
+        public override void Motto() { Console.WriteLine($"{Name}: Мой молот готов служить всезнающему!"); }
 
-        private uint blockDamage;
+        private readonly uint blockDamage;
 
 
 
@@ -26,8 +26,8 @@ namespace Steps
         public Warrior(string Name, byte Level, uint HitPoint)
             : base(Name, Level, HitPoint)
         {
-            this.blockDamage = 2;
-            this.Charge = 5;
+            blockDamage = 2;
+            Charge = 5;
         }
 
         /// <summary>
@@ -53,16 +53,16 @@ namespace Steps
 
         public void Recharge()
         {
-            this.Charge = 5;
+            Charge = 5;
         }
 
         public void UltraAttack(Hero Target)
         {
-            for (int i = 0; i < this.Charge; i++)
+            for (int i = 0; i < Charge; i++)
             {
                 Target.Attacked(10);
             }
-            this.Charge = 0;
+            Charge = 0;
         }
     }
 }

@@ -30,8 +30,8 @@ namespace Steps
 
         public bool Equals(Robot other)
         {
-            return this.Nickname == other.Nickname
-                   && this.Dislocation == other.Dislocation;
+            return Nickname == other.Nickname
+                   && Dislocation == other.Dislocation;
         }
     }
 }

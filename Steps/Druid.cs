@@ -10,7 +10,7 @@ namespace Steps
         /// <summary>
         /// Девиз
         /// </summary>
-        public override void Motto() { Console.WriteLine($"{this.Name}: Благословляю всех!"); }
+        public override void Motto() { Console.WriteLine($"{Name}: Благословляю всех!"); }
 
         /// <summary>
         /// Создание героя

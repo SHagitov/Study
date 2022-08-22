@@ -33,14 +33,14 @@ namespace Steps
         public Cat(string Nickname, string Breed, int Weight)
         {
             this.Nickname = Nickname;
-            this.breed = Breed;
+            breed = Breed;
             this.Weight = Weight;
         }
 
         /// <summary>
         /// Порода
         /// </summary>
-        private string breed;
+        private readonly string breed;
 
         /// <summary>
         /// Вес
@@ -55,22 +55,22 @@ namespace Steps
         /// <summary>
         /// Свойство, описываюее породу
         /// </summary>
-        public string Breed => "Порода: " + this.breed;
+        public string Breed => "Порода: " + breed;
 
         /// <summary>
         /// Метод, определеющий логику игры котика
         /// </summary>
-        public void ToPlay() { Console.WriteLine($"{this.Nickname} играет..."); }
+        public void ToPlay() { Console.WriteLine($"{Nickname} играет..."); }
 
         /// <summary>
         /// Метод, определеющий логику сна котика
         /// </summary>
-        public void ToSleep() { Console.WriteLine($"{this.Nickname} спит..."); }
+        public void ToSleep() { Console.WriteLine($"{Nickname} спит..."); }
 
         /// <summary>
         /// Метод, определеющий логику питания котика
         /// </summary>
-        public void ToEat() { Console.WriteLine($"{this.Nickname} кушает..."); }
+        public void ToEat() { Console.WriteLine($"{Nickname} кушает..."); }
 
         /// <summary>
         /// Мяуканье котика

@@ -22,7 +22,7 @@ namespace Steps
         /// <summary>
         /// Генератор псевдослучайных чисел
         /// </summary>
-        private static Random randomize;
+        private static readonly Random randomize;
 
         /// <summary>
         /// Статический конструктор, в котором "хранятся"
@@ -82,12 +82,12 @@ namespace Steps
         /// <param name="Count">Количество сотрудников, которых нужно создать</param>
         public Repository(int Count)
         {
-            this.Workers = new List<Worker>(); // Выделение памяти для хранения базы данных Workers
+            Workers = new List<Worker>(); // Выделение памяти для хранения базы данных Workers
 
             for (int i = 0; i < Count; i++)    // Заполнение базы данных Workers. Выполняется Count раз
             {
                 // Добавляем нового работника в базы данных Workers
-                this.Workers.Add(
+                Workers.Add(
                     new Worker(
                         // выбираем случайное имя из базы данных имён
                         firstNames[Repository.randomize.Next(Repository.firstNames.Length)],
@@ -122,12 +122,12 @@ namespace Steps
             Console.ForegroundColor = ConsoleColor.Gray;
 
 
-            foreach (var worker in this.Workers) //
+            foreach (var worker in Workers) //
             {                                    // Печатаем в консоль всех работников
                 Console.WriteLine(worker);       //
             }                                    //
 
-            Console.WriteLine($"Итого: {this.Workers.Count}\n");    // Сводный отчёт. Сколько работников распечатано
+            Console.WriteLine($"Итого: {Workers.Count}\n");    // Сводный отчёт. Сколько работников распечатано
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Steps
         /// <param name="MaxSalary">Уровень зарплаты работника, которых нужно уволить</param>
         public void DeleteWorkerBySalary(int MaxSalary)
         {
-            this.Workers.RemoveAll(e => e.Salary > MaxSalary);//Удаление работников чья зарплата больше заданной MaxSalary
+            Workers.RemoveAll(e => e.Salary > MaxSalary);//Удаление работников чья зарплата больше заданной MaxSalary
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Steps
         /// <param name="CurrentName">Имя работников, которых нужно уволить</param>
         public void DeleteWorkerByName(string CurrentName)
         {
-            this.Workers.RemoveAll(e => e.FirstName == CurrentName);//Удаление работников чьё имя Удовлетворяет выбранному CurrentName
+            Workers.RemoveAll(e => e.FirstName == CurrentName);//Удаление работников чьё имя Удовлетворяет выбранному CurrentName
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Steps
         /// <param name="NewFirstName">Новое имя</param>
         public void ChangeFirstName(int Index, string NewFirstName)
         {
-            this.Workers[Index].FirstName = NewFirstName;
+            Workers[Index].FirstName = NewFirstName;
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Steps
         {
             var r = new Repository(0);
 
-            foreach (var e in this.Workers)
+            foreach (var e in Workers)
             {
                 r.Workers.Add(new Worker(e.FirstName, e.LastName, e.Age, e.Salary));
             }
@@ -181,9 +181,9 @@ namespace Steps
             //yield return this.Workers[1];
             //yield return this.Workers[2];
 
-            for (int i = 0; i < this.Workers.Count; i++)
+            for (int i = 0; i < Workers.Count; i++)
             {
-                yield return this.Workers[i];
+                yield return Workers[i];
             }
 
             //foreach (var e in this.Workers)

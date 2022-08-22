@@ -93,8 +93,8 @@ namespace Steps
     }
     public class Point2D
     {
-        private int x;
-        private int y;
+        private readonly int x;
+        private readonly int y;
 
         public Point2D(int x, int y)
         {

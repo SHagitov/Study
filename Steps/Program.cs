@@ -91,7 +91,7 @@ namespace Steps
             // Устанавливает перечислитель в его начальное положение, т. е. перед первым элементом
             public void Reset() { index = -1; }
 
-            private int[] array;
+            private readonly int[] array;
             public SomethingB()
             {
                 array = Enumerable.Range(11, 10).ToArray();

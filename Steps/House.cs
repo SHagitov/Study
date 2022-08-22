@@ -13,12 +13,12 @@
         /// <param name="address">Адрес</param>
         public House(int FloorCount, int flatCount, string address)
         {
-            this.floorCount = FloorCount;
+            floorCount = FloorCount;
             this.FloorCount = flatCount;
-            this.Address = address;
+            Address = address;
         }
 
-        private int floorCount; // Поле количество этажей
+        private readonly int floorCount; // Поле количество этажей
 
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <summary>
         /// Количество квартир
         /// </summary>
-        public int FlatCount => this.FloorCount;
+        public int FlatCount => FloorCount;
 
         /// <summary>
         /// Адрес

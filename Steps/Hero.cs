@@ -32,12 +32,12 @@ namespace Steps
         /// <summary>
         /// Уровень
         /// </summary>
-        public byte Level => this.level;
+        public byte Level => level;
 
         /// <summary>
         /// Запас здоровья
         /// </summary>
-        public uint HitPoint => this.hitPoint;
+        public uint HitPoint => hitPoint;
 
         /// <summary>
         /// Создание героя
@@ -54,11 +54,11 @@ namespace Steps
 
             this.Name = Name;
             Hero.dbNames.Add(Name);
-            this.level = Level;
+            level = Level;
 
             HitPoint = HitPoint != 0 ? HitPoint : (uint)Hero.randomize.Next(100, 400);
-            this.hitPoint = HitPoint;
-            this.maxHitPoint = HitPoint;
+            hitPoint = HitPoint;
+            maxHitPoint = HitPoint;
         }
 
         /// <summary>
@@ -73,11 +73,11 @@ namespace Steps
         /// </summary>
         public virtual void Treatment(uint Hp = 10)
         {
-            if (this.hitPoint == 0)
+            if (hitPoint == 0)
             {
-                Console.WriteLine($"Лечение невозможно, {this.Name} в таверне");
+                Console.WriteLine($"Лечение невозможно, {Name} в таверне");
             }
-            else { this.hitPoint = this.hitPoint + Hp <= this.maxHitPoint ? this.hitPoint + Hp : this.maxHitPoint; }
+            else { hitPoint = hitPoint + Hp <= maxHitPoint ? hitPoint + Hp : maxHitPoint; }
         }
 
         /// <summary>
@@ -90,20 +90,20 @@ namespace Steps
         /// </summary>
         public void Attacked(uint Damage)
         {
-            if (this.hitPoint == 0)
+            if (hitPoint == 0)
             {
-                this.Tavern();
+                Tavern();
             }
             else
             {
-                if (this.hitPoint - Damage <= 0)
+                if (hitPoint - Damage <= 0)
                 {
-                    this.hitPoint = 0;
-                    this.Die();
+                    hitPoint = 0;
+                    Die();
                 }
                 else
                 {
-                    this.hitPoint -= Damage;
+                    hitPoint -= Damage;
                 }
             }
         }
@@ -113,8 +113,8 @@ namespace Steps
         /// </summary>
         protected void Die()
         {
-            Console.WriteLine($"У {this.Name} Критический уровень запаса жизни");
-            this.Tavern();
+            Console.WriteLine($"У {Name} Критический уровень запаса жизни");
+            Tavern();
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Steps
         /// </summary>
         protected void Tavern()
         {
-            Console.WriteLine($"Герой {this.Name} в таверне");
+            Console.WriteLine($"Герой {Name} в таверне");
         }
 
         /// <summary>
@@ -132,10 +132,10 @@ namespace Steps
         public string HeroInformation()
         {
             return String.Format("Name:{0,10} |  Level:{1,4} |  HitPoint:{2,6} |  Type:{3,12}",
-                this.Name,
-                this.Level,
-                this.HitPoint,
-                this.GetType().Name
+                Name,
+                Level,
+                HitPoint,
+                GetType().Name
                 );
         }
 

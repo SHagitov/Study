@@ -21,7 +21,7 @@ namespace Steps
         /// <summary>
         /// Индикатор состояния
         /// </summary>
-        public int Indicator => this.condition ? 1 : 0;
+        public int Indicator => condition ? 1 : 0;
 
         /// <summary>
         /// Создание компьютера
@@ -30,7 +30,7 @@ namespace Steps
         public Computer3(string Title)
         {
             this.Title = Title;
-            this.condition = false;
+            condition = false;
         }
 
         /// <summary>
@@ -38,15 +38,15 @@ namespace Steps
         /// </summary>
         public void Power()
         {
-            if (this.condition)
+            if (condition)
             {
-                this.PowerOff();
-                this.condition = false;
+                PowerOff();
+                condition = false;
             }
             else
             {
-                this.PowerOn();
-                this.condition = true;
+                PowerOn();
+                condition = true;
             }
 
         }
@@ -56,32 +56,32 @@ namespace Steps
         /// <summary>
         /// Загрузка BIOS
         /// </summary>
-        private void ActivationBIOS() { Console.WriteLine($"{this.Title} | Activation BIOS..."); }
+        private void ActivationBIOS() { Console.WriteLine($"{Title} | Activation BIOS..."); }
 
         /// <summary>
         /// Загрузка OS
         /// </summary>
-        private void ActivationOS() { Console.WriteLine($"{this.Title} | Activation OS..."); }
+        private void ActivationOS() { Console.WriteLine($"{Title} | Activation OS..."); }
 
         /// <summary>
         /// Приветствие
         /// </summary>
-        private void Greeting() { Console.WriteLine($"{this.Title} | Hello..."); }
+        private void Greeting() { Console.WriteLine($"{Title} | Hello..."); }
 
         /// <summary>
         /// Выгрузка BIOS
         /// </summary>
-        private void DeactivationBIOS() { Console.WriteLine($"{this.Title} | Deactivation BIOS..."); }
+        private void DeactivationBIOS() { Console.WriteLine($"{Title} | Deactivation BIOS..."); }
 
         /// <summary>
         /// Выгрузка OS
         /// </summary>
-        public void DeactivationOS() { Console.WriteLine($"{this.Title} | Deactivation OS..."); }
+        public void DeactivationOS() { Console.WriteLine($"{Title} | Deactivation OS..."); }
 
         /// <summary>
         /// Прощание
         /// </summary>
-        private void Parting() { Console.WriteLine($"{this.Title} | Bye..."); }
+        private void Parting() { Console.WriteLine($"{Title} | Bye..."); }
 
         #endregion
 
@@ -90,10 +90,10 @@ namespace Steps
         /// </summary>
         private void PowerOn()
         {
-            this.ActivationBIOS();
-            this.ActivationOS();
-            this.Greeting();
-            this.Calculation();
+            ActivationBIOS();
+            ActivationOS();
+            Greeting();
+            Calculation();
         }
 
         /// <summary>
@@ -101,9 +101,9 @@ namespace Steps
         /// </summary>
         private void PowerOff()
         {
-            this.Parting();
-            this.DeactivationOS();
-            this.DeactivationBIOS();
+            Parting();
+            DeactivationOS();
+            DeactivationBIOS();
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Steps
         /// </summary>
         private void Calculation()
         {
-            Console.WriteLine($"\n{this.Title} | Calculation...\n");
+            Console.WriteLine($"\n{Title} | Calculation...\n");
         }
 
     }

@@ -10,7 +10,7 @@ namespace Steps
         /// <summary>
         /// Девиз
         /// </summary>
-        public override void Motto() { Console.WriteLine($"{this.Name}: Охота началась!"); }
+        public override void Motto() { Console.WriteLine($"{Name}: Охота началась!"); }
 
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace Steps
         public Hunter(string Name, byte Level, uint HitPoint)
               : base(Name, Level, HitPoint)
         {
-            this.Charge = 3;
+            Charge = 3;
         }
 
         /// <summary>
@@ -48,16 +48,16 @@ namespace Steps
 
         public void Recharge()
         {
-            this.Charge = 3;
+            Charge = 3;
         }
 
         public void UltraAttack(Hero Target)
         {
-            for (int i = 0; i < this.Charge; i++)
+            for (int i = 0; i < Charge; i++)
             {
                 Target.Attacked(10);
             }
-            this.Charge = 0;
+            Charge = 0;
         }
     }
 }
