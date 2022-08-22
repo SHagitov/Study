@@ -24,20 +24,20 @@ namespace Steps
 
         #endregion
         // void, void
-        static void Something1() { Console.WriteLine("Something method"); }
+        private static void Something1() { Console.WriteLine("Something method"); }
 
         // void, string
-        static void Something2(string Msg) { Console.WriteLine(Msg); }
+        private static void Something2(string Msg) { Console.WriteLine(Msg); }
 
         // double, double
-        static double Something3(double X) { return X + 10; }
+        private static double Something3(double X) { return X + 10; }
         private static void Main(string[] args)
         {
             Definitions();
             Console.ReadLine();
         }
 
-        static void Definitions()
+        private static void Definitions()
         {
             // var r1 = Something1;
             // var r2 = Something2;
@@ -63,7 +63,7 @@ namespace Steps
             delegateVar2("Строка");
 
             DelegateName3 delegateVar3 = Something3;
-            var res = Something3(2.5);
+            double res = Something3(2.5);
             res = delegateVar3(2.5);
 
             #endregion
