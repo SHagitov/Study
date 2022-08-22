@@ -45,10 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
+    <Compile Include="ApiService.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="Cat.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Computer3.cs" />
+    <Compile Include="DataProcessing.cs" />
+    <Compile Include="Delegate.cs" />
     <Compile Include="Druid.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="EvilInheritance.cs" />
