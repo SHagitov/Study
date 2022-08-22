@@ -73,7 +73,10 @@ namespace Steps
         /// </summary>
         public virtual void Treatment(uint Hp = 10)
         {
-            if (this.hitPoint == 0) Console.WriteLine($"Лечение невозможно, {this.Name} в таверне");
+            if (this.hitPoint == 0)
+            {
+                Console.WriteLine($"Лечение невозможно, {this.Name} в таверне");
+            }
             else { this.hitPoint = this.hitPoint + Hp <= this.maxHitPoint ? this.hitPoint + Hp : this.maxHitPoint; }
         }
 

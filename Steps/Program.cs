@@ -158,7 +158,10 @@ namespace Steps
             Console.ReadKey();
             Console.Clear();
 
-            foreach (var e in cats) Console.WriteLine(e);
+            foreach (var e in cats)
+            {
+                Console.WriteLine(e);
+            }
         }
 
         private static void Interface()
@@ -1108,11 +1111,17 @@ namespace Steps
                 list.Add(i);
             }
 
-            for (int i = 0; i < list.Count; i++) Console.Write($"{list[i]} ");
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.Write($"{list[i]} ");
+            }
 
             list.Sort();
             Console.WriteLine("\n");
-            for (int i = 0; i < list.Count; i++) Console.Write($"{list[i]} ");
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.Write($"{list[i]} ");
+            }
 
 
             // SortedList<> - аналог List<>, за исключением того, что отсортирован по умолчаию
@@ -1901,7 +1910,10 @@ namespace Steps
             // Char.IsUpper         // Показывает, относится ли указанный символ Юникода к категории букв верхнего регистра.
 
             char[] symbols = "symbols".ToCharArray();
-            foreach (var item in symbols) Console.Write($"{item} ");
+            foreach (var item in symbols)
+            {
+                Console.Write($"{item} ");
+            }
 
             string s = new String(symbols);
         }
@@ -2233,7 +2245,9 @@ namespace Steps
                 Thread.Sleep(100);
                 Count = Count - 1;
                 if (Count > 0) // Базовый случай
+                {
                     NotInfinity(Count);
+                }
             }
 
             //Infinity();
@@ -2612,11 +2626,25 @@ namespace Steps
 
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i] > maxArr) maxArr = arr[i];
-                if (arr[i] < minArr) minArr = arr[i];
+                if (arr[i] > maxArr)
+                {
+                    maxArr = arr[i];
+                }
 
-                if (brr[i] > maxBrr) maxBrr = brr[i];
-                if (brr[i] < minBrr) minBrr = brr[i];
+                if (arr[i] < minArr)
+                {
+                    minArr = arr[i];
+                }
+
+                if (brr[i] > maxBrr)
+                {
+                    maxBrr = brr[i];
+                }
+
+                if (brr[i] < minBrr)
+                {
+                    minBrr = brr[i];
+                }
             }
 
             Console.WriteLine("arr");
@@ -2664,7 +2692,10 @@ namespace Steps
 
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i] > max) max = arr[i];
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
             }
             Console.WriteLine($"max = {max}");
 
@@ -2674,7 +2705,10 @@ namespace Steps
 
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i] < min) min = arr[i];
+                if (arr[i] < min)
+                {
+                    min = arr[i];
+                }
             }
             Console.WriteLine($"min = {min}");
 
@@ -2696,7 +2730,10 @@ namespace Steps
 
             for (int i = 0; i < brr.Length; i++)
             {
-                if (brr[i] > max) max = brr[i];
+                if (brr[i] > max)
+                {
+                    max = brr[i];
+                }
             }
             Console.WriteLine($"max = {max}");
 
@@ -2705,7 +2742,10 @@ namespace Steps
 
             for (int i = 0; i < brr.Length; i++)
             {
-                if (brr[i] < min) min = brr[i];
+                if (brr[i] < min)
+                {
+                    min = brr[i];
+                }
             }
             Console.WriteLine($"min = {min}");
 
@@ -3156,10 +3196,17 @@ namespace Steps
 
             int[] col = { 1, 3, 5, 7, 9 };
 
-            foreach (var e in col) Console.Write($"{e} ");
+            foreach (var e in col)
+            {
+                Console.Write($"{e} ");
+            }
+
             Console.WriteLine();
             int[] inverseCol = Inverse(col);          // Вызов метода Inverse
-            foreach (var e in inverseCol) Console.Write($"{e} ");
+            foreach (var e in inverseCol)
+            {
+                Console.Write($"{e} ");
+            }
         }
 
         private static void ForEach()
@@ -4102,13 +4149,25 @@ namespace Steps
             {
                 if (flag)                                // flag = true
                 {                                       //
-                    if (numbs[head] == 1) flag = false; // Работаем с головным элементом
-                    else head++;                        //
+                    if (numbs[head] == 1)
+                    {
+                        flag = false; // Работаем с головным элементом
+                    }
+                    else
+                    {
+                        head++;                        //
+                    }
                 }
                 else                                    // иначе flag = false
                 {                                       //
-                    if (numbs[tail] == 0) flag = true;  // Работаем с хвостовым элементом
-                    else tail--;                        // 
+                    if (numbs[tail] == 0)
+                    {
+                        flag = true;  // Работаем с хвостовым элементом
+                    }
+                    else
+                    {
+                        tail--;                        // 
+                    }
                 }
 
                 if (numbs[head] == 1 && numbs[tail] == 0)  // Если головной элемент = 1 и хвостовой = 0
@@ -4325,11 +4384,13 @@ namespace Steps
             int end = Convert.ToInt32(Console.ReadLine());
 
             if (start <= end)
+            {
                 do
                 {
                     Console.WriteLine($"{start,4}^2 = {start * start}");
                     start++;
                 } while (start <= end);
+            }
 
             // Пример 5. Пользователь вводит два целых числа numerator и denominator, 
             // которые являются числителем и знаменателем соответственно
@@ -4361,7 +4422,14 @@ namespace Steps
             {
                 do
                 {
-                    if (a > b) a = a - b; else b = b - a;
+                    if (a > b)
+                    {
+                        a = a - b;
+                    }
+                    else
+                    {
+                        b = b - a;
+                    }
 
                     Console.WriteLine($">>> {a} {b}");
                 } while (a != b);
@@ -4534,7 +4602,14 @@ namespace Steps
 
             while (a != b)
             {
-                if (a > b) a = a - b; else b = b - a;
+                if (a > b)
+                {
+                    a = a - b;
+                }
+                else
+                {
+                    b = b - a;
+                }
             }
 
             Console.WriteLine($"Можно сократить на {a}");
@@ -4812,10 +4887,53 @@ namespace Steps
 
             double a = numerator, b = denominator;
 
-            if (a != b) if (a > b) a = a - b; else b = b - a;
-            if (a != b) if (a > b) a = a - b; else b = b - a;
-            if (a != b) if (a > b) a = a - b; else b = b - a;
-            if (a != b) if (a > b) a = a - b; else b = b - a;
+            if (a != b)
+            {
+                if (a > b)
+                {
+                    a = a - b;
+                }
+                else
+                {
+                    b = b - a;
+                }
+            }
+
+            if (a != b)
+            {
+                if (a > b)
+                {
+                    a = a - b;
+                }
+                else
+                {
+                    b = b - a;
+                }
+            }
+
+            if (a != b)
+            {
+                if (a > b)
+                {
+                    a = a - b;
+                }
+                else
+                {
+                    b = b - a;
+                }
+            }
+
+            if (a != b)
+            {
+                if (a > b)
+                {
+                    a = a - b;
+                }
+                else
+                {
+                    b = b - a;
+                }
+            }
 
             Console.WriteLine($"Можно сократить на {a}");
 
@@ -4831,14 +4949,38 @@ namespace Steps
             Console.Write("Введите номер дня: ");
             int dayIndex = int.Parse(Console.ReadLine());
 
-            if (dayIndex == 1) Console.WriteLine("Понедельник");
-            else if (dayIndex == 2) Console.WriteLine("Вторник");
-            else if (dayIndex == 3) Console.WriteLine("Среда");
-            else if (dayIndex == 4) Console.WriteLine("Четверг");
-            else if (dayIndex == 5) Console.WriteLine("Пятница");
-            else if (dayIndex == 6) Console.WriteLine("Суббота");
-            else if (dayIndex == 7) Console.WriteLine("Воскресенье");
-            else Console.WriteLine("На планете Земля в неделе семь дней");
+            if (dayIndex == 1)
+            {
+                Console.WriteLine("Понедельник");
+            }
+            else if (dayIndex == 2)
+            {
+                Console.WriteLine("Вторник");
+            }
+            else if (dayIndex == 3)
+            {
+                Console.WriteLine("Среда");
+            }
+            else if (dayIndex == 4)
+            {
+                Console.WriteLine("Четверг");
+            }
+            else if (dayIndex == 5)
+            {
+                Console.WriteLine("Пятница");
+            }
+            else if (dayIndex == 6)
+            {
+                Console.WriteLine("Суббота");
+            }
+            else if (dayIndex == 7)
+            {
+                Console.WriteLine("Воскресенье");
+            }
+            else
+            {
+                Console.WriteLine("На планете Земля в неделе семь дней");
+            }
 
             switch (dayIndex)
             {
@@ -5134,7 +5276,9 @@ namespace Steps
             Console.WriteLine($"Получено значение x = {x}");
 
             if (x < 2)
+            {
                 Console.WriteLine("x равен 0 или 1");
+            }
 
             // Часто используемая форма записи
 
@@ -5165,9 +5309,18 @@ namespace Steps
 
             #region if-else-if
 
-            if (x < 1) Console.WriteLine("x < 1");
-            else if (x > 1) Console.WriteLine("x > 1");
-            else Console.WriteLine("x = 1");
+            if (x < 1)
+            {
+                Console.WriteLine("x < 1");
+            }
+            else if (x > 1)
+            {
+                Console.WriteLine("x > 1");
+            }
+            else
+            {
+                Console.WriteLine("x = 1");
+            }
 
             #endregion
 
@@ -5445,14 +5598,38 @@ namespace Steps
 
             #region Вариант 2
 
-            if (dayIndex == 1) Console.WriteLine("Понедельник");
-            else if (dayIndex == 2) Console.WriteLine("Вторник");
-            else if (dayIndex == 3) Console.WriteLine("Среда");
-            else if (dayIndex == 4) Console.WriteLine("Четверг");
-            else if (dayIndex == 5) Console.WriteLine("Пятница");
-            else if (dayIndex == 6) Console.WriteLine("Суббота");
-            else if (dayIndex == 7) Console.WriteLine("Воскресенье");
-            else Console.WriteLine("На планете Земля в неделе семь дней");
+            if (dayIndex == 1)
+            {
+                Console.WriteLine("Понедельник");
+            }
+            else if (dayIndex == 2)
+            {
+                Console.WriteLine("Вторник");
+            }
+            else if (dayIndex == 3)
+            {
+                Console.WriteLine("Среда");
+            }
+            else if (dayIndex == 4)
+            {
+                Console.WriteLine("Четверг");
+            }
+            else if (dayIndex == 5)
+            {
+                Console.WriteLine("Пятница");
+            }
+            else if (dayIndex == 6)
+            {
+                Console.WriteLine("Суббота");
+            }
+            else if (dayIndex == 7)
+            {
+                Console.WriteLine("Воскресенье");
+            }
+            else
+            {
+                Console.WriteLine("На планете Земля в неделе семь дней");
+            }
 
             #endregion
         }
@@ -6437,7 +6614,9 @@ namespace Steps
             finally
             {
                 if (file != null)
+                {
                     file.Dispose();
+                }
             }
             Console.ReadLine();
             Console.WriteLine("Please input a number");
@@ -6725,7 +6904,11 @@ namespace Steps
 
             foreach (var e in list)
             {
-                if (!dictionary.ContainsKey(e)) dictionary.Add(e, 0);
+                if (!dictionary.ContainsKey(e))
+                {
+                    dictionary.Add(e, 0);
+                }
+
                 dictionary[e]++;
             }
 
@@ -6893,7 +7076,9 @@ namespace Steps
                 numbers[inputCount] = number;
                 inputCount++;
                 if (number == 0)
+                {
                     break;
+                }
             }
             int sum = 0;
             int count = 0;
@@ -7015,7 +7200,10 @@ namespace Steps
                 //    Console.WriteLine(n);
                 //}
                 if (n % 2 != 0)
+                {
                     continue;
+                }
+
                 Console.WriteLine(n);
             }
             int[] numbers1 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -7027,7 +7215,10 @@ namespace Steps
                 for (int j = 0; j < letters.Length; j++)
                 {
                     if (numbers1[i] == j)
+                    {
                         break;
+                    }
+
                     Console.Write($"{letters[j]} ");
                 }
                 Console.WriteLine();
@@ -7049,8 +7240,9 @@ namespace Steps
                         counter++;
                     }
                     if (counter == 3)
+                    {
                         break;
-
+                    }
                 }
             }
             Console.ReadKey();
@@ -7121,7 +7313,9 @@ namespace Steps
             for (int i = 0; i < numbers.Length; i++)
             {
                 if (numbers[i] % 2 == 0)
+                {
                     Console.Write(numbers[i] + " ");
+                }
             }
             Console.WriteLine();
             foreach (int val in numbers)

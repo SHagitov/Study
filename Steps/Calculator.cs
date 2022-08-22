@@ -8,7 +8,10 @@ namespace Steps
         {
             result = 0;
             if (divisor == 0)
+            {
                 return false;
+            }
+
             result = divisible / divisor;
             return true;
         }

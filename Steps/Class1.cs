@@ -16,9 +16,14 @@ namespace Steps
         public Class1(string name, int armor)
         {
             if (name == null)
+            {
                 throw new ArgumentNullException("name arg can't be null");
+            }
+
             if (armor < 0 || armor > 100)
+            {
                 throw new ArgumentException("armor can't be less than 0 or greater than 100");
+            }
         }
         public Class1(Race race)
         {
@@ -79,7 +84,10 @@ namespace Steps
                 throw new InvalidOperationException("Can't hit a dead character");
             }
             if (damage > health)
+            {
                 damage = health;
+            }
+
             health -= damage;
         }
     }
