@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Steps
 {
@@ -31,7 +27,7 @@ namespace Steps
         /// <param name="Msg">Текст сообщения</param>
         public void PublicMessage(string Msg)
         {
-            var agrs = new TwitterMessageArgs()
+            TwitterMessageArgs agrs = new TwitterMessageArgs()
             {
                 Time = DateTime.Now.ToShortTimeString(),
                 Message = Msg
@@ -51,7 +47,7 @@ namespace Steps
         /// <param name="Docs">Вложения</param>
         public void PublicMessage(string Msg, params Content[] Docs)
         {
-            var args = new TwitterMessageArgs()
+            TwitterMessageArgs args = new TwitterMessageArgs()
             {
                 Time = DateTime.Now.ToShortTimeString(),
                 Message = Msg,
@@ -70,13 +66,13 @@ namespace Steps
         {
             add // Организация подписки
             {
-                Console.WriteLine($"У пользователя {this.Nick} новый подписчик. {(value.Target as TwitterUser).Nick}");
+                Console.WriteLine($"У пользователя {Nick} новый подписчик. {(value.Target as TwitterUser).Nick}");
                 post += value;
             }
 
             remove // Организация отписки
             {
-                Console.WriteLine($"{(value.Target as TwitterUser).Nick} отписался от пользователя {this.Nick}. ");
+                Console.WriteLine($"{(value.Target as TwitterUser).Nick} отписался от пользователя {Nick}. ");
                 post -= value;
             }
         }
@@ -90,14 +86,14 @@ namespace Steps
         /// <param name="e">Параметры сообщения</param>
         public void Tape(object sender, TwitterMessageArgs e)
         {
-            var user = sender as TwitterUser;
+            TwitterUser user = sender as TwitterUser;
 
-            Page.Print($"--> Лента {this.Nick}:  {user.Nick} опубликовал: {e.Message} ");
+            Page.Print($"--> Лента {Nick}:  {user.Nick} опубликовал: {e.Message} ");
 
             if (e.Objs != null)
             {
                 Console.Write("и ");
-                foreach (var args in e.Objs)
+                foreach (Content args in e.Objs)
                 {
                     Console.Write($"{args.GetType().Name} ");
                 }

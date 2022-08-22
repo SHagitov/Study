@@ -17,7 +17,7 @@ namespace Steps
             Console.ReadLine();
         }
 
-        static void Twitter()
+        private static void Twitter()
         {
             TwitterUser donald = new TwitterUser("donald");
             donald.PublicMessage("Всем добра!");
