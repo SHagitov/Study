@@ -13,10 +13,20 @@ namespace Steps
     {
         private static void Main(string[] args)
         {
-            Exceptionz();
+            Console.WriteLine(DigitalsSum(59));
             Console.ReadLine();
         }
 
+        public static int DigitalsSum(int a)
+        {
+            int result = 0;
+            while (a > 0)
+            {
+                result += a % 10;
+                a /= 10;
+            }
+            return result == 14 ? 1 : 0;
+        }
         private static void Exceptionz()
         {
             MyClass a = new MyClass() { MyProperty = 10 }; Console.WriteLine(a.MyProperty);

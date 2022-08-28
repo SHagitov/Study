@@ -25,7 +25,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/Marat SHagitov/Documents/GitHub/Study/Python",
-    "settings.editor.selected.configurable": "Errors"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -38,7 +38,8 @@
       <updated>1661588536834</updated>
       <workItem from="1661588538273" duration="27000" />
       <workItem from="1661588585116" duration="59000" />
-      <workItem from="1661588684809" duration="9457000" />
+      <workItem from="1661588684809" duration="11740000" />
+      <workItem from="1661663288065" duration="1734000" />
     </task>
     <servers />
   </component>
