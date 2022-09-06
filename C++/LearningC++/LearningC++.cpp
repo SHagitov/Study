@@ -1,42 +1,90 @@
 ﻿// LearningC++.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
-
 #include <iostream>
+#include <string>
 using namespace std;
-void Variables()
+void TypeDefs()
 {
-    int a = 65;
-    a = 10;
-    float t = 12.34f;
-    double z = 34.78750;
-    bool var = true;
-    char n;
-    n = 'n';
-    n = '0';
-    const float PI = 3.1415f;
-    int _a = 10;
-    int A_123 = 0;
-    std::cout << "Hello, World!\n";
-    cout << "Hello, World!" << endl;
-    //char v;
-    //cin >> v;
-    //cout << v;
+	typedef int cnt;
+	typedef unsigned int uint;
+	cnt a = 0;
+	uint z = 10;
+	double b = 3.5;
+	char A = 'z';
 
-}
-void ArithmeticOperations()
+	cout << "Hello World!" << endl;
+ }
+void Enums()
 {
-    int a = 8;
-    int b = 4;
-    int c = a - b;
-    cout << c << endl;
-    cout << a % b << endl;
-    a = 11;
-    b = 3;
-    float z = float(a) / float(b);
-    cout << z << endl;
+	enum Color { red, green, blue };
+	//          = 0   = 1    = 2     >> тип int
+	Color a = Color::red;
+	enum Player { first = -10000000, second = 0, third = 1 };
+	cout << "Hello World!" << endl;
+	cout << a << endl;
+	Player a1 = Player::first;
+	cout << a1 << endl;
+	switch (a)
+	{
+	case red:
+	{
+		cout << "it's red" << endl;
+		break;
+	}
+	default:
+	{
+		cout << "not red" << endl;
+		break;
+	}
+	}
+
+	/*using namespace std;
+	typedef unsigned int uint;
+	enum class Color : long long;
+	void foo(Color a);
+	enum class Color : long long { red = -300000000000000, yellow = -3, green = 0, blue };
+	int main()
+	{
+		Color a = Color::blue;
+		switch (a)
+		{
+		case Color::blue:
+		{
+			cout «"it's blue";
+			break;
+		}
+		default:
+		{
+			cout «"not blue";
+			break;
+		}
+		}
+		int blue = -7;
+		cout « (int)Color::blue « endl;
+		return 0;
+	}*/
+}
+void Arrays()
+{
+	struct Car
+	{
+		int width = 50;
+		int length;
+		int wheels;
+		string name;
+	} other_car;
+	int array[10];
+	double a;
+
+	Car my_car;
+	my_car.name = "The best car";
+	my_car.length = 100;
+
+	cout << my_car.name << ", length = " << my_car.length << ", width = " << my_car.width << endl;
 }
 
 int main()
 {  
-    ArithmeticOperations();
+	Arrays();
+	return 0;
 }
