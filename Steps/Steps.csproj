@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
     <Compile Include="Animal.cs" />
     <Compile Include="ApiService.cs" />
     <Compile Include="Calculator.cs" />
@@ -78,10 +79,12 @@
     <Compile Include="Temporary.cs" />
     <Compile Include="TwitterMessageArgs.cs" />
     <Compile Include="TwitterUser.cs" />
+    <Compile Include="Users.cs" />
     <Compile Include="Warrior.cs" />
     <Compile Include="Workers.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".editorconfig" />
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
