@@ -13,10 +13,51 @@ namespace Steps
     {
         private static void Main(string[] args)
         {
-            UsersExample();
+            LinqExample();
             Console.ReadLine();
         }
 
+        static void LinqExample()
+        {
+            SquareNumber square = el => el * el;
+
+            List<int> numbers = new List<int>();
+            numbers.AddRange(Enumerable.Range(1, 10));
+
+            List<int> digits = new List<int>();
+            digits.AddRange(Enumerable.Range(11, 20));
+
+            var groupAndMult = numbers.Zip(digits, (x, y) => x * y);
+
+            List<string> words = new List<string> { "word", "hello", "hi", "word" };
+            string result = string.Join(", ", words.Distinct());
+            Console.WriteLine(result);
+
+            Console.ReadKey();
+        }
+        static void LinqWhere()
+        {
+            SquareNumber square = el => el * el;
+            Console.WriteLine("10 ^ 2 = " + square(10));
+            Console.WriteLine("5 ^ 2 = " + square(5));
+            Console.WriteLine("7 ^ 2 = " + square(7));
+
+            List<int> numbers = new List<int>();
+
+            Random rnd = new Random();
+            for (int i = 0; i < 14; i++)
+                numbers.Add(rnd.Next(1, 10));
+
+            //var list = numbers.Where(x => (x > 5) && (x <= 14)).ToList();
+            //foreach(var el in list)
+            //Console.WriteLine(el);
+
+            var list = numbers.Where(x => (x > 2) && (x < 9)).ToList().Count();
+            Console.WriteLine($"Количество найденных элементов: {list}");
+            Console.ReadKey();
+
+        }
+        delegate float SquareNumber(float number);
         public static void UsersExample()
         {
             Users marat = new Users("Марат", "test@yandex.ru", "1234", -45);
