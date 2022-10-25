@@ -21,13 +21,8 @@ namespace Steps
         {
             Users marat = new Users("Марат", "test@yandex.ru", "1234", -45);
             Users admin = new Users("Администратор", "admin@yandex.ru", "1234", 22, "Админ");
-
             Users.print();
-
             Console.ReadKey();
-
-
-
             Console.ReadKey();
         }
         public static int DigitalsSum(int a)
