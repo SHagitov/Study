@@ -5,18 +5,66 @@ namespace Steps
     public class Users
     {
 
-        public string name;
-        public string email;
-        public string password;
-        public byte age;
-        public Admin administrator = new Admin();
+        private string name;
+        private string email;
+        private string password;
+        private sbyte age;
 
-        public void setAll(string _name, string _email, string _pass, byte _age)
+        public sbyte Age
+        {
+            get
+            {
+                age++;
+                return age;
+            }
+            set
+            {
+                if (value < 0)
+                    this.age = 1;
+                else
+                    age = value;
+            }
+        }
+
+        private Admin administrator = new Admin();
+
+        public static int count;
+
+        public Users(string name, string email, string password, sbyte age)
+        {
+            this.name = name;
+            this.email = email;
+            this.password = password;
+            Age = age;
+
+            this.printAll();
+
+            count++;
+        }
+
+        public Users(string _name, string _email, string _pass, sbyte _age, string role)
         {
             name = _name;
             email = _email;
             password = _pass;
-            age = _age;
+            Age = _age;
+            Admin.role = role;
+
+            printAll();
+            count++;
+        }
+
+        public Users()
+        {
+            count++;
+        }
+
+        public void setAll(string _name, string _email, string _pass, sbyte _age)
+        {
+            name = _name;
+            email = _email;
+            password = _pass;
+            Age = _age;
         }
 
         public void setEmail(string _email)
@@ -26,12 +74,22 @@ namespace Steps
 
         public void setAdmin(string _role)
         {
-            administrator.role = _role;
+            Admin.role = _role;
         }
 
         public void printAll()
         {
-            Console.WriteLine($"Имя: {name}, email: {email}, пароль: {password}, возраст: {age}");
+            Console.WriteLine($"Имя: {name}, email: {email}, пароль: {password}, возраст: {Age}");
+        }
+
+        public string getAdminRole()
+        {
+            return Admin.role;
+        }
+
+        public static void print()
+        {
+            Console.WriteLine($"Количество элементов: {count}");
         }
 
     }

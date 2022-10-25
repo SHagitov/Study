@@ -2,6 +2,6 @@
 {
     public class Admin
     {
-        public string role = null;
+        public static string role = null;
     }
 }

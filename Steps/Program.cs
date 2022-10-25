@@ -19,24 +19,12 @@ namespace Steps
 
         public static void UsersExample()
         {
-            Users marat = new Users();
-            //alex.age = 45;
-            //alex.email = "test@mail.ru";
-            //alex.name = "Алексей";
-            marat.setAll("Марат", "test@yandex.ru", "1234", 45);
-            marat.setEmail("test2@gmail.com");
+            Users marat = new Users("Марат", "test@yandex.ru", "1234", -45);
+            Users admin = new Users("Администратор", "admin@yandex.ru", "1234", 22, "Админ");
 
-            Users admin = new Users();
-            admin.setAdmin("Администратор");
-            //admin.age = 22;
-            //admin.email = "admin@mail.ru";
-            //admin.name = "Администратор";
-            admin.setAll("Администратор", "admin@yandex.ru", "1234", 22);
+            Users.print();
 
-            admin.printAll();
-            marat.printAll();
-
-            Console.WriteLine(admin.administrator.role);
+            Console.ReadKey();
 
 
 
