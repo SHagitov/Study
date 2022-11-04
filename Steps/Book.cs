@@ -4,9 +4,9 @@ namespace Steps
 {
     public struct Book
     {
-        private short pages;
-        private string author, name;
-        private short date;
+        private readonly short pages;
+        private readonly string author, name;
+        private readonly short date;
 
         public Book(short pages, string author, string name, short date)
         {

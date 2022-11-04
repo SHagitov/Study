@@ -17,16 +17,10 @@ namespace Steps
                 age++;
                 return age;
             }
-            set
-            {
-                if (value < 0)
-                    this.age = 1;
-                else
-                    age = value;
-            }
+            set => age = value < 0 ? (sbyte)1 : value;
         }
 
-        private Admin administrator = new Admin();
+        private readonly Admin administrator = new Admin();
 
         public static int count;
 
@@ -37,7 +31,7 @@ namespace Steps
             this.password = password;
             Age = age;
 
-            this.printAll();
+            printAll();
 
             count++;
         }

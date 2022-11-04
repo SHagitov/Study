@@ -8,7 +8,6 @@ using System.Xml.Linq;
 
 namespace Steps
 {
-
     public static class Program
     {
         private static void Main(string[] args)
@@ -27,7 +26,7 @@ namespace Steps
             List<int> digits = new List<int>();
             digits.AddRange(Enumerable.Range(11, 20));
 
-            var groupAndMult = numbers.Zip(digits, (x, y) => x * y);
+            IEnumerable<int> groupAndMult = numbers.Zip(digits, (x, y) => x * y);
 
             List<string> words = new List<string> { "word", "hello", "hi", "word" };
             string result = string.Join(", ", words.Distinct());
@@ -35,7 +34,8 @@ namespace Steps
 
             Console.ReadKey();
         }
-        static void LinqWhere()
+
+        private static void LinqWhere()
         {
             SquareNumber square = el => el * el;
             Console.WriteLine("10 ^ 2 = " + square(10));
@@ -52,12 +52,13 @@ namespace Steps
             //foreach(var el in list)
             //Console.WriteLine(el);
 
-            var list = numbers.Where(x => (x > 2) && (x < 9)).ToList().Count();
+            int list = numbers.Where(x => (x > 2) && (x < 9)).ToList().Count();
             Console.WriteLine($"Количество найденных элементов: {list}");
             Console.ReadKey();
 
         }
-        delegate float SquareNumber(float number);
+
+        private delegate float SquareNumber(float number);
         public static void UsersExample()
         {
             Users marat = new Users("Марат", "test@yandex.ru", "1234", -45);
