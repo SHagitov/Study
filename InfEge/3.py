@@ -53,7 +53,8 @@ art = []
 for x in range(1, 20 + 1):
     art += ['M' + str(x)] * 250
 art += ['M20'] * 2
-wb = load_workbook('test.xlsx')
+FILENAME = 'test.xlsx'
+wb = load_workbook(FILENAME)
 ws = wb["Движение товаров"]
 for x in range(2, CONST + 1):
     ws["A" + str(x)].value = x-1
@@ -87,4 +88,4 @@ for i in range(2, len(M)):
     ws["B" + str(i)] = areas[i]
     ws["C" + str(i)] = streets[i]
 
-wb.save('test.xlsx')
+wb.save(FILENAME)
