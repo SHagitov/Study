@@ -1,8 +1,21 @@
+import random
+from random import randrange
 product = []
+'''
 with open('file.txt', encoding="utf-8") as t:
     for i in range(60):
         product.append([i.strip() for i in t.readline().split('-')])
-# print(product)
+'''
+with open('fileO.txt', encoding="utf-8") as t:
+    for i in range(60):
+        x = [i.strip() for i in t.readline().split('-')][1:]
+        r = ['Мобильные телефоны', 'Товар', 'шт', 'кол-во в упаковке', 'цена']
+        r[1] = x[0]
+        r[3] = str(random.randrange(10, 100, 10))
+        r[4] = x[1]
+        product.append(r)
+        #print(x,r)
+print(product)
 from openpyxl import *
 import datetime as DT
 import random
@@ -72,8 +85,6 @@ for i1, i2 in zip(range(2, CONST + 1), [i for i in {"Поступление", "�
 ws = wb["Товар"]
 for j, x in enumerate(product, start=1):
     i1, i2, i3, i4, i5 = x
-    i4 = randrange(100, 1000, 25)
-    i5 = randrange(200, 1000, 100)
     ws["A" + str(j+1)] = j
     ws["B" + str(j + 1)] = i1
     ws["C" + str(j + 1)] = i2
