@@ -11,8 +11,8 @@ with open('fileO.txt', encoding="utf-8") as t:
         x = [i.strip() for i in t.readline().split('-')][1:]
         r = ['Мобильные телефоны', 'Товар', 'шт', 'кол-во в упаковке', 'цена']
         r[1] = x[0]
-        r[3] = str(random.randrange(10, 100, 10))
-        r[4] = x[1]
+        r[3] = str(1)
+        r[4] = x[1].replace('руб.', ' ').strip()
         product.append(r)
         #print(x,r)
 print(product)
@@ -78,10 +78,9 @@ for x in range(2, len(art)):
     ws["C" + str(x)].value = art[x]
 for i1, i2 in zip(range(2, CONST + 1), [i for i in range(1, 60 + 1)] * CONST):
     ws["D" + str(i1)].value = i2
-for i1, i2 in zip(range(2, CONST + 1), [i for i in range(100, 1000 + 1, 100)] * CONST):
+    ws["F" + str(i1)].value = random.choice([i for i in {"Поступление", "Продажа"}])
+for i1, i2 in zip(range(2, CONST + 1), [i for i in range(100, 500 + 1, 100)] * CONST):
     ws["E" + str(i1)].value = i2
-for i1, i2 in zip(range(2, CONST + 1), [i for i in {"Поступление", "Продажа"}] * CONST):
-    ws["F" + str(i1)].value = i2
 ws = wb["Товар"]
 for j, x in enumerate(product, start=1):
     i1, i2, i3, i4, i5 = x
