@@ -80,7 +80,7 @@ for i1, i2 in zip(range(2, CONST + 1), [i for i in range(1, 60 + 1)] * CONST):
     ws["D" + str(i1)].value = i2
     ws["F" + str(i1)].value = random.choice([i for i in {"Поступление", "Продажа"}])
 for i1, i2 in zip(range(2, CONST + 1), [i for i in range(100, 500 + 1, 100)] * CONST):
-    ws["E" + str(i1)].value = i2
+    ws["E" + str(i1)].value = random.randrange(10, 100, 5)
 ws = wb["Товар"]
 for j, x in enumerate(product, start=1):
     i1, i2, i3, i4, i5 = x
